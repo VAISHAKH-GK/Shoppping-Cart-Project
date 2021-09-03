@@ -35,7 +35,8 @@ router.get('/', function (req, res, next) {
     }
   ];
 
-  res.render('index', {mobile});
+  res.render('index', {mobile,admin:false});
+  
 });
 
 module.exports = router;
