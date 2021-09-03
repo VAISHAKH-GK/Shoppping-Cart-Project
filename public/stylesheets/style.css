@@ -1,0 +1,11 @@
+body{
+  background-color: aqua!important;
+}
+.navbar{
+  background-color: red;
+  color: lime;
+}
+.btn-outline-success{
+  background-color: green!important;
+  color: white!important;
+}
