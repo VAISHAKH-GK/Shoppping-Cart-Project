@@ -35,8 +35,9 @@ router.get('/', function (req, res, next) {
     }
   ];
 
-  res.render('index', {mobile,admin:false});
+  res.render('user/user', {mobile,admin:false});
   
 });
 
 module.exports = router;
+

@@ -1,0 +1,35 @@
+<main class="main" style="padding-top: 40px;">
+    <section>
+        <div class="container">
+            <div class="row " style="display: flex; justify-content: right;"> 
+                <a href="/admin/add-product" class="btn btn-success">Add Product</a>
+            </div>
+            <table class="table" style="margin-top: 20px ;">
+                <thead>
+                    <tr>
+                        <th scope="col">No</th>
+                        <th scope="col">Prodect-Name</th>
+                        <th scope="col">Category</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Img</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+
+                    {{#each mobile}}
+                    <tr>
+                        <th scope="row">{{incrementIndex @index}}</th>
+                        <td>{{this.name}}</td>
+                        <td>{{this.category}}</td>
+                        <td>{{this.description}}</td>
+                        <td><img style="width: 50px; height: 50px;" src="{{this.image}}" alt=""></td>
+
+                    </tr>
+                    {{/each}}
+
+                </tbody>
+            </table>
+        </div>
+    </section>
+</main>
