@@ -2,11 +2,13 @@ var express = require('express');
 var router = express.Router();
 var Handlebars = require('handlebars');
 var fileUpload = require('express-fileupload');
+var productHelper = require('../helpers/product-helpers');
+const productHelpers = require('../helpers/product-helpers');
 
 /* GET users listing. */
-router.get('/', function(req, res, next) {
+router.get('/', function (req, res, next) {
 
-  res.render('admin/admin',{admin:true});
+  res.render('admin/admin', { admin: true });
 
 });
 let mobile = [
@@ -42,20 +44,23 @@ let mobile = [
 Handlebars.registerHelper("incrementIndex", function (index) {
   return index + 1;
 });
-router.get('/products', function(req, res, next) {
+router.get('/products', function (req, res, next) {
 
-  res.render('admin/products',{admin:true,mobile});
-
-});
-router.get('/add-product', function(req, res, next) {
-
-  res.render('admin/add-product',{admin:true});
+  res.render('admin/products', { admin: true, mobile });
 
 });
-router.post('/add-product', function(req, res, next) {
-  
+router.get('/add-product', function (req, res, next) {
+
+  res.render('admin/add-product', { admin: true });
+
+});
+router.post('/add-product', function (req, res, next) {
+
   console.log(req.body);
   console.log(req.files);
+  productHelpers.addProduct(req.body,()=>{
+    res.render('admin/add-product');
+  });
 
 
 });
