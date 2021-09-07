@@ -1,16 +1,17 @@
-var MongoClient = require('mongodb').MongoClient;
+var mongoClient = require('mongodb').MongoClient;
 var state ={db:null};
 
 
 var url = "mongodb://localhost:27017/mydb";
+var dbname ='shopping';
 
 module.exports.connect=(done)=>{
 
-    MongoClient.connect(url, function(err, db) {
+    mongoClient.connect(url, function(err, db) {
 
         if (err) throw err;
         console.log("Database created!");
-        state.db=db.db(dname);
+        state.db=db.db(dbname);
 
     });
 
