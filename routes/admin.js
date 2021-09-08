@@ -56,18 +56,17 @@ router.get('/add-product', function (req, res, next) {
 });
 router.post('/add-product', function (req, res, next) {
 
-  console.log(req.body);
-  console.log(req.files.pimg);
+
   productHelpers.addProduct(req.body,(id)=>{
-    console.log(id)
-    let image =req.files.pimg;
+    
+    let image =req.files.Image;
     image.mv('public/productimage/'+id+'.jpg',(err,done)=>{
       if (!err){
         res.render('admin/add-product');
       }else{
         console.log(err);
       }
-    })
+    });
     
   });
 
