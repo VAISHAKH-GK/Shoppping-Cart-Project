@@ -1,13 +1,13 @@
 <section>
     <div class="container mt-5">
-        <div class="row col md-12">
+        <div class="row col-md-12" style=" margin: right 0;px;margin-left:0px;">
             {{#each mobile}}
-            <div class="col-md-3">
-                <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="{{this.image}}" alt="Card image cap">
+            <div class="col-md-4 col-sm-6 col-12 " style="margin-right: 0; display: flex; justify-content: center;">
+                <div class="card" style="width: 18rem; height: 30rem;">
+                    <img class="card-img-top"  src="/productimage/{{this._id}}.jpg" alt="Card image cap">
                     <div class="card-body">
-                        <h5 class="card-title">{{this.name}} </h5>
-                        <p class="card-text">{{this.description}}</p>
+                        <h5 class="card-title">{{this.Name}} </h5>
+                        <p class="card-text">{{this.Description}}</p>
                         <a href="#" class="btn btn-primary">Add to cart</a>
                     </div>
                 </div>
