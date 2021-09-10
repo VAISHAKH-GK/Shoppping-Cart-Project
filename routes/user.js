@@ -4,8 +4,11 @@ const productHelpers = require('../helpers/product-helpers');
 const userHelpers = require('../helpers/user-helper');
 /* GET home page. */
 router.get('/', function (req, res, ) {
+  let user=req.session.user;
+  console.log(user);
+
   productHelpers.getAllProducts().then((mobile)=>{
-    res.render('user/user', { admin: false,mobile });
+    res.render('user/user', { admin: false,mobile,user });
 
   });
 });
@@ -17,8 +20,24 @@ router.get('/signup', function (req, res, ) {
 });
 router.post('/signup', function (req, res, ) {
   userHelpers.doSignup(req.body).then((responce)=>{
-    console.log(responce);
+    res.render('user/login', { admin: false});
+    console.log('Account created');
   });
+});
+router.post('/login', function (req, res, ) {
+  userHelpers.doLogin(req.body).then((responce)=>{
+    if(responce.status){
+      req.session.loggedIn=true;
+      req.session.user=responce.user;
+      res.redirect('/');
+    }else{
+      res.redirect('/login');
+    }
+  });
+});
+router.get('/logout', function (req, res, ) {
+  req.session.destroy();
+  res.redirect('/');
 });
 
 module.exports = router;
