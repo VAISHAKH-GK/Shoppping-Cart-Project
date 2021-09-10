@@ -7,7 +7,6 @@ const productHelpers = require('../helpers/product-helpers');
 
 /* GET users listing. */
 router.get('/', function (req, res, next) {
-
   res.render('admin/admin', { admin: true });
 
 });
