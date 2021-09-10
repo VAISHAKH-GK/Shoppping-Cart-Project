@@ -3,42 +3,68 @@ var router = express.Router();
 const productHelpers = require('../helpers/product-helpers');
 const userHelpers = require('../helpers/user-helper');
 /* GET home page. */
-router.get('/', function (req, res, ) {
-  let user=req.session.user;
+var wrong = false;
+const checklog = (req, res, next) => {
+  if (req.session.user) {
+    next();
+  } else {
+    res.redirect('/login');
+  }
+}
+router.get('/', function (req, res) {
+  let user = req.session.user;
   console.log(user);
 
-  productHelpers.getAllProducts().then((mobile)=>{
-    res.render('user/user', { admin: false,mobile,user });
+  productHelpers.getAllProducts().then((mobile) => {
+    res.render('user/user', { admin: false, mobile, user });
 
   });
 });
-router.get('/login', function (req, res, ) {
-  res.render('user/login', { admin: false});
+router.get('/login', function (req, res) {
+  if (req.session.loggedIn) {
+    res.redirect('/');
+  } else {
+    res.render('user/login', { admin: false, wrong });
+    wrong = false;
+  }
+
 });
-router.get('/signup', function (req, res, ) {
-  res.render('user/signup', { admin: false});
+router.get('/signup', function (req, res) {
+  if (req.session.loggedIn) {
+    res.redirect('/');
+  } else {
+    res.render('user/signup', { admin: false });
+  }
+
 });
-router.post('/signup', function (req, res, ) {
-  userHelpers.doSignup(req.body).then((responce)=>{
-    res.render('user/login', { admin: false});
+router.post('/signup', function (req, res) {
+  userHelpers.doSignup(req.body).then((responce) => {
+    res.render('user/login', { admin: false });
     console.log('Account created');
   });
 });
-router.post('/login', function (req, res, ) {
-  userHelpers.doLogin(req.body).then((responce)=>{
-    if(responce.status){
-      req.session.loggedIn=true;
-      req.session.user=responce.user;
+router.post('/login', function (req, res) {
+  userHelpers.doLogin(req.body).then((responce) => {
+    if (responce.status) {
+      req.session.loggedIn = true;
+      req.session.user = responce.user;
       res.redirect('/');
-    }else{
+      wrong = false;
+    } else {
       res.redirect('/login');
+      wrong = "Invalid username or password";
     }
   });
 });
-router.get('/logout', function (req, res, ) {
+router.get('/logout', function (req, res) {
   req.session.destroy();
   res.redirect('/');
 });
+router.get('/cart',checklog, function (req, res) {
+  var user=req.session.user;
+  res.render('user/cart',{ admin: false, user });
+});
+
 
 module.exports = router;
 

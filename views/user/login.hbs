@@ -5,6 +5,9 @@
                 <div class="mb-3">
                     <h1 class="mx-auto" style="width: 125px;">LOGIN</h1>
                 </div>
+                {{#if wrong}}
+                <p class="error" style="color: red;">{{wrong}}</p>
+                {{/if}}
                 <div class="mb-3">
                     <label for="" class="form-label">Email Address</label>
                     <input type="email" class="form-control" id="Email" placeholder="Email Address" name="Email">
