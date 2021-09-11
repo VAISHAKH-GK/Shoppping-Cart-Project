@@ -1,11 +1,11 @@
 var db = require('../config/connection');
 var coll = require('../config/collection');
+var objid=require('mongodb').ObjectId;
 module.exports={
 
     addProduct:(product,callback)=>{
 
         db.get().collection(coll.prod).insertOne(product).then((data)=>{
-            
             callback(data.insertedId);
         });
 
@@ -17,6 +17,16 @@ module.exports={
             resolve(products);
         });
 
+    },
+    deleteProduct:(proId)=>{
+        return new Promise((resolve,reject)=>{
+            console.log(proId);
+            console.log(objid(proId));
+            db.get().collection(coll.prod).deleteOne({_id:objid(proId)}).then((response)=>{
+                console.log(response);
+                resolve(response);
+            });
+        });
     }
 
 }
