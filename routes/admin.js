@@ -74,12 +74,12 @@ router.post('/edit-product', (req, res) => {
     res.redirect('/admin/add-product');
   } else {
     let id = req.query.id;
-    productHelper.editProduct(req.body, id).then((data) => {
+    productHelper.editProduct(req.body, id).then(() => {
       const pathToFile = 'public/productimage/' + id + '.jpg';
       fs.unlink(pathToFile, function (err) {
       });
       let image = req.files.Image;
-      image.mv('public/productimage/' + data + '.jpg', (err, done) => {
+      image.mv('public/productimage/' + id + '.jpg', (err, done) => {
         if (!err) {
           res.redirect('/admin/products');
         } else {
