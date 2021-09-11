@@ -31,21 +31,24 @@ router.get('/add-product', function (req, res, next) {
 });
 router.post('/add-product', function (req, res, next) {
 
-
-  productHelpers.addProduct(req.body, (id) => {
-
-    let image = req.files.Image;
-    image.mv('public/productimage/' + id + '.jpg', (err, done) => {
-      if (!err) {
-
-        res.render('admin/add-product', { admin: true });
-      } else {
-        console.log(err);
-      }
+  if (!req.files) {
+    res.redirect('/admin/add-product');
+  } else if (!req.body.Name) {
+    res.redirect('/admin/add-product');
+  } else if (!req.body.Category) {
+    res.redirect('/admin/add-product');
+  } else {
+    productHelpers.addProduct(req.body, (id) => {
+      let image = req.files.Image;
+      image.mv('public/productimage/' + id + '.jpg', (err, done) => {
+        if (!err) {
+          res.redirect('/admin/productc');
+        } else {
+          res.redirect('/admin/productc');
+        }
+      });
     });
-
-  });
-
+  }
 
 });
 router.get('/delete-product/', (req, res) => {
@@ -54,12 +57,10 @@ router.get('/delete-product/', (req, res) => {
   productHelper.deleteProduct(proid).then((response) => {
     res.redirect('/admin/products');
   });
-
-  const pathToFile = 'public/productimage/'+proid+'.jpg';
-
+  const pathToFile = 'public/productimage/' + proid + '.jpg';
   fs.unlink(pathToFile, function (err) {
     if (err) {
-      throw err
+      console.log('NO Image');
     } else {
       console.log("Successfully deleted the file.");
     }
