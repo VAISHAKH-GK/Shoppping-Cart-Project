@@ -5,6 +5,7 @@ var Handlebars = require('handlebars');
 var fileUpload = require('express-fileupload');
 var productHelper = require('../helpers/product-helpers');
 const productHelpers = require('../helpers/product-helpers');
+const { RSA_NO_PADDING } = require("constants");
 
 /* GET users listing. */
 router.get('/', function (req, res, next) {
@@ -19,7 +20,6 @@ router.get('/products', function (req, res, next) {
 
 
   productHelpers.getAllProducts().then((mobile) => {
-    console.log(mobile);
     res.render('admin/products', { admin: true, mobile });
   });
 
@@ -31,20 +31,16 @@ router.get('/add-product', function (req, res, next) {
 });
 router.post('/add-product', function (req, res, next) {
 
-  if (!req.files) {
-    res.redirect('/admin/add-product');
-  } else if (!req.body.Name) {
-    res.redirect('/admin/add-product');
-  } else if (!req.body.Category) {
+  if (!req.files || !req.body.Name || !req.body.Category) {
     res.redirect('/admin/add-product');
   } else {
     productHelpers.addProduct(req.body, (id) => {
       let image = req.files.Image;
       image.mv('public/productimage/' + id + '.jpg', (err, done) => {
         if (!err) {
-          res.redirect('/admin/productc');
+          res.redirect('/admin/products');
         } else {
-          res.redirect('/admin/productc');
+          res.redirect('/admin/products');
         }
       });
     });
@@ -65,6 +61,33 @@ router.get('/delete-product/', (req, res) => {
       console.log("Successfully deleted the file.");
     }
   });
+});
+router.get('/edit-product/', (req, res) => {
+  let proid = req.query.id;
+  productHelper.findProduct(proid).then((product) => {
+    var pro=product;
+    res.render('admin/edit-product', { admin: true,pro});
+  });
+});
+router.post('/edit-product', (req, res) => {
+  if (!req.files || !req.body.Name || !req.body.Category) {
+    res.redirect('/admin/add-product');
+  } else {
+    let id = req.query.id;
+    productHelper.editProduct(req.body, id).then((data) => {
+      const pathToFile = 'public/productimage/' + id + '.jpg';
+      fs.unlink(pathToFile, function (err) {
+      });
+      let image = req.files.Image;
+      image.mv('public/productimage/' + data + '.jpg', (err, done) => {
+        if (!err) {
+          res.redirect('/admin/products');
+        } else {
+          res.redirect('/admin/products');
+        }
+      });
+    });
+  }
 });
 
 

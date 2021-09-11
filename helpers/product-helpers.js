@@ -27,6 +27,21 @@ module.exports={
                 resolve(response);
             });
         });
+    },
+    editProduct:(product,id)=>{
+        return new Promise((resolve,reject)=>{
+            db.get().collection(coll.prod).deleteOne({_id:objid(id)});
+            db.get().collection(coll.prod).insertOne(product).then((data)=>{
+                resolve(data.insertedId);
+            });
+        });
+        
+    },findProduct:(id)=>{
+        return new Promise((resolve,reject)=>{
+            db.get().collection(coll.prod).findOne({_id:objid(id)}).then((product)=>{
+                resolve(product);
+            });
+        });
     }
 
 }
