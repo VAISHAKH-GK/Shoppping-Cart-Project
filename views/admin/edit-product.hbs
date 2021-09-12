@@ -22,8 +22,8 @@
                 </div>
 
                 <label for="Image">Image</label>
-                <img src="/productimage/{{pro._id}}.jpg" style="width: 100px; height: auto;" alt="">
-                <input type="file" class="form-control" id="Image" name="Image">
+                <img src="/productimage/{{pro._id}}.jpg" style="width: 100px; height: auto;"  alt="" id="dis_image">
+                <input type="file" class="form-control" id="Image" accept="image/*" name="Image" onchange="viewImage(event)">
 
 
                 <button type="submit" class="btn btn-primary" id="sub-btn">Submit</button>
@@ -31,3 +31,10 @@
         </div>
     </section>
 </main>
+
+<script>
+    function viewImage(event){
+
+        document.getElementById('dis_image').src=URL.createObjectURL(event.target.files[0])
+    }
+</script>

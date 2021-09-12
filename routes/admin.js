@@ -65,8 +65,8 @@ router.get('/delete-product/', (req, res) => {
 router.get('/edit-product/', (req, res) => {
   let proid = req.query.id;
   productHelper.findProduct(proid).then((product) => {
-    var pro=product;
-    res.render('admin/edit-product', { admin: true,pro});
+    var pro = product;
+    res.render('admin/edit-product', { admin: true, pro });
   });
 });
 router.post('/edit-product', (req, res) => {
@@ -76,16 +76,9 @@ router.post('/edit-product', (req, res) => {
     let id = req.query.id;
     productHelper.editProduct(req.body, id).then(() => {
       const pathToFile = 'public/productimage/' + id + '.jpg';
-      fs.unlink(pathToFile, function (err) {
-      });
       let image = req.files.Image;
-      image.mv('public/productimage/' + id + '.jpg', (err, done) => {
-        if (!err) {
-          res.redirect('/admin/products');
-        } else {
-          res.redirect('/admin/products');
-        }
-      });
+      image.mv('public/productimage/' + id + '.jpg');
+      res.redirect('/admin/products');
     });
   }
 });

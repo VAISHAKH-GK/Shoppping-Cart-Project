@@ -39,8 +39,11 @@ router.get('/signup', function (req, res) {
 });
 router.post('/signup', function (req, res) {
   userHelpers.doSignup(req.body).then((responce) => {
-    res.render('user/login', { admin: false });
     console.log('Account created');
+    req.session.loggedIn = true;
+    req.session.user = responce.user;
+    res.redirect('/');
+    wrong = false;
   });
 });
 router.post('/login', function (req, res) {
@@ -60,9 +63,9 @@ router.get('/logout', function (req, res) {
   req.session.destroy();
   res.redirect('/');
 });
-router.get('/cart',checklog, function (req, res) {
-  var user=req.session.user;
-  res.render('user/cart',{ admin: false, user });
+router.get('/cart', checklog, function (req, res) {
+  var user = req.session.user;
+  res.render('user/cart', { admin: false, user });
 });
 
 
