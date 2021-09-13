@@ -30,7 +30,7 @@ module.exports={
     },
     editProduct:(product,id)=>{
         return new Promise((resolve,reject)=>{
-            db.get().collection(coll.prod).updateOne({_id:objid(id)},{$set:{product}}).then((data)=>{
+            db.get().collection(coll.prod).updateOne({_id:objid(id)},{$set:product}).then((data)=>{
                 resolve();
             });
         });
