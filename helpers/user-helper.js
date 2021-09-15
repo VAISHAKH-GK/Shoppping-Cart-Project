@@ -1,6 +1,7 @@
 var db = require('../config/connection');
 var bcrypt = require('bcrypt');
 const collection = require('../config/collection');
+var objid=require('mongodb').ObjectId;
 module.exports = {
     doSignup: (userData) => {
         return new Promise((resolve, reject) => {
@@ -42,4 +43,17 @@ module.exports = {
             }
         });
     },
+    addCart:(uid,pid)=>{
+        return new Promise((resolve,reject)=>{
+            db.get().collection(collection.cart).findOne({user:objid(uid)}).then((ucoll)=>{
+
+                if(ucoll){
+                    
+                }else{
+                    db.get().collection(collection.cart).insertOne()
+                }
+
+            });
+        });
+    }
 };

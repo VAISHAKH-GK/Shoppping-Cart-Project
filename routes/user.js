@@ -63,9 +63,14 @@ router.get('/logout', function (req, res) {
   req.session.destroy();
   res.redirect('/');
 });
-router.get('/cart', checklog, function (req, res) {
+router.get('/carts', checklog, function (req, res) {
   var user = req.session.user;
   res.render('user/cart', { admin: false, user });
+});
+router.get('/addtocart',(req,res)=>{
+  var pid = req.query.id;
+  var uid=req.session.user._id;
+  userHelpers.addtoCart(uid,pid);
 });
 
 

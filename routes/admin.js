@@ -36,13 +36,8 @@ router.post('/add-product', function (req, res, next) {
   } else {
     productHelpers.addProduct(req.body, (id) => {
       let image = req.files.Image;
-      image.mv('public/productimage/' + id + '.jpg', (err, done) => {
-        if (!err) {
-          res.redirect('/admin/products');
-        } else {
-          res.redirect('/admin/products');
-        }
-      });
+      image.mv('public/productimage/' + id + '.jpg');
+      res.redirect('/admin/products');
     });
   }
 
@@ -70,15 +65,19 @@ router.get('/edit-product/', (req, res) => {
   });
 });
 router.post('/edit-product', (req, res) => {
-  if (!req.files || !req.body.Name || !req.body.Category) {
+  if (!req.body.Name || !req.body.Category) {
     res.redirect('/admin/add-product');
   } else {
     let id = req.query.id;
     productHelper.editProduct(req.body, id).then(() => {
-      const pathToFile = 'public/productimage/' + id + '.jpg';
-      let image = req.files.Image;
-      image.mv('public/productimage/' + id + '.jpg');
-      res.redirect('/admin/products');
+      if (req.files) {
+        const pathToFile = 'public/productimage/' + id + '.jpg';
+        let image = req.files.Image;
+        image.mv('public/productimage/' + id + '.jpg');
+        res.redirect('/admin/products');
+      } else {
+        res.redirect('/admin/products');
+      }
     });
   }
 });

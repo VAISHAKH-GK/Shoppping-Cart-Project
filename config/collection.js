@@ -1,4 +1,5 @@
 module.exports={
     prod:'product',
-    user:'user'
+    user:'user',
+    cart:'cart'
 }
