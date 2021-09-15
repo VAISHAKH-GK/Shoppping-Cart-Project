@@ -71,7 +71,7 @@ router.get('/addtocart',checklog,(req,res)=>{
   var pid = req.query.id;
   var uid=req.session.user._id;
   userHelpers.addtoCart(uid,pid).then(()=>{
-    redirect('/');
+    res.redirect('/');
   })
 });
 

@@ -45,7 +45,7 @@ module.exports = {
     },
     addtoCart: (uid, pid) => {
         return new Promise(async (resolve, reject) => {
-            var ucoll =await  db.get().collection(collection.cart).findOne({ user: objid(uid) });
+            var ucoll = await  db.get().collection(collection.cart).findOne({ user: objid(uid) });
             if (ucoll) {
 
             } else {
