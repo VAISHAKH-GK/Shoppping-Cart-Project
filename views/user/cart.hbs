@@ -1,7 +1,18 @@
 <section>
-    <div class="container">
-        <div style="display: flex; justify-content: center;">
-            <h1>Cart is empty</h1>
+    <div class="container mt-5">
+        <div class="row col-md-12" style=" margin: right 0;px;margin-left:0px;">
+            {{#each products}}
+            <div class="col-md-4 col-sm-6 col-12 " style="margin-right: 0; display: flex; justify-content: center;">
+                <div class="card" style="width: 18rem; height: 30rem;">
+                    <img class="card-img-top"  src="/productimage/{{this._id}}.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">{{this.Name}} </h5>
+                        <p class="card-text">{{this.Description}}</p>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+
         </div>
     </div>
 </section>

@@ -45,19 +45,33 @@ module.exports = {
     },
     addtoCart: (uid, pid) => {
         return new Promise(async (resolve, reject) => {
-            var ucoll = await  db.get().collection(collection.cart).findOne({ user: objid(uid) });
+            var ucoll = await db.get().collection(collection.cart).findOne({ user: objid(uid) });
             if (ucoll) {
+
+                db.get().collection(collection.cart).updateOne({user:objid(uid)},{$push:{product:objid(pid)}}).then((responce)=>{
+                    resolve(responce);
+                });
 
             } else {
 
                 let cartoj = {
                     user: objid(uid),
                     product: [objid(pid)]
-                }
+                };
                 db.get().collection(collection.cart).insertOne(cartoj).then((responce) => {
                     resolve(responce);
                 });
             }
+        });
+    },
+    getCart: (uid) => {
+
+        return new Promise((resolve, reject) => {
+            db.get().collection(collection.cart).findOne({ user: objid(uid) }).then((product_det) => {
+                db.get().collection(collection.prod).findOne({_id:objid(product_det.product)}).then((prodcutd)=>{
+                    resolve(prodcutd);
+                });
+            });
         });
     }
 };
