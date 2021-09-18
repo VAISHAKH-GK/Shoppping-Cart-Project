@@ -48,7 +48,7 @@ module.exports = {
             var ucoll = await db.get().collection(collection.cart).findOne({ user: objid(uid) });
             if (ucoll) {
 
-                db.get().collection(collection.cart).updateOne({user:objid(uid)},{$push:{product:objid(pid)}}).then((responce)=>{
+                db.get().collection(collection.cart).updateOne({ user: objid(uid) }, { $push: { product: objid(pid) } }).then((responce) => {
                     resolve(responce);
                 });
 
@@ -68,10 +68,35 @@ module.exports = {
 
         return new Promise((resolve, reject) => {
             db.get().collection(collection.cart).findOne({ user: objid(uid) }).then((product_det) => {
-                db.get().collection(collection.prod).findOne({_id:objid(product_det.product)}).then((prodcutd)=>{
+                db.get().collection(collection.prod).findOne({ _id: objid(product_det.product) }).then((prodcutd) => {
                     resolve(prodcutd);
                 });
             });
+        });
+    }, getCartProducts: (uid) => {
+        return new Promise(async (resolve, reject) => {
+            var cartItems = await db.get().collection(collection.cart).aggregate([
+                {
+                    $match:{user:objid(uid)}
+                },
+                {
+                    $lookup:{
+                        from:collection.prod,
+                        let:{proList:'$product'},
+                        pipeline:[
+                            {
+                                $match:{
+                                    $expr:{
+                                        $in:['$_id','$$proList']
+                                    }
+                                }
+                            }
+                        ],
+                        as:'cartItems'
+                    }
+                }
+            ]).toArray();
+            resolve(cartItems[0].cartItems);
         });
     }
 };

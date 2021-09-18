@@ -71,6 +71,14 @@ router.get('/addtocart', checklog, (req, res) => {
     res.redirect('/');
   });
 });
+router.get('/carts',checklog,(req,res)=>{
+  let user =req.session.user;
+  userHelpers.getCartProducts(user._id).then((products)=>{
+    console.log(products);
+    res.render('user/cart',user,)
+  })
+ 
+});
 
 
 module.exports = router;
