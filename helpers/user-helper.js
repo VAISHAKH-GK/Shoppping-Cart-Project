@@ -44,19 +44,25 @@ module.exports = {
         });
     },
     addtoCart: (uid, pid) => {
+        let proObj = {
+            item: objid(pid),
+            quantity: 1
+        }
         return new Promise(async (resolve, reject) => {
             var ucoll = await db.get().collection(collection.cart).findOne({ user: objid(uid) });
             if (ucoll) {
 
-                db.get().collection(collection.cart).updateOne({ user: objid(uid) }, { $push: { product: objid(pid) } }).then((responce) => {
-                    resolve(responce);
-                });
+                let proExist = ucoll.product.findIndex(producte => producte.item == pid);
+                console.log(proExist);
+                // db.get().collection(collection.cart).updateOne({ user: objid(uid) }, { $push: { product: objid(pid) } }).then((responce) => {
+                //     resolve(responce);
+                // });
 
             } else {
 
                 let cartoj = {
                     user: objid(uid),
-                    product: [objid(pid)]
+                    product: [proObj]
                 };
                 db.get().collection(collection.cart).insertOne(cartoj).then((responce) => {
                     resolve(responce);
@@ -101,8 +107,14 @@ module.exports = {
     }, cartCount: (id) => {
         return new Promise((resolve, reject) => {
             db.get().collection(collection.cart).findOne({ user: objid(id) }).then((pron) => {
-                var number= pron.product.length;
-                resolve(number);
+                if (pron) {
+                    var number = pron.product.length;
+                    resolve(number);
+                } else {
+                    var number = 0;
+                    resolve(number);
+                }
+
             });
         });
     }
