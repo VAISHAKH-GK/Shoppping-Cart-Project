@@ -4,6 +4,7 @@ const productHelpers = require('../helpers/product-helpers');
 const userHelpers = require('../helpers/user-helper');
 /* GET home page. */
 var wrong = false;
+
 const checklog = (req, res, next) => {
   if (req.session.user) {
     next();
@@ -11,12 +12,23 @@ const checklog = (req, res, next) => {
     res.redirect('/login');
   }
 }
-router.get('/', function (req, res) {
+var Cnum = null;
+var cartCount = async (req, res, next) => {
+  if (req.session.user) {
+    Cnum= await userHelpers.cartCount(req.session.user._id);
+    next();
+  } else {
+    next();
+  }
+  
+};
+
+router.get('/',cartCount, function (req, res) {
   let user = req.session.user;
   console.log(user);
 
   productHelpers.getAllProducts().then((mobile) => {
-    res.render('user/user', { admin: false, mobile, user });
+    res.render('user/user', { admin: false, mobile, user,Cnumber:Cnum });
 
   });
 });
@@ -71,13 +83,13 @@ router.get('/addtocart', checklog, (req, res) => {
     res.redirect('/');
   });
 });
-router.get('/carts',checklog,(req,res)=>{
-  let user =req.session.user;
-  userHelpers.getCartProducts(user._id).then((products)=>{
+router.get('/carts', checklog, (req, res) => {
+  let user = req.session.user;
+  userHelpers.getCartProducts(user._id).then((products) => {
     console.log(products);
-    res.render('user/cart',{products,user});
+    res.render('user/cart', { products, user });
   })
- 
+
 });
 
 

@@ -1,6 +1,7 @@
 var db = require('../config/connection');
 var coll = require('../config/collection');
 var objid=require('mongodb').ObjectId;
+const collection = require('../config/collection');
 module.exports={
 
     addProduct:(product,callback)=>{
@@ -43,4 +44,4 @@ module.exports={
         });
     }
 
-}
+};

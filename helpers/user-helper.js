@@ -77,26 +77,33 @@ module.exports = {
         return new Promise(async (resolve, reject) => {
             var cartItems = await db.get().collection(collection.cart).aggregate([
                 {
-                    $match:{user:objid(uid)}
+                    $match: { user: objid(uid) }
                 },
                 {
-                    $lookup:{
-                        from:collection.prod,
-                        let:{proList:'$product'},
-                        pipeline:[
+                    $lookup: {
+                        from: collection.prod,
+                        let: { proList: '$product' },
+                        pipeline: [
                             {
-                                $match:{
-                                    $expr:{
-                                        $in:['$_id','$$proList']
+                                $match: {
+                                    $expr: {
+                                        $in: ['$_id', '$$proList']
                                     }
                                 }
                             }
                         ],
-                        as:'cartItems'
+                        as: 'cartItems'
                     }
                 }
             ]).toArray();
             resolve(cartItems[0].cartItems);
+        });
+    }, cartCount: (id) => {
+        return new Promise((resolve, reject) => {
+            db.get().collection(collection.cart).findOne({ user: objid(id) }).then((pron) => {
+                var number= pron.product.length;
+                resolve(number);
+            });
         });
     }
 };
