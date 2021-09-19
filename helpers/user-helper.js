@@ -54,10 +54,16 @@ module.exports = {
 
                 let proExist = ucoll.product.findIndex(producte => producte.item == pid);
                 console.log(proExist);
-                // db.get().collection(collection.cart).updateOne({ user: objid(uid) }, { $push: { product: objid(pid) } }).then((responce) => {
-                //     resolve(responce);
-                // });
-
+                if(proExist!=-1){
+                    db.get().collection(collection.cart).updateOne({'product.item':objid(pid)},{$inc:{'product.$.quantity':1}}).then(()=>{
+                        resolve();
+                    });
+                }else{
+                    db.get().collection(collection.cart).updateOne({ user: objid(uid) }, { $push: { product:proObj } }).then((responce) => {
+                        resolve(responce);
+                    });
+                }
+               
             } else {
 
                 let cartoj = {
