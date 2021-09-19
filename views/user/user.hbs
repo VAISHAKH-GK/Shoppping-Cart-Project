@@ -4,11 +4,11 @@
             {{#each mobile}}
             <div class="col-md-4 col-sm-6 col-12 " style="margin-right: 0; display: flex; justify-content: center;">
                 <div class="card" style="width: 18rem; height: 30rem;">
-                    <img class="card-img-top"  src="/productimage/{{this._id}}.jpg" alt="Card image cap">
+                    <img class="card-img-top" src="/productimage/{{this._id}}.jpg" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">{{this.Name}} </h5>
                         <p class="card-text">{{this.Description}}</p>
-                        <a href="/addtocart?id={{this._id}}" class="btn btn-primary">Add to cart</a>
+                        <button class="btn btn-primary" onclick="addToCart('{{this._id}}')">Add to Cart</button>
                     </div>
                 </div>
             </div>

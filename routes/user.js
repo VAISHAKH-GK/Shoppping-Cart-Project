@@ -18,6 +18,7 @@ var cartCount = async (req, res, next) => {
     Cnum= await userHelpers.cartCount(req.session.user._id);
     next();
   } else {
+    Cnum=null;
     next();
   }
   
@@ -25,9 +26,8 @@ var cartCount = async (req, res, next) => {
 
 router.get('/',cartCount, function (req, res) {
   let user = req.session.user;
-  console.log(user);
-
   productHelpers.getAllProducts().then((mobile) => {
+    console.log(user);
     res.render('user/user', { admin: false, mobile, user,Cnumber:Cnum });
 
   });
@@ -80,7 +80,8 @@ router.get('/addtocart', checklog, (req, res) => {
   var pid = req.query.id;
   var uid = req.session.user._id;
   userHelpers.addtoCart(uid, pid).then(() => {
-    res.redirect('/');
+    console.log('hai');
+    res.json({status:true})
   });
 });
 router.get('/carts', checklog, (req, res) => {
