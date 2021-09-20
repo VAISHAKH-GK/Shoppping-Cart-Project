@@ -56,11 +56,13 @@ module.exports = {
                 console.log(proExist);
                 if(proExist!=-1){
                     db.get().collection(collection.cart).updateOne({'product.item':objid(pid),user:objid(uid)},{$inc:{'product.$.quantity':1}}).then(()=>{
-                        resolve();
+                        var pro ={status:true,newp:false};
+                        resolve(pro);
                     });
                 }else{
                     db.get().collection(collection.cart).updateOne({ user: objid(uid) }, { $push: { product:proObj } }).then((responce) => {
-                        resolve(responce);
+                        var pro ={status:true,newp:true};
+                        resolve(pro);
                     });
                 }
                
@@ -71,7 +73,8 @@ module.exports = {
                     product: [proObj]
                 };
                 db.get().collection(collection.cart).insertOne(cartoj).then((responce) => {
-                    resolve(responce);
+                    var pro ={status:true,newp:true};
+                    resolve(pro);
                 });
             }
         });
