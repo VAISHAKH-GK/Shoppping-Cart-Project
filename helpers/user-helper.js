@@ -55,7 +55,7 @@ module.exports = {
                 let proExist = ucoll.product.findIndex(producte => producte.item == pid);
                 console.log(proExist);
                 if(proExist!=-1){
-                    db.get().collection(collection.cart).updateOne({'product.item':objid(pid)},{$inc:{'product.$.quantity':1}}).then(()=>{
+                    db.get().collection(collection.cart).updateOne({'product.item':objid(pid),user:objid(uid)},{$inc:{'product.$.quantity':1}}).then(()=>{
                         resolve();
                     });
                 }else{
@@ -92,23 +92,40 @@ module.exports = {
                     $match: { user: objid(uid) }
                 },
                 {
-                    $lookup: {
-                        from: collection.prod,
-                        let: { proList: '$product' },
-                        pipeline: [
-                            {
-                                $match: {
-                                    $expr: {
-                                        $in: ['$_id', '$$proList']
-                                    }
-                                }
-                            }
-                        ],
-                        as: 'cartItems'
+                    $unwind:'$product'
+                },
+                {
+                    $project:{
+                        item:'$product.item',
+                        quantity:'$product.quantity'
+                    }
+                },
+                {
+                    $lookup:{
+                        from:collection.prod,
+                        localField:'item',
+                        foreignField:'_id',
+                        as:'product'
                     }
                 }
+                // {
+                //     $lookup: {
+                //         from: collection.prod,
+                //         let: { proList: '$product' },
+                //         pipeline: [
+                //             {
+                //                 $match: {
+                //                     $expr: {
+                //                         $in: ['$_id', '$$proList']
+                //                     }
+                //                 }
+                //             }
+                //         ],
+                //         as: 'cartItems'
+                //     }
+                // }
             ]).toArray();
-            resolve(cartItems[0].cartItems);
+            resolve(cartItems);
         });
     }, cartCount: (id) => {
         return new Promise((resolve, reject) => {
