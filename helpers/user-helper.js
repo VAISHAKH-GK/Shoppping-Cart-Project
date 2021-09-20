@@ -108,26 +108,14 @@ module.exports = {
                         from:collection.prod,
                         localField:'item',
                         foreignField:'_id',
-                        as:'product'
+                        as:'productDetail'
                     }
+                },
+                {
+                    $unwind: '$productDetail'
                 }
-                // {
-                //     $lookup: {
-                //         from: collection.prod,
-                //         let: { proList: '$product' },
-                //         pipeline: [
-                //             {
-                //                 $match: {
-                //                     $expr: {
-                //                         $in: ['$_id', '$$proList']
-                //                     }
-                //                 }
-                //             }
-                //         ],
-                //         as: 'cartItems'
-                //     }
-                // }
             ]).toArray();
+            console.log(cartItems);
             resolve(cartItems);
         });
     }, cartCount: (id) => {
