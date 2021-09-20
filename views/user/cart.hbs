@@ -8,6 +8,7 @@
                         <th scope="col">Prodect</th>
                         <th scope="col">Name</th>
                         <th scope="col">Quauntity</th>
+                        <th scope="col">Price</th>
                         <th scope="col">Remove</th>
                     </tr>
                 </thead>
@@ -17,6 +18,7 @@
                     <tr>
                         <td><img style="width: 50px; height: 50px;" src="/productimage/{{this.productDetail._id}}.jpg" alt=""></td>
                         <td>{{this.productDetail.Name}}</td>
+                         <td>{{this.productDetail.Price}}</td>
                         <td><button class="cart-items-counter  mr-3">-</button>{{this.quantity}}<button class="cart-items-counter  ml-3">+</button></td>
                         <td><a href="" class="btn btn-danger">Remove</a></td>
 

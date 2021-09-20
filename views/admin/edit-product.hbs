@@ -20,10 +20,16 @@
                     <input type="text" class="form-control" id="Description" name="Description"
                         placeholder="Product Description" value='{{pro.Description}}'>
                 </div>
+                <div class="form-group">
+                    <label for="Price">Price</label>
+                    <input type="text" class="form-control" id="Price" name="Price" placeholder="Product Description"
+                        value='{{pro.Price}}'>
+                </div>
 
                 <label for="Image">Image</label>
-                <img src="/productimage/{{pro._id}}.jpg" style="width: 100px; height: auto;"  alt="" id="dis_image">
-                <input type="file" class="form-control" id="Image" accept="image/*" name="Image" onchange="viewImage(event)">
+                <img src="/productimage/{{pro._id}}.jpg" style="width: 100px; height: auto;" alt="" id="dis_image">
+                <input type="file" class="form-control" id="Image" accept="image/*" name="Image"
+                    onchange="viewImage(event)">
 
 
                 <button type="submit" class="btn btn-primary" id="sub-btn">Submit</button>
@@ -33,8 +39,8 @@
 </main>
 
 <script>
-    function viewImage(event){
+    function viewImage(event) {
 
-        document.getElementById('dis_image').src=URL.createObjectURL(event.target.files[0])
+        document.getElementById('dis_image').src = URL.createObjectURL(event.target.files[0])
     }
 </script>
