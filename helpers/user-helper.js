@@ -54,18 +54,18 @@ module.exports = {
 
                 let proExist = ucoll.product.findIndex(producte => producte.item == pid);
                 console.log(proExist);
-                if(proExist!=-1){
-                    db.get().collection(collection.cart).updateOne({'product.item':objid(pid),user:objid(uid)},{$inc:{'product.$.quantity':1}}).then(()=>{
-                        var pro ={status:true,newp:false};
+                if (proExist != -1) {
+                    db.get().collection(collection.cart).updateOne({ 'product.item': objid(pid), user: objid(uid) }, { $inc: { 'product.$.quantity': 1 } }).then(() => {
+                        var pro = { status: true, newp: false };
                         resolve(pro);
                     });
-                }else{
-                    db.get().collection(collection.cart).updateOne({ user: objid(uid) }, { $push: { product:proObj } }).then((responce) => {
-                        var pro ={status:true,newp:true};
+                } else {
+                    db.get().collection(collection.cart).updateOne({ user: objid(uid) }, { $push: { product: proObj } }).then((responce) => {
+                        var pro = { status: true, newp: true };
                         resolve(pro);
                     });
                 }
-               
+
             } else {
 
                 let cartoj = {
@@ -73,7 +73,7 @@ module.exports = {
                     product: [proObj]
                 };
                 db.get().collection(collection.cart).insertOne(cartoj).then((responce) => {
-                    var pro ={status:true,newp:true};
+                    var pro = { status: true, newp: true };
                     resolve(pro);
                 });
             }
@@ -95,20 +95,20 @@ module.exports = {
                     $match: { user: objid(uid) }
                 },
                 {
-                    $unwind:'$product'
+                    $unwind: '$product'
                 },
                 {
-                    $project:{
-                        item:'$product.item',
-                        quantity:'$product.quantity'
+                    $project: {
+                        item: '$product.item',
+                        quantity: '$product.quantity'
                     }
                 },
                 {
-                    $lookup:{
-                        from:collection.prod,
-                        localField:'item',
-                        foreignField:'_id',
-                        as:'productDetail'
+                    $lookup: {
+                        from: collection.prod,
+                        localField: 'item',
+                        foreignField: '_id',
+                        as: 'productDetail'
                     }
                 },
                 {
@@ -131,5 +131,26 @@ module.exports = {
 
             });
         });
+    },
+    changeProductQuantity: (detail)=>{
+        detail.count = parseInt(detail.count);
+        return new Promise((resolve,reject)=>{
+            db.get().collection(collection.cart).updateOne({ 'product.item': objid(detail.prod), _id: objid(detail.cart) }, { $inc: { 'product.$.quantity': detail.count } }).then((responce) => {
+                let diff = {change:detail.count};
+                resolve(diff);
+            });
+        });
+    },
+    removeProduct:(detail)=>{
+
+        return new Promise((resolve,reject)=>{
+            db.get().collection(collection.cart).updateOne({_id:objid(detail.cart)},{$pull:{product:{item:objid(detail.prod)}}}).then(()=>{
+                var responce = {reslt:"productremoved"};
+                resolve(responce);
+            });
+        });
+        
     }
+
+
 };

@@ -27,7 +27,6 @@ var cartCount = async (req, res, next) => {
 router.get('/',cartCount, function (req, res) {
   let user = req.session.user;
   productHelpers.getAllProducts().then((mobile) => {
-    console.log(user);
     res.render('user/user', { admin: false, mobile, user,Cnumber:Cnum });
 
   });
@@ -83,12 +82,22 @@ router.get('/addtocart', checklog, (req, res) => {
     res.json(pro);
   });
 });
-router.get('/carts', checklog, (req, res) => {
+router.get('/carts',cartCount, checklog, (req, res) => {
   let user = req.session.user;
   userHelpers.getCartProducts(user._id).then((products) => {
-    res.render('user/cart', { products, user });
-  })
+    res.render('user/cart', { products, user,Cnumber:Cnum });
+  });
 
+});
+router.post('/change-product-quantity',checklog,(req,res)=>{
+    userHelpers.changeProductQuantity(req.body).then((responce)=>{
+      res.json(responce);
+    });
+});
+router.post('/remove-product',checklog,(req,res)=>{
+  userHelpers.removeProduct(req.body).then((responce)=>{
+    res.json(responce);
+  });
 });
 
 
