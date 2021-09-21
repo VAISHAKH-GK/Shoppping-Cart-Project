@@ -99,6 +99,10 @@ router.post('/remove-product',checklog,(req,res)=>{
     res.json(responce);
   });
 });
+router.get('/place-order',checklog,(req,res)=>{
+  let user = req.session.user;
+  res.render('user/placeOrder',{user});
+});
 
 
 module.exports = router;
