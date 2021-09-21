@@ -82,10 +82,11 @@ router.get('/addtocart', checklog, (req, res) => {
     res.json(pro);
   });
 });
-router.get('/carts',cartCount, checklog, (req, res) => {
+router.get('/carts',cartCount, checklog,(req, res) => {
   let user = req.session.user;
-  userHelpers.getCartProducts(user._id).then((products) => {
-    res.render('user/cart', { products, user,Cnumber:Cnum });
+  userHelpers.getCartProducts(user._id).then(async(products) => {
+    var total = await userHelpers.getTotalAmount(user._id);
+    res.render('user/cart', { products, user,Cnumber:Cnum,total });
   });
 
 });
@@ -101,7 +102,10 @@ router.post('/remove-product',checklog,(req,res)=>{
 });
 router.get('/place-order',checklog,(req,res)=>{
   let user = req.session.user;
-  res.render('user/placeOrder',{user});
+  userHelpers.getTotalAmount(user._id).then((total)=>{
+    res.render('user/placeOrder',{user,total:total,Cnumber:Cnum});
+  });
+  
 });
 
 
