@@ -19,9 +19,9 @@
                         <td><img style="width: 50px; height: 50px;" src="/productimage/{{this.productDetail._id}}.jpg"
                                 alt=""></td>
                         <td>{{this.productDetail.Name}}</td>
-                        <td><button class="cart-items-counter  mr-3"
+                        <td><button class="cart-items-counter  mr-3 btn btn-primary"
                                 onclick="changeQuantity('{{this._id}}','{{this.productDetail._id}}',-1)">-</button>
-                            <span id="qua">{{this.quantity}}</span><button class="cart-items-counter ml-3"
+                            <span id="{{this.productDetail._id}}">{{this.quantity}}</span><button class="cart-items-counter ml-3 btn btn-primary"
                                 onclick="changeQuantity('{{this._id}}','{{this.productDetail._id}}',1)">+</button>
                         </td>
                         <td>{{this.productDetail.Price}}</td>
@@ -33,6 +33,11 @@
 
                 </tbody>
             </table>
+            <hr>
+            <div class="float-right pr-5">
+                <h4 class="float-right  mt-5 mr-5">Total Price is : ₹10000</h4>
+                <a href="place-order" class="btn btn-success float-right mt-4" style="width: 80%;">Place Order</a>
+            </div>
         </div>
     </section>
 </main>
@@ -40,7 +45,7 @@
 <script>
 
     function changeQuantity(cartId, proId, count) {
-        let num = $('#qua').html()
+        let num = document.getElementById(proId).innerHTML
         if (num == 1 && count == -1) {
 
             alert("Minimum qunatity is zero try to remove item from cart")
@@ -57,7 +62,7 @@
                 success: (response) => {
                     if (response) {
                         num = parseInt(num) + response.change;
-                        $('#qua').html(num);
+                        document.getElementById(proId).innerHTML = num;
                         alert("Quantity of product is now " + num)
                     }
 
