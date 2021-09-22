@@ -115,9 +115,10 @@ router.post('/place-order',checklog,async(req,res)=>{
     res.json({status:true});
   });
 });
-router.get('/orders',checklog,(req,res)=>{
+router.get('/orders',checklog,async(req,res)=>{
   var user = req.session.user;
-  userHelpers.getOrderProducts(user._id);
+  var orders = await userHelpers.getOrderProducts(user._id);
+  res.render('user/orders',{orders,user,Cnumber:Cnum});
 });
 
 

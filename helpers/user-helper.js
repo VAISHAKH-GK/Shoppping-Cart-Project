@@ -197,7 +197,7 @@ module.exports = {
     },
     placeOrders: (detail, products, total) => {
         return new Promise((resolve, reject) => {
-            let hai = detail.pay_method === 'COD' ? 'Order Placed' : 'Order Pending';
+            let st = detail.pay_method === 'COD' ? 'Order Placed' : 'Order Pending';
             let orderObj = {
 
                 deliveryDetails: {
@@ -206,7 +206,7 @@ module.exports = {
                     Email: detail.Email,
 
                 },
-                status: hai,
+                status: st,
                 date: new Date(),
                 TotalPrice: total,
                 userId: objid(detail.userId),
@@ -246,7 +246,8 @@ module.exports = {
                         date:'$date',
                         payment:'$payment',
                         userId:'$userId',
-                        Price:'$TotalPrice'
+                        Price:'$TotalPrice',
+                        status:'$status'
                     }
                 },
                 {

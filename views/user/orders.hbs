@@ -5,30 +5,30 @@
             <table class="table" style="margin-top: 20px ;">
                 <thead>
                     <tr>
+                        <th scope="col">Date</th>
                         <th scope="col">Prodect</th>
                         <th scope="col">Name</th>
                         <th scope="col">Quauntity</th>
                         <th scope="col">Price</th>
-                        <th scope="col">Remove</th>
+                        <th scope="col">Order status</th>
+
                     </tr>
                 </thead>
                 <tbody>
 
-                    {{#each products}}
+                    {{#each orders}}
                     <tr>
+                        <td>{{this.date}}</td>
                         <td><img style="width: 50px; height: 50px;" src="/productimage/{{this.productDetail._id}}.jpg"
                                 alt=""></td>
                         <td>{{this.productDetail.Name}}</td>
-                        <td><button class="cart-items-counter  mr-3 btn btn-primary"
-                                onclick="changeQuantity('{{this._id}}','{{this.productDetail._id}}',-1,'{{this.productDetail.Price}}')">-</button>
-                            <span id="{{this.productDetail._id}}">{{this.quantity}}</span><button
-                                class="cart-items-counter ml-3 btn btn-primary"
-                                onclick="changeQuantity('{{this._id}}','{{this.productDetail._id}}',1,'{{this.productDetail.Price}}')">+</button>
+                        <td>
+                            <span id="{{this.productDetail._id}}">{{this.quantity}}</span>
+
                         </td>
                         <td>₹{{this.productDetail.Price}}</td>
-                        <td><a href="" class="btn btn-danger"
-                                onclick="removeProduct('{{this.productDetail._id}}','{{this._id}}')">Remove</a>
-                        </td>
+                        <td>{{this.status}}</td>
+
 
                     </tr>
                     {{/each}}
@@ -36,10 +36,7 @@
                 </tbody>
             </table>
             <hr>
-            <div class="float-right pr-5">
-                <h4 class="float-right  mt-5 mr-5">Total Price is : ₹ <span id="totalPrice"> {{total}} </span> </h4>
-                <a href="place-order" class="btn btn-success float-right mt-4" style="width: 80%;">Place Order</a>
-            </div>
+
         </div>
     </section>
 </main>
