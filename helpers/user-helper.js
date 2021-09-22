@@ -1,3 +1,5 @@
+/*jshint esversion: 6 */
+
 var db = require('../config/connection');
 var bcrypt = require('bcrypt');
 const collection = require('../config/collection');
@@ -183,16 +185,51 @@ module.exports = {
                     }
                 }
             ]).toArray()
-            if(total[0]){
+            if (total[0]) {
                 resolve(total[0].total);
-            }else{
+            } else {
                 resolve(0);
             }
-            
+
 
         });
 
-    }
+    },
+    placeOrders: (detail,products,total) => {
+        return new Promise((resolve,reject)=>{
+            console.log(detail,products);
+            console.log(total);
+            let status = detail.pay_method === 'COD'?'Order Placed':'Order Pending';
+            let orderObj={
 
+                deliveryDetails:{
+                    mobile:detail.Mobile,
+                    address:detail.Address,
+                    Email:detail.Email,
+                    
+                },
+                userId:objid(detail.userId),
+                payment:detail.pay_method,
+                products:products,
+                status:status,
+                date : new Date(),
+                TotalPrice:total
+
+            };
+            db.get().collection(collection.order).insertOne(orderObj).then((responce)=>{
+                db.get().collection(collection.cart).remove({user:objid(detail.userId)});
+                resolve();
+            });
+        });
+        
+    },
+    getCartProductList: (userId)=>{
+
+        return new Promise (async(resolve,reject)=>{
+
+            let cart = await db.get().collection(collection.cart).findOne({user:objid(userId)});
+            resolve(cart.product);
+        });
+    }
 
 };

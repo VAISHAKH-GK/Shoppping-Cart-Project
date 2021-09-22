@@ -107,6 +107,15 @@ router.get('/place-order',checklog,(req,res)=>{
   });
   
 });
+router.post('/place-order',checklog,async(req,res)=>{
+  let user = req.session.user;
+  var products =await userHelpers.getCartProductList(req.body.userId);
+  let total = await userHelpers.getTotalAmount(req.body.userId);
+  userHelpers.placeOrders(req.body,products,total).then((responce)=>{
+    res.json({status:true});
+  });
+  
+});
 
 
 module.exports = router;

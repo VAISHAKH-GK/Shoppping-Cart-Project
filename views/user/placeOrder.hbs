@@ -22,6 +22,7 @@
                     <div class="mb-3">
                         <label for="Mobile" class="form-label">Mobile</label>
                         <input type="tel" class="form-control" id="Mobile" placeholder="Mobile Number" name="Mobile">
+                        <input type="text" name="userId" id="" value="{{user._id}}" hidden>
                     </div>
                 </div>
                 <div class="col-md-5 ml-auto">
@@ -35,9 +36,9 @@
                             <h5 style="padding-bottom: 10px;padding-top: 10px;">Payment method</h5>
                             <input type="radio" id="COD" name="pay_method" value="COD">
                             <label for="COD">COD</label><br>
-                            <input type="radio" id="Online" name="pay_method" value="Online">
+                            <input type="radio" id="Online" name="pay_method" value="ONLINE">
                             <label for="Online">Online</label><br>
-                            <button class="float-right btn btn-primary">Checkout</button>
+                            <button class="float-right btn btn-primary" type="submit">Checkout</button>
 
                         </div>
                     </div>
@@ -50,5 +51,15 @@
     </section>
 </div>
 <script>
-
+    $("#payment").submit((e)=>{
+        e.preventDefault();
+        $.ajax({
+            url:'/place-order',
+            method:'post',
+            data:$('#payment').serialize(),
+            success:(responce)=>{
+                alert('hai');
+            }
+        })
+    })
 </script>

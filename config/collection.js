@@ -1,5 +1,6 @@
 module.exports={
     prod:'product',
     user:'user',
-    cart:'cart'
+    cart:'cart',
+    order:'orders'
 }
