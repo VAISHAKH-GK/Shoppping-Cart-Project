@@ -116,7 +116,6 @@ module.exports = {
                     $unwind: '$productDetail'
                 }
             ]).toArray();
-            console.log(cartItems);
             resolve(cartItems);
         });
     }, cartCount: (id) => {

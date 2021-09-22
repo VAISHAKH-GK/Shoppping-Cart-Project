@@ -20,13 +20,15 @@
                                 alt=""></td>
                         <td>{{this.productDetail.Name}}</td>
                         <td><button class="cart-items-counter  mr-3 btn btn-primary"
-                                onclick="changeQuantity('{{this._id}}','{{this.productDetail._id}}',-1)">-</button>
-                            <span id="{{this.productDetail._id}}">{{this.quantity}}</span><button class="cart-items-counter ml-3 btn btn-primary"
-                                onclick="changeQuantity('{{this._id}}','{{this.productDetail._id}}',1)">+</button>
+                                onclick="changeQuantity('{{this._id}}','{{this.productDetail._id}}',-1,'{{this.productDetail.Price}}')">-</button>
+                            <span id="{{this.productDetail._id}}">{{this.quantity}}</span><button
+                                class="cart-items-counter ml-3 btn btn-primary"
+                                onclick="changeQuantity('{{this._id}}','{{this.productDetail._id}}',1,'{{this.productDetail.Price}}')">+</button>
                         </td>
                         <td>₹{{this.productDetail.Price}}</td>
                         <td><a href="" class="btn btn-danger"
-                                onclick="removeProduct('{{this.productDetail._id}}','{{this._id}}')">Remove</a></td>
+                                onclick="removeProduct('{{this.productDetail._id}}','{{this._id}}')">Remove</a>
+                        </td>
 
                     </tr>
                     {{/each}}
@@ -35,7 +37,7 @@
             </table>
             <hr>
             <div class="float-right pr-5">
-                <h4 class="float-right  mt-5 mr-5">Total Price is : ₹<span id="total">{{total}}</span></h4>
+                <h4 class="float-right  mt-5 mr-5">Total Price is : ₹ <span id="totalPrice"> {{total}} </span> </h4>
                 <a href="place-order" class="btn btn-success float-right mt-4" style="width: 80%;">Place Order</a>
             </div>
         </div>
@@ -44,7 +46,7 @@
 
 <script>
 
-    function changeQuantity(cartId, proId, count) {
+    function changeQuantity(cartId, proId, count, price) {
         let num = document.getElementById(proId).innerHTML
         if (num == 1 && count == -1) {
 
@@ -62,8 +64,16 @@
                 success: (response) => {
                     if (response) {
                         num = parseInt(num) + response.change;
+                        console.log(num);
                         document.getElementById(proId).innerHTML = num;
-                        location.reload();
+                        var totalPrice = parseInt(document.getElementById('totalPrice').innerHTML);
+                        if (count == 1) {
+                            document.getElementById('totalPrice').innerHTML = totalPrice + parseInt(price)
+                            console.log(totalPrice);
+                        } else if (count == -1) {
+                            document.getElementById('totalPrice').innerHTML = totalPrice - parseInt(price)
+                            console.log(totalPrice);
+                        }
                     }
 
                 }
