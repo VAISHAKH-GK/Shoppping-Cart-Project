@@ -217,7 +217,8 @@ module.exports = {
             };
             db.get().collection(collection.order).insertOne(orderObj).then((responce) => {
                 db.get().collection(collection.cart).deleteOne({ user: objid(detail.userId) });
-                resolve();
+                console.log(responce.insertedId);
+                resolve(responce.insertedId);
             });
         });
 
@@ -262,7 +263,6 @@ module.exports = {
                     $unwind: '$productDetail'
                 }
             ]).toArray();
-            console.log(orderList);
             resolve(orderList);
         });
     }
