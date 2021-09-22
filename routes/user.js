@@ -114,7 +114,10 @@ router.post('/place-order',checklog,async(req,res)=>{
   userHelpers.placeOrders(req.body,products,total).then((responce)=>{
     res.json({status:true});
   });
-  
+});
+router.get('/orders',checklog,(req,res)=>{
+  var user = req.session.user;
+  userHelpers.getOrderProducts(user._id);
 });
 
 
