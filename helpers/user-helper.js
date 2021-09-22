@@ -5,6 +5,10 @@ var bcrypt = require('bcrypt');
 const collection = require('../config/collection');
 var objid = require('mongodb').ObjectId;
 const { resolve, reject } = require('promise');
+var Razorpay = require('razorpay');
+
+var instance = new Razorpay({ key_id: 'rzp_test_nyXfWw6c82FKiv', key_secret: 'fRmYl0sLISE1n4kzuPWZCHpp' });
+
 module.exports = {
     doSignup: (userData) => {
         return new Promise((resolve, reject) => {
@@ -217,7 +221,6 @@ module.exports = {
             };
             db.get().collection(collection.order).insertOne(orderObj).then((responce) => {
                 db.get().collection(collection.cart).deleteOne({ user: objid(detail.userId) });
-                console.log(responce.insertedId);
                 resolve(responce.insertedId);
             });
         });
@@ -244,11 +247,11 @@ module.exports = {
                     $project: {
                         item: '$product.item',
                         quantity: '$product.quantity',
-                        date:'$date',
-                        payment:'$payment',
-                        userId:'$userId',
-                        Price:'$TotalPrice',
-                        status:'$status'
+                        date: '$date',
+                        payment: '$payment',
+                        userId: '$userId',
+                        Price: '$TotalPrice',
+                        status: '$status'
                     }
                 },
                 {
@@ -264,6 +267,19 @@ module.exports = {
                 }
             ]).toArray();
             resolve(orderList);
+        });
+    },
+    generateRazorpay: (orderId,price) => {
+        return new Promise((resolve, reject) => {
+
+            var options = {
+                amount: price,  // amount in the smallest currency unit
+                currency: "INR",
+                receipt: ""+orderId
+            };
+            instance.orders.create(options, function (err, order) {
+                resolve(order);
+            });
         });
     }
 

@@ -111,14 +111,24 @@ router.post('/place-order',checklog,async(req,res)=>{
   let user = req.session.user;
   var products =await userHelpers.getCartProductList(req.body.userId);
   let total = await userHelpers.getTotalAmount(req.body.userId);
-  userHelpers.placeOrders(req.body,products,total).then((responce)=>{
-    res.json({status:true});
+  userHelpers.placeOrders(req.body,products,total).then((orderId)=>{
+    if(req.body['pay_method']=='COD'){
+      res.json({paySuccess:true});
+    }else if (req.body['pay_method']=='ONLINE'){
+      userHelpers.generateRazorpay(orderId,total).then((responce)=>{
+        res.json(responce);
+      });
+    }
+    
   });
 });
 router.get('/orders',checklog,async(req,res)=>{
   var user = req.session.user;
   var orders = await userHelpers.getOrderProducts(user._id);
   res.render('user/orders',{orders,user,Cnumber:Cnum});
+});
+router.post('./verify-payment',(req,res)=>{
+  console.log(req.body);
 });
 
 

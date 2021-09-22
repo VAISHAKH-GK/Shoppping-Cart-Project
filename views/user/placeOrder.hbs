@@ -50,6 +50,7 @@
         </form>
     </section>
 </div>
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 <script>
     $("#payment").submit((e) => {
         e.preventDefault();
@@ -58,9 +59,54 @@
             method: 'post',
             data: $('#payment').serialize(),
             success: (responce) => {
-                alert('hai');
-                location.href = '/orders'
+                alert(responce);
+                if (responce.paySuccess) {
+                    location.href = '/orders';
+                } else {
+                    razorpayPayment(responce)
+                }
+
             }
         })
     })
+    function razorpayPayment(order) {
+        var options = {
+            "key": "rzp_test_nyXfWw6c82FKiv", // Enter the Key ID generated from the Dashboard
+            "amount": order.amount, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+            "currency": "INR",
+            "name": "Vaishakh",
+            "description": "Test Transaction",
+            "image": "https://cdn.razorpay.com/logos/I0a73CIDgR0Iuq_original.png",
+            "order_id": order.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+            "handler": function (response) {
+                alert(response.razorpay_payment_id);
+                alert(response.razorpay_order_id);
+                alert(response.razorpay_signature)
+                verifyPayment(response,order)
+            },
+            "prefill": {
+                "name": document.getElementById('Name').innerHTML,
+                "email": document.getElementById('Email').innerHTML,
+                "contact": document.getElementById('Mobile').innerHTML
+            },
+            "notes": {
+                "address": "Razorpay Corporate Office"
+            },
+            "theme": {
+                "color": "#FF0000"
+            }
+        };
+        var rzp1 = new Razorpay(options);
+        rzp1.open();
+    }
+    function verifyPayment(payment,order){
+        $.ajax({
+            url:'/verify-payment',
+            data:{
+                payment,
+                order
+            },
+            method:'post'
+        })
+    }
 </script>
