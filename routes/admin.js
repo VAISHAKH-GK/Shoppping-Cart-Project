@@ -32,23 +32,6 @@ router.get('/login', function (req, res) {
   }
 
 });
-router.get('/signup', function (req, res) {
-  if (req.session.admin) {
-    res.redirect('/');
-  } else {
-    res.render('admin/signup', { admin: true });
-  }
-
-});
-router.post('/signup', function (req, res) {
-  adminHelpers.doSignup(req.body).then((responce) => {
-    console.log('Account created');
-    req.session.admin = responce.admin;
-    req.session.admin.loggedIn = true;
-    res.redirect('/admin');
-    wrong = false;
-  });
-});
 router.get('/logout', function (req, res) {
   req.session.admin = null;
   res.redirect('/admin');

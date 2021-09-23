@@ -5,23 +5,7 @@ var objid = require('mongodb').ObjectId;
 
 
 module.exports = {
-    doSignup: (adminData) => {
-        return new Promise((resolve, reject) => {
-            let responce = {};
-            bcrypt.genSalt().then((salt) => {
-                bcrypt.hash(adminData.Password, salt).then((hash) => {
-                    adminData.Password = hash;
-                    db.get().collection(collection.admin).insertOne(adminData).then((data) => {
-                        loginst = true;
-                        responce.admin = adminData;
-                        responce.status = true;
-                        resolve(responce);
-                    });
-                });
-            });
-        });
-
-    }, doLogin: (adminDatal) => {
+     doLogin: (adminDatal) => {
         return new Promise(async (resolve, reject) => {
             let loginst = false;
             let responce = {};
