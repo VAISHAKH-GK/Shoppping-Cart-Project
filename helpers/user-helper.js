@@ -4,8 +4,9 @@ var db = require('../config/connection');
 var bcrypt = require('bcrypt');
 const collection = require('../config/collection');
 var objid = require('mongodb').ObjectId;
-const { resolve, reject } = require('promise');
 var Razorpay = require('razorpay');
+const crypto =  require('crypto');
+
 
 var instance = new Razorpay({ key_id: 'rzp_test_nyXfWw6c82FKiv', key_secret: 'fRmYl0sLISE1n4kzuPWZCHpp' });
 
@@ -220,7 +221,9 @@ module.exports = {
 
             };
             db.get().collection(collection.order).insertOne(orderObj).then((responce) => {
-                db.get().collection(collection.cart).deleteOne({ user: objid(detail.userId) });
+                if (orderObj.status == 'Order Placed') {
+                    db.get().collection(collection.cart).deleteOne({ user: objid(detail.userId) });
+                }
                 resolve(responce.insertedId);
             });
         });
@@ -230,7 +233,11 @@ module.exports = {
 
         return new Promise(async (resolve, reject) => {
 
-            let cart = await db.get().collection(collection.cart).findOne({ user: objid(userId) });
+            var cart = {
+
+                product: null
+            }
+            cart = await db.get().collection(collection.cart).findOne({ user: objid(userId) });
             resolve(cart.product);
         });
     },
@@ -269,16 +276,37 @@ module.exports = {
             resolve(orderList);
         });
     },
-    generateRazorpay: (orderId,price) => {
+    generateRazorpay: (orderId, price) => {
         return new Promise((resolve, reject) => {
 
             var options = {
                 amount: price,  // amount in the smallest currency unit
                 currency: "INR",
-                receipt: ""+orderId
+                receipt: "" + orderId
             };
             instance.orders.create(options, function (err, order) {
                 resolve(order);
+            });
+        });
+    },
+    verifyPayment: (details) => {
+        return new Promise((resolve, reject) => {
+            var hmac = crypto.createHmac('sha256', 'fRmYl0sLISE1n4kzuPWZCHpp');
+            hmac.update(details['payment[razorpay_order_id]']+'|'+details['payment[razorpay_payment_id]']);
+            hmac = hmac.digest('hex');
+            if(hmac==details['payment[razorpay_signature]']){
+                resolve();
+            }else{
+                reject();
+            }
+            
+        });
+    },
+    changePaymentStatus:(order,uid)=>{
+        return new Promise((resolve,reject)=>{
+            db.get().collection(collection.order).updateOne({_id:objid(order)},{$set:{status:'Order Placed'}}).then(()=>{
+                db.get().collection(collection.cart).deleteOne({ user: objid(uid) });
+                resolve();
             });
         });
     }
