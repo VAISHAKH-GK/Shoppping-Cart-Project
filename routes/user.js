@@ -12,7 +12,7 @@ const checklog = (req, res, next) => {
     res.redirect('/login');
   }
 }
-var Cnum = null;
+var Cnum = null;  
 var cartCount = async (req, res, next) => {
   if (req.session.user) {
     Cnum = await userHelpers.cartCount(req.session.user._id);

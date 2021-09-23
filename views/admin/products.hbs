@@ -2,12 +2,12 @@
     <section>
         <div class="container">
             <div class="row " style="display: flex; justify-content: right;"> 
-                <a href="/admin/add-product" class="btn btn-success">Add Product</a>
+                <a href="/admin/add-product" class="btn btn-success mb-3">Add Product</a>
             </div>
-            <table class="table" style="margin-top: 20px ;">
+            <table class="table" style="margin-top: 20px ;" id="productsTable">
                 <thead>
                     <tr>
-                        <th scope="col">No</th>
+                        
                         <th scope="col">Prodect-Name</th>
                         <th scope="col">Category</th>
                         <th scope="col">Description</th>
@@ -21,11 +21,11 @@
 
                     {{#each mobile}}
                     <tr>
-                        <th scope="row">{{incrementIndex @index}}</th>
+                        
                         <td>{{this.Name}}</td>
                         <td>{{this.Category}}</td>
                         <td>{{this.Description}}</td>
-                        <td>₹{{this.Price}}</td>
+                        <td>{{this.Price}}</td>
                         <td><img style="width: 50px; height: 50px;" src="/productimage/{{this._id}}.jpg" alt=""></td>
                         <td><a href="/admin/edit-product?id={{this._id}}" class="btn btn-primary">Edit</a>
                         <a href="/admin/delete-product?id={{this._id}}" onclick="return confirm('Are you sure to Delete {{this.Name}}')" class="btn btn-danger">Delete</a></td>
@@ -38,3 +38,9 @@
         </div>
     </section>
 </main>
+<script>
+    $(function(){
+        $('#productsTable').DataTable( {});
+    });
+    
+</script>
