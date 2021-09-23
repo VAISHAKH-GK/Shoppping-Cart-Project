@@ -280,7 +280,7 @@ module.exports = {
         return new Promise((resolve, reject) => {
 
             var options = {
-                amount: price,  // amount in the smallest currency unit
+                amount: price*100,  // amount in the smallest currency unit
                 currency: "INR",
                 receipt: "" + orderId
             };
