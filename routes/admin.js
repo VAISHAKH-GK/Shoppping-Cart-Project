@@ -6,30 +6,82 @@ var fileUpload = require('express-fileupload');
 var productHelper = require('../helpers/product-helpers');
 const productHelpers = require('../helpers/product-helpers');
 const { RSA_NO_PADDING } = require("constants");
+const adminHelpers = require('../helpers/admin-helpers');
 
-/* GET users listing. */
+
+const checklog = (req, res, next) => {
+  if (req.session.admin) {
+    next();
+  } else {
+    res.redirect('/login');
+  }
+}
 router.get('/', function (req, res, next) {
-  res.render('admin/admin', { admin: true });
+  let adminD = req.session.admin;
+  res.render('admin/admin', { admin: true ,adminD});
 
 });
+router.get('/login',checklog, function (req, res) {
+  if (req.session.admin) {
+    res.redirect('/');
+  } else {
+    res.render('admin/login', { admin: true, wrong });
+    wrong = false;
+  }
 
+});
+router.get('/signup',checklog, function (req, res) {
+  if (req.session.admin) {
+    res.redirect('/');
+  } else {
+    res.render('admin/signup', { admin: true });
+  }
+
+});
+router.post('/signup', function (req, res) {
+  adminHelpers.doSignup(req.body).then((responce) => {
+    console.log('Account created');
+    req.session.admin = responce.admin;
+    req.session.admin.loggedIn = true;
+    res.redirect('/admin');
+    wrong = false;
+  });
+});
+router.get('/logout', function (req, res) {
+  req.session.admin = null;
+  res.redirect('/admin');
+});
+router.post('/login', function (req, res) {
+  adminHelpers.doLogin(req.body).then((responce) => {
+    if (responce.status) {
+      req.session.admin = responce.user;
+      req.session.admin.loggedIn = true;
+      res.redirect('/');
+      wrong = false;
+    } else {
+      res.redirect('/login');
+      wrong = "Invalid username or password";
+    }
+  });
+});
 Handlebars.registerHelper("incrementIndex", function (index) {
   return index + 1;
 });
-router.get('/products', function (req, res, next) {
+router.get('/products', checklog,function (req, res, next) {
 
 
   productHelpers.getAllProducts().then((mobile) => {
-    res.render('admin/products', { admin: true, mobile });
+    let adminD = req.session.admin;
+    res.render('admin/products', { admin: true, mobile,adminD });
   });
 
 });
-router.get('/add-product', function (req, res, next) {
-
-  res.render('admin/add-product', { admin: true });
+router.get('/add-product',checklog, function (req, res, next) {
+  let adminD = req.session.admin;
+  res.render('admin/add-product', { admin: true,adminD });
 
 });
-router.post('/add-product', function (req, res, next) {
+router.post('/add-product',checklog, function (req, res, next) {
 
   if (!req.files || !req.body.Name || !req.body.Category) {
     res.redirect('/admin/add-product');
@@ -42,7 +94,7 @@ router.post('/add-product', function (req, res, next) {
   }
 
 });
-router.get('/delete-product/', (req, res) => {
+router.get('/delete-product/',checklog, (req, res) => {
   let proid = req.query.id;
   console.log(proid);
   productHelper.deleteProduct(proid).then((response) => {
@@ -57,14 +109,15 @@ router.get('/delete-product/', (req, res) => {
     }
   });
 });
-router.get('/edit-product/', (req, res) => {
+router.get('/edit-product/',checklog, (req, res) => {
+  let adminD = req.session.admin;
   let proid = req.query.id;
   productHelper.findProduct(proid).then((product) => {
     var pro = product;
-    res.render('admin/edit-product', { admin: true, pro });
+    res.render('admin/edit-product', { admin: true, pro,adminD });
   });
 });
-router.post('/edit-product', (req, res) => {
+router.post('/edit-product', checklog,(req, res) => {
   if (!req.body.Name || !req.body.Category) {
     res.redirect('/admin/add-product');
   } else {
