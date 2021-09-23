@@ -7,13 +7,15 @@ var productHelper = require('../helpers/product-helpers');
 const productHelpers = require('../helpers/product-helpers');
 const { RSA_NO_PADDING } = require("constants");
 const adminHelpers = require('../helpers/admin-helpers');
+var wrong = false;
+
 
 
 const checklog = (req, res, next) => {
   if (req.session.admin) {
     next();
   } else {
-    res.redirect('/login');
+    res.redirect('login');
   }
 }
 router.get('/', function (req, res, next) {
@@ -21,7 +23,7 @@ router.get('/', function (req, res, next) {
   res.render('admin/admin', { admin: true ,adminD});
 
 });
-router.get('/login',checklog, function (req, res) {
+router.get('/login', function (req, res) {
   if (req.session.admin) {
     res.redirect('/');
   } else {
@@ -30,7 +32,7 @@ router.get('/login',checklog, function (req, res) {
   }
 
 });
-router.get('/signup',checklog, function (req, res) {
+router.get('/signup', function (req, res) {
   if (req.session.admin) {
     res.redirect('/');
   } else {
@@ -54,9 +56,9 @@ router.get('/logout', function (req, res) {
 router.post('/login', function (req, res) {
   adminHelpers.doLogin(req.body).then((responce) => {
     if (responce.status) {
-      req.session.admin = responce.user;
+      req.session.admin = responce.admin;
       req.session.admin.loggedIn = true;
-      res.redirect('/');
+      res.redirect('/admin');
       wrong = false;
     } else {
       res.redirect('/login');
