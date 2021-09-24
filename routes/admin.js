@@ -15,7 +15,7 @@ const checklog = (req, res, next) => {
   if (req.session.adminLoggedIn) {
     next();
   } else {
-    res.redirect('login');
+    res.redirect('/admin/login');
   }
 }
 router.get('/', function (req, res, next) {
@@ -128,6 +128,12 @@ router.get('/orders', checklog, async(req,res)=>{
   console.log(orderList.user);
   res.render('admin/orders',{admin: true,orders:orderList,adminD});
 });
-
+router.get('/order-details',checklog,async(req,res)=>{
+  let order = req.query.order;
+  let adminD = req.session.admin;
+  var orderDetails = await adminHelpers.getOrdersDetails(order);
+  console.log(orderDetails);
+  res.render('admin/orderDetails',{orderDetails,admin:true,adminD})
+});
 
 module.exports = router;

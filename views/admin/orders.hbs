@@ -2,7 +2,7 @@
     <section>
         <div class="container">
 
-            <table class="table" style="margin-top: 20px ;">
+            <table class="table" style="margin-top: 20px ;" id="orderTable">
                 <thead>
                     <tr>
                         <th scope="col">Order</th>
@@ -11,6 +11,7 @@
                         <th scope="col">Price</th>
                         <th scope="col">Payment</th>
                         <th scope="col">Order status</th>
+                        <th>Order</th>
 
                     </tr>
                 </thead>
@@ -25,6 +26,7 @@
                         <td>{{this.Price}}</td>
                         <td>{{this.payment}}</td>
                         <td>{{this.status}}</td>
+                        <td><a href="/admin/order-details/?order={{this._id}}" class="btn btn-primary">Order Details</a></td>
 
 
                     </tr>
@@ -36,4 +38,10 @@
             <hr>
         </div>
     </section>
-</main
+</main>
+<script>
+    $(function(){
+        $('#orderTable').DataTable( {});
+    });
+    
+</script>

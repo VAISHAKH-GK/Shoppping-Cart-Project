@@ -51,7 +51,59 @@ module.exports = {
                     }
                 },
                 {
-                    $unwind:'$user'
+                    $unwind: '$user'
+                }
+            ]).toArray();
+            console.log(orderList);
+            resolve(orderList);
+        });
+    },
+    getOrdersDetails: (order) => {
+        console.log(order);
+        return new Promise(async (resolve, reject) => {
+            var orderList = await db.get().collection(collection.order).aggregate([
+                {
+                    $match:{_id:objid(order)}
+                },
+                {
+                    $unwind: '$product'
+                },
+                {
+                    $project: {
+
+                        delivary:'$deliveryDetails',
+                        payment: '$payment',
+                        userId: '$userId',
+                        Price: '$TotalPrice',
+                        item: '$product.item',
+                        quantity: '$product.quantity',
+                        status:'$status'
+                    }
+                },
+                {
+                    $unwind: '$delivary'
+                },
+                {
+                    $lookup: {
+                        from: collection.user,
+                        localField: 'userId',
+                        foreignField: '_id',
+                        as: 'user'
+                    }
+                },
+                {
+                    $unwind: '$user'
+                },
+                {
+                    $lookup: {
+                        from: collection.prod,
+                        localField: 'item',
+                        foreignField: '_id',
+                        as: 'productDetail'
+                    }
+                },
+                {
+                    $unwind: '$productDetail'
                 }
             ]).toArray();
             console.log(orderList);
