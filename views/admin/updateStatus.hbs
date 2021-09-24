@@ -1,0 +1,13 @@
+<main>
+    <section>
+        <div class="container">
+            <form action="/admin/updateStatus?order={{orderid}}" method="POST" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="Status">Status</label>
+                    <input type="Status" class="form-control" id="Status" name="Status"  value="{{Orderstatus}}">
+                </div>
+                <button type="submit" class="btn btn-primary" id="sub-btn">Submit</button>
+            </form>
+        </div>
+    </section>
+</main>

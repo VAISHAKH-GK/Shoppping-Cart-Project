@@ -1,3 +1,6 @@
+/*jshint esversion: 6 */
+
+
 const fs = require("fs");
 var express = require('express');
 var router = express.Router();
@@ -7,6 +10,7 @@ var productHelper = require('../helpers/product-helpers');
 const productHelpers = require('../helpers/product-helpers');
 const { RSA_NO_PADDING } = require("constants");
 const adminHelpers = require('../helpers/admin-helpers');
+const { admin } = require("../config/collection");
 var wrong = false;
 
 
@@ -123,17 +127,28 @@ router.post('/edit-product', checklog,(req, res) => {
 });
 router.get('/orders', checklog, async(req,res)=>{
   let adminD = req.session.admin;
-  console.log('haiiii');
   var orderList = await adminHelpers.getOrders();
-  console.log(orderList.user);
   res.render('admin/orders',{admin: true,orders:orderList,adminD});
 });
 router.get('/order-details',checklog,async(req,res)=>{
   let order = req.query.order;
   let adminD = req.session.admin;
   var orderDetails = await adminHelpers.getOrdersDetails(order);
-  console.log(orderDetails);
-  res.render('admin/orderDetails',{orderDetails,admin:true,adminD})
+  res.render('admin/orderDetails',{orderDetails,admin:true,adminD});
 });
+router.get('/updateStatus', checklog, (req,res)=>{
+  let orderid = req.query.order;
+  adminHelpers.getStatus(orderid).then((status)=>{
+    res.render('admin/updateStatus',{admin:true,Orderstatus:status,orderid});
+  });
+});
+router.post('/updateStatus', checklog, (req,res)=>{
+  let orderid = req.query.order;
+  console.log(req.body);
+  adminHelpers.updateStatus(orderid,req.body.Status).then(()=>{
+    res.redirect('/admin/orders');
+  });
+});
+
 
 module.exports = router;

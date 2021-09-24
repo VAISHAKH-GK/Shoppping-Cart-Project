@@ -2,6 +2,7 @@ var db = require('../config/connection');
 var bcrypt = require('bcrypt');
 const collection = require('../config/collection');
 var objid = require('mongodb').ObjectId;
+const { reject } = require('promise');
 
 
 module.exports = {
@@ -54,12 +55,10 @@ module.exports = {
                     $unwind: '$user'
                 }
             ]).toArray();
-            console.log(orderList);
             resolve(orderList);
         });
     },
     getOrdersDetails: (order) => {
-        console.log(order);
         return new Promise(async (resolve, reject) => {
             var orderList = await db.get().collection(collection.order).aggregate([
                 {
@@ -77,7 +76,7 @@ module.exports = {
                         Price: '$TotalPrice',
                         item: '$product.item',
                         quantity: '$product.quantity',
-                        status:'$status'
+                        status:'$status',
                     }
                 },
                 {
@@ -109,6 +108,23 @@ module.exports = {
             console.log(orderList);
             resolve(orderList);
         });
+    },
+    getStatus:(orderId)=>{
+        console.log('id'+orderId);
+        return new Promise(async(resolve,reject)=>{
+            var order= await db.get().collection(collection.order).findOne({_id:objid(orderId)});
+            console.log('status :');
+            console.log(order.status);
+            resolve(order.status);
+        });
+        
+    },
+    updateStatus:(orderId,newstatus)=>{
+        console.log('order :'+orderId+'status :'+newstatus);
+        return new Promise((resolve,reject)=>{
+            db.get().collection(collection.order).updateOne({_id:objid(orderId)},{$set:{status:newstatus}});
+            resolve();
+        }); 
     }
 
 }

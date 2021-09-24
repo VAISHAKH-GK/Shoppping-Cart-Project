@@ -26,11 +26,18 @@
                         <td>{{this.0.delivary.Email}}</td>
                         <td>{{this.0.delivary.address}}</td>
                         <td>{{this.0.delivary.mobile}}</td>
+                        
                     </tr>
                     {{/with}}
                 </tbody>
             </table>
-            <table class="table" style="margin-top: 20px ;">
+
+            <div class="row mx-auto">
+                
+                <a href="/admin/updateStatus/?order={{orderDetails.0._id}}" class="btn btn-primary mx-auto">Update Status</a>
+            </div>
+
+            <table class="table" style="margin-top: 100px ;">
                 <thead>
                     <tr>
                         <th scope="col">Item</th>
