@@ -12,7 +12,7 @@ var wrong = false;
 
 
 const checklog = (req, res, next) => {
-  if (req.session.admin) {
+  if (req.session.adminLoggedIn) {
     next();
   } else {
     res.redirect('login');
@@ -34,17 +34,18 @@ router.get('/login', function (req, res) {
 });
 router.get('/logout', function (req, res) {
   req.session.admin = null;
+  adminLoggedIn = false
   res.redirect('/admin');
 });
 router.post('/login', function (req, res) {
   adminHelpers.doLogin(req.body).then((responce) => {
     if (responce.status) {
       req.session.admin = responce.admin;
-      req.session.admin.loggedIn = true;
+      req.session.adminLoggedIn = true;
       res.redirect('/admin');
       wrong = false;
     } else {
-      res.redirect('/login');
+      res.redirect('/admin/login');
       wrong = "Invalid username or password";
     }
   });
@@ -118,6 +119,14 @@ router.post('/edit-product', checklog,(req, res) => {
       }
     });
   }
+  
+});
+router.get('/orders', checklog, async(req,res)=>{
+  let adminD = req.session.admin;
+  console.log('haiiii');
+  var orderList = await adminHelpers.getOrders();
+  console.log(orderList.user);
+  res.render('admin/orders',{admin: true,orders:orderList,adminD});
 });
 
 

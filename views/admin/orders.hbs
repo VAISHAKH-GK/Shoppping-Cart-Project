@@ -1,0 +1,39 @@
+<main class="main" style="padding-top: 40px;">
+    <section>
+        <div class="container">
+
+            <table class="table" style="margin-top: 20px ;">
+                <thead>
+                    <tr>
+                        <th scope="col">Order</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">User</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Payment</th>
+                        <th scope="col">Order status</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+
+                    {{#each orders}}
+
+                    <tr>
+                        <td>{{this._id}}</td>
+                        <td>{{this.date}}</td>
+                        <td>{{this.user.Name}}</td>
+                        <td>{{this.Price}}</td>
+                        <td>{{this.payment}}</td>
+                        <td>{{this.status}}</td>
+
+
+                    </tr>
+
+                    {{/each}}
+
+                </tbody>
+            </table>
+            <hr>
+        </div>
+    </section>
+</main

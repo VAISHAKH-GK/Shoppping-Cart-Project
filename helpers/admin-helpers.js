@@ -5,7 +5,7 @@ var objid = require('mongodb').ObjectId;
 
 
 module.exports = {
-     doLogin: (adminDatal) => {
+    doLogin: (adminDatal) => {
         return new Promise(async (resolve, reject) => {
             let loginst = false;
             let responce = {};
@@ -27,6 +27,35 @@ module.exports = {
                 console.log('wrong email');
                 resolve({ status: false });
             }
+        });
+    },
+    getOrders: () => {
+        return new Promise(async (resolve, reject) => {
+            var orderList = await db.get().collection(collection.order).aggregate([
+                {
+                    $project: {
+                        _id: '$_id',
+                        date: '$date',
+                        payment: '$payment',
+                        userId: '$userId',
+                        Price: '$TotalPrice',
+                        status: '$status'
+                    }
+                },
+                {
+                    $lookup: {
+                        from: collection.user,
+                        localField: 'userId',
+                        foreignField: '_id',
+                        as: 'user'
+                    }
+                },
+                {
+                    $unwind:'$user'
+                }
+            ]).toArray();
+            console.log(orderList);
+            resolve(orderList);
         });
     }
 

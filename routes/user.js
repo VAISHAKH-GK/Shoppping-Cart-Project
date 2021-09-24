@@ -6,7 +6,7 @@ const userHelpers = require('../helpers/user-helper');
 var wrong = false;
 
 const checklog = (req, res, next) => {
-  if (req.session.user.loggedIn) {
+  if (req.session.userloggedIn) {
     next();
   } else {
     res.redirect('/login');
@@ -52,7 +52,7 @@ router.post('/signup', function (req, res) {
   userHelpers.doSignup(req.body).then((responce) => {
     console.log('Account created');
     req.session.user = responce.user;
-    req.session.user.loggedIn = true;
+    req.session.userloggedIn = true;
     res.redirect('/');
     wrong = false;
   });
@@ -61,7 +61,7 @@ router.post('/login', function (req, res) {
   userHelpers.doLogin(req.body).then((responce) => {
     if (responce.status) {
       req.session.user = responce.user;
-      req.session.user.loggedIn = true;
+      req.session.userloggedIn = true;
       res.redirect('/');
       wrong = false;
     } else {
@@ -72,6 +72,7 @@ router.post('/login', function (req, res) {
 });
 router.get('/logout', function (req, res) {
   req.session.user = null;
+  req.session.userloggedIn=false
   res.redirect('/');
 });
 
@@ -114,7 +115,7 @@ router.post('/place-order', checklog, async (req, res) => {
   userHelpers.placeOrders(req.body, products, total).then((orderId) => {
     var orderId = orderId;
     if (req.body['pay_method'] == 'COD') {
-      res.json({ paySuccess: true }, { orderId: orderId });
+      res.json({ paySuccess: true });
     } else if (req.body['pay_method'] == 'ONLINE') {
       userHelpers.generateRazorpay(orderId, total).then((responce) => {
         res.json(responce);
