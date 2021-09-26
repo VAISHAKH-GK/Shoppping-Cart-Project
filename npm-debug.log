@@ -1,0 +1,1823 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/node', '/usr/bin/npm', 'install', 'bcrypt' ]
+2 info using npm@3.5.2
+3 info using node@v8.10.0
+4 silly loadCurrentTree Starting
+5 silly install loadCurrentTree
+6 silly install readLocalPackageData
+7 silly fetchPackageMetaData bcrypt@^5.0.1
+8 silly fetchNamedPackageData bcrypt
+9 silly mapToRegistry name bcrypt
+10 silly mapToRegistry using default registry
+11 silly mapToRegistry registry https://registry.npmjs.org/
+12 silly mapToRegistry uri https://registry.npmjs.org/bcrypt
+13 verbose request uri https://registry.npmjs.org/bcrypt
+14 verbose request no auth needed
+15 info attempt registry request try #1 at 6:44:07 AM
+16 verbose request id 73fae9e3c93546b2
+17 verbose etag W/"98740aa602121bb7a87ac7cde2ca4572"
+18 verbose lastModified Sat, 22 May 2021 04:28:55 GMT
+19 http request GET https://registry.npmjs.org/bcrypt
+20 http 304 https://registry.npmjs.org/bcrypt
+21 verbose headers { date: 'Sun, 26 Sep 2021 01:14:08 GMT',
+21 verbose headers   connection: 'keep-alive',
+21 verbose headers   'cf-ray': '6948a234f88ede7e-BLR',
+21 verbose headers   'cache-control': 'public, max-age=300',
+21 verbose headers   etag: '"98740aa602121bb7a87ac7cde2ca4572"',
+21 verbose headers   'last-modified': 'Sat, 22 May 2021 04:28:55 GMT',
+21 verbose headers   vary: 'Accept-Encoding',
+21 verbose headers   'cf-cache-status': 'HIT',
+21 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+21 verbose headers   server: 'cloudflare' }
+22 silly get cb [ 304,
+22 silly get   { date: 'Sun, 26 Sep 2021 01:14:08 GMT',
+22 silly get     connection: 'keep-alive',
+22 silly get     'cf-ray': '6948a234f88ede7e-BLR',
+22 silly get     'cache-control': 'public, max-age=300',
+22 silly get     etag: '"98740aa602121bb7a87ac7cde2ca4572"',
+22 silly get     'last-modified': 'Sat, 22 May 2021 04:28:55 GMT',
+22 silly get     vary: 'Accept-Encoding',
+22 silly get     'cf-cache-status': 'HIT',
+22 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+22 silly get     server: 'cloudflare' } ]
+23 verbose etag https://registry.npmjs.org/bcrypt from cache
+24 verbose get saving bcrypt to /home/vaishakh/.npm/registry.npmjs.org/bcrypt/.cache.json
+25 silly install normalizeTree
+26 silly loadCurrentTree Finishing
+27 silly loadIdealTree Starting
+28 silly install loadIdealTree
+29 silly cloneCurrentTree Starting
+30 silly install cloneCurrentTreeToIdealTree
+31 silly cloneCurrentTree Finishing
+32 silly loadShrinkwrap Starting
+33 silly install loadShrinkwrap
+34 silly loadShrinkwrap Finishing
+35 silly loadAllDepsIntoIdealTree Starting
+36 silly install loadAllDepsIntoIdealTree
+37 silly resolveWithNewModule bcrypt@5.0.1 checking installable status
+38 silly cache add args [ 'bcrypt@^5.0.1', null ]
+39 verbose cache add spec bcrypt@^5.0.1
+40 silly cache add parsed spec Result {
+40 silly cache add   raw: 'bcrypt@^5.0.1',
+40 silly cache add   scope: null,
+40 silly cache add   name: 'bcrypt',
+40 silly cache add   rawSpec: '^5.0.1',
+40 silly cache add   spec: '>=5.0.1 <6.0.0',
+40 silly cache add   type: 'range' }
+41 silly addNamed bcrypt@>=5.0.1 <6.0.0
+42 verbose addNamed ">=5.0.1 <6.0.0" is a valid semver range for bcrypt
+43 silly addNameRange { name: 'bcrypt', range: '>=5.0.1 <6.0.0', hasData: false }
+44 silly mapToRegistry name bcrypt
+45 silly mapToRegistry using default registry
+46 silly mapToRegistry registry https://registry.npmjs.org/
+47 silly mapToRegistry uri https://registry.npmjs.org/bcrypt
+48 verbose addNameRange registry:https://registry.npmjs.org/bcrypt not in flight; fetching
+49 verbose get https://registry.npmjs.org/bcrypt not expired, no request
+50 silly addNameRange number 2 { name: 'bcrypt', range: '>=5.0.1 <6.0.0', hasData: true }
+51 silly addNameRange versions [ 'bcrypt',
+51 silly addNameRange   [ '0.1.2',
+51 silly addNameRange     '0.2.0',
+51 silly addNameRange     '0.2.1',
+51 silly addNameRange     '0.1.3',
+51 silly addNameRange     '0.2.2',
+51 silly addNameRange     '0.2.3',
+51 silly addNameRange     '0.2.4',
+51 silly addNameRange     '0.3.0',
+51 silly addNameRange     '0.3.1',
+51 silly addNameRange     '0.3.2',
+51 silly addNameRange     '0.4.0',
+51 silly addNameRange     '0.4.1',
+51 silly addNameRange     '0.5.0',
+51 silly addNameRange     '0.6.0',
+51 silly addNameRange     '0.7.0',
+51 silly addNameRange     '0.7.1',
+51 silly addNameRange     '0.7.2',
+51 silly addNameRange     '0.7.3',
+51 silly addNameRange     '0.7.4',
+51 silly addNameRange     '0.7.5',
+51 silly addNameRange     '0.7.6',
+51 silly addNameRange     '0.7.7',
+51 silly addNameRange     '0.7.8',
+51 silly addNameRange     '0.8.0',
+51 silly addNameRange     '0.8.1',
+51 silly addNameRange     '0.8.2',
+51 silly addNameRange     '0.8.3',
+51 silly addNameRange     '0.8.4',
+51 silly addNameRange     '0.8.5',
+51 silly addNameRange     '0.8.6',
+51 silly addNameRange     '0.8.7',
+51 silly addNameRange     '1.0.0',
+51 silly addNameRange     '1.0.1',
+51 silly addNameRange     '1.0.2',
+51 silly addNameRange     '1.0.3',
+51 silly addNameRange     '1.1.0-napi',
+51 silly addNameRange     '2.0.0',
+51 silly addNameRange     '2.0.1',
+51 silly addNameRange     '3.0.0',
+51 silly addNameRange     '3.0.1',
+51 silly addNameRange     '3.0.2',
+51 silly addNameRange     '3.0.3',
+51 silly addNameRange     '3.0.4',
+51 silly addNameRange     '3.0.4-napi',
+51 silly addNameRange     '3.0.5',
+51 silly addNameRange     '3.0.6',
+51 silly addNameRange     '3.0.7',
+51 silly addNameRange     '3.0.8',
+51 silly addNameRange     '4.0.0',
+51 silly addNameRange     '4.0.1',
+51 silly addNameRange     '5.0.0',
+51 silly addNameRange     '5.0.1' ] ]
+52 silly addNamed bcrypt@5.0.1
+53 verbose addNamed "5.0.1" is a plain semver version for bcrypt
+54 silly cache afterAdd bcrypt@5.0.1
+55 verbose afterAdd /home/vaishakh/.npm/bcrypt/5.0.1/package/package.json not in flight; writing
+56 verbose afterAdd /home/vaishakh/.npm/bcrypt/5.0.1/package/package.json written
+57 silly loadAllDepsIntoIdealTree Finishing
+58 silly idealTree:prePrune shpping-cart-project@0.0.0
+58 silly idealTree:prePrune +-- @mapbox/node-pre-gyp@1.0.5
+58 silly idealTree:prePrune +-- @types/node@16.10.1
+58 silly idealTree:prePrune +-- @types/webidl-conversions@6.1.1
+58 silly idealTree:prePrune +-- @types/whatwg-url@8.2.1
+58 silly idealTree:prePrune +-- abbrev@1.1.1
+58 silly idealTree:prePrune +-- accepts@1.3.7
+58 silly idealTree:prePrune +-- agent-base@6.0.2
+58 silly idealTree:prePrune | +-- debug@4.3.2
+58 silly idealTree:prePrune | `-- ms@2.1.2
+58 silly idealTree:prePrune +-- ajv@6.12.6
+58 silly idealTree:prePrune +-- ansi-regex@2.1.1
+58 silly idealTree:prePrune +-- aproba@1.2.0
+58 silly idealTree:prePrune +-- are-we-there-yet@1.1.7
+58 silly idealTree:prePrune +-- array-flatten@1.1.1
+58 silly idealTree:prePrune +-- asap@2.0.6
+58 silly idealTree:prePrune +-- asn1@0.2.4
+58 silly idealTree:prePrune +-- assert-plus@1.0.0
+58 silly idealTree:prePrune +-- asynckit@0.4.0
+58 silly idealTree:prePrune +-- aws-sign2@0.7.0
+58 silly idealTree:prePrune +-- aws4@1.11.0
+58 silly idealTree:prePrune +-- balanced-match@1.0.2
+58 silly idealTree:prePrune +-- base64-js@1.5.1
+58 silly idealTree:prePrune +-- basic-auth@2.0.1
+58 silly idealTree:prePrune +-- bcrypt-pbkdf@1.0.2
+58 silly idealTree:prePrune +-- bcrypt@5.0.1
+58 silly idealTree:prePrune +-- bluebird@3.7.2
+58 silly idealTree:prePrune +-- body-parser@1.18.3
+58 silly idealTree:prePrune +-- brace-expansion@1.1.11
+58 silly idealTree:prePrune +-- bson@4.5.2
+58 silly idealTree:prePrune +-- buffer@5.7.1
+58 silly idealTree:prePrune +-- busboy@0.3.1
+58 silly idealTree:prePrune +-- bytes@3.0.0
+58 silly idealTree:prePrune +-- caseless@0.12.0
+58 silly idealTree:prePrune +-- chownr@2.0.0
+58 silly idealTree:prePrune +-- code-point-at@1.1.0
+58 silly idealTree:prePrune +-- combined-stream@1.0.8
+58 silly idealTree:prePrune +-- concat-map@0.0.1
+58 silly idealTree:prePrune +-- console-control-strings@1.1.0
+58 silly idealTree:prePrune +-- content-disposition@0.5.2
+58 silly idealTree:prePrune +-- content-type@1.0.4
+58 silly idealTree:prePrune +-- cookie-parser@1.4.5
+58 silly idealTree:prePrune +-- cookie-signature@1.0.6
+58 silly idealTree:prePrune +-- cookie@0.4.0
+58 silly idealTree:prePrune +-- core-util-is@1.0.3
+58 silly idealTree:prePrune +-- crypto@1.0.1
+58 silly idealTree:prePrune +-- dashdash@1.14.1
+58 silly idealTree:prePrune +-- debug@2.6.9
+58 silly idealTree:prePrune +-- delayed-stream@1.0.0
+58 silly idealTree:prePrune +-- delegates@1.0.0
+58 silly idealTree:prePrune +-- denque@2.0.1
+58 silly idealTree:prePrune +-- depd@1.1.2
+58 silly idealTree:prePrune +-- destroy@1.0.4
+58 silly idealTree:prePrune +-- detect-libc@1.0.3
+58 silly idealTree:prePrune +-- dicer@0.3.0
+58 silly idealTree:prePrune +-- ecc-jsbn@0.1.2
+58 silly idealTree:prePrune +-- ee-first@1.1.1
+58 silly idealTree:prePrune +-- encodeurl@1.0.2
+58 silly idealTree:prePrune +-- escape-html@1.0.3
+58 silly idealTree:prePrune +-- etag@1.8.1
+58 silly idealTree:prePrune +-- express-fileupload@1.2.1
+58 silly idealTree:prePrune +-- express-handlebars@5.3.3
+58 silly idealTree:prePrune +-- express-session@1.17.2
+58 silly idealTree:prePrune | +-- cookie@0.4.1
+58 silly idealTree:prePrune | +-- depd@2.0.0
+58 silly idealTree:prePrune | `-- safe-buffer@5.2.1
+58 silly idealTree:prePrune +-- express@4.16.4
+58 silly idealTree:prePrune | `-- cookie@0.3.1
+58 silly idealTree:prePrune +-- extend@3.0.2
+58 silly idealTree:prePrune +-- extsprintf@1.3.0
+58 silly idealTree:prePrune +-- fast-deep-equal@3.1.3
+58 silly idealTree:prePrune +-- fast-json-stable-stringify@2.1.0
+58 silly idealTree:prePrune +-- file@0.2.2
+58 silly idealTree:prePrune +-- finalhandler@1.1.1
+58 silly idealTree:prePrune +-- foreachasync@3.0.0
+58 silly idealTree:prePrune +-- forever-agent@0.6.1
+58 silly idealTree:prePrune +-- form-data@3.0.1
+58 silly idealTree:prePrune +-- forwarded@0.2.0
+58 silly idealTree:prePrune +-- fresh@0.5.2
+58 silly idealTree:prePrune +-- fs-minipass@2.1.0
+58 silly idealTree:prePrune +-- fs.realpath@1.0.0
+58 silly idealTree:prePrune +-- gauge@2.7.4
+58 silly idealTree:prePrune +-- getpass@0.1.7
+58 silly idealTree:prePrune +-- glob@7.1.7
+58 silly idealTree:prePrune +-- graceful-fs@4.2.8
+58 silly idealTree:prePrune +-- handlebars@4.7.7
+58 silly idealTree:prePrune +-- har-schema@2.0.0
+58 silly idealTree:prePrune +-- har-validator@5.1.5
+58 silly idealTree:prePrune +-- has-unicode@2.0.1
+58 silly idealTree:prePrune +-- hbs@4.1.2
+58 silly idealTree:prePrune +-- http-errors@1.6.3
+58 silly idealTree:prePrune +-- http-signature@1.2.0
+58 silly idealTree:prePrune +-- https-proxy-agent@5.0.0
+58 silly idealTree:prePrune | +-- debug@4.3.2
+58 silly idealTree:prePrune | `-- ms@2.1.2
+58 silly idealTree:prePrune +-- iconv-lite@0.4.23
+58 silly idealTree:prePrune +-- ieee754@1.2.1
+58 silly idealTree:prePrune +-- inflight@1.0.6
+58 silly idealTree:prePrune +-- inherits@2.0.3
+58 silly idealTree:prePrune +-- ipaddr.js@1.9.1
+58 silly idealTree:prePrune +-- is-fullwidth-code-point@1.0.0
+58 silly idealTree:prePrune +-- is-typedarray@1.0.0
+58 silly idealTree:prePrune +-- isarray@1.0.0
+58 silly idealTree:prePrune +-- isstream@0.1.2
+58 silly idealTree:prePrune +-- jsbn@0.1.1
+58 silly idealTree:prePrune +-- json-schema-traverse@0.4.1
+58 silly idealTree:prePrune +-- json-schema@0.2.3
+58 silly idealTree:prePrune +-- json-stringify-safe@5.0.1
+58 silly idealTree:prePrune +-- jsprim@1.4.1
+58 silly idealTree:prePrune +-- lodash@4.17.21
+58 silly idealTree:prePrune +-- lru-cache@6.0.0
+58 silly idealTree:prePrune +-- make-dir@3.1.0
+58 silly idealTree:prePrune | `-- semver@6.3.0
+58 silly idealTree:prePrune +-- media-typer@0.3.0
+58 silly idealTree:prePrune +-- memory-pager@1.5.0
+58 silly idealTree:prePrune +-- merge-descriptors@1.0.1
+58 silly idealTree:prePrune +-- methods@1.1.2
+58 silly idealTree:prePrune +-- mime-db@1.49.0
+58 silly idealTree:prePrune +-- mime-types@2.1.32
+58 silly idealTree:prePrune +-- mime@1.4.1
+58 silly idealTree:prePrune +-- minimatch@3.0.4
+58 silly idealTree:prePrune +-- minimist@1.2.5
+58 silly idealTree:prePrune +-- minipass@3.1.3
+58 silly idealTree:prePrune +-- minizlib@2.1.2
+58 silly idealTree:prePrune +-- mkdirp@1.0.4
+58 silly idealTree:prePrune +-- mongod@2.0.0
+58 silly idealTree:prePrune +-- mongodb-connection-string-url@2.1.0
+58 silly idealTree:prePrune +-- mongodb@4.1.2
+58 silly idealTree:prePrune +-- morgan@1.9.1
+58 silly idealTree:prePrune +-- ms@2.0.0
+58 silly idealTree:prePrune +-- negotiator@0.6.2
+58 silly idealTree:prePrune +-- neo-async@2.6.2
+58 silly idealTree:prePrune +-- node-addon-api@3.2.1
+58 silly idealTree:prePrune +-- node-fetch@2.6.2
+58 silly idealTree:prePrune +-- nopt@5.0.0
+58 silly idealTree:prePrune +-- npmlog@4.1.2
+58 silly idealTree:prePrune +-- number-is-nan@1.0.1
+58 silly idealTree:prePrune +-- oauth-sign@0.9.0
+58 silly idealTree:prePrune +-- object-assign@4.1.1
+58 silly idealTree:prePrune +-- on-finished@2.3.0
+58 silly idealTree:prePrune +-- on-headers@1.0.2
+58 silly idealTree:prePrune +-- once@1.4.0
+58 silly idealTree:prePrune +-- parseurl@1.3.3
+58 silly idealTree:prePrune +-- path-is-absolute@1.0.1
+58 silly idealTree:prePrune +-- path-to-regexp@0.1.7
+58 silly idealTree:prePrune +-- performance-now@2.1.0
+58 silly idealTree:prePrune +-- process-nextick-args@2.0.1
+58 silly idealTree:prePrune +-- promise-queue@2.2.5
+58 silly idealTree:prePrune +-- promise@8.1.0
+58 silly idealTree:prePrune +-- proxy-addr@2.0.7
+58 silly idealTree:prePrune +-- psl@1.8.0
+58 silly idealTree:prePrune +-- punycode@2.1.1
+58 silly idealTree:prePrune +-- qs@6.5.2
+58 silly idealTree:prePrune +-- random-bytes@1.0.0
+58 silly idealTree:prePrune +-- range-parser@1.2.1
+58 silly idealTree:prePrune +-- raw-body@2.3.3
+58 silly idealTree:prePrune +-- razorpay@2.0.7
+58 silly idealTree:prePrune +-- readable-stream@2.3.7
+58 silly idealTree:prePrune +-- request-promise-core@1.1.4
+58 silly idealTree:prePrune +-- request-promise@4.2.6
+58 silly idealTree:prePrune +-- request@2.88.2
+58 silly idealTree:prePrune | `-- form-data@2.3.3
+58 silly idealTree:prePrune +-- rimraf@3.0.2
+58 silly idealTree:prePrune +-- safe-buffer@5.1.2
+58 silly idealTree:prePrune +-- safer-buffer@2.1.2
+58 silly idealTree:prePrune +-- saslprep@1.0.3
+58 silly idealTree:prePrune +-- semver@7.3.5
+58 silly idealTree:prePrune +-- send@0.16.2
+58 silly idealTree:prePrune +-- serve-static@1.13.2
+58 silly idealTree:prePrune +-- set-blocking@2.0.0
+58 silly idealTree:prePrune +-- setprototypeof@1.1.0
+58 silly idealTree:prePrune +-- signal-exit@3.0.3
+58 silly idealTree:prePrune +-- source-map@0.6.1
+58 silly idealTree:prePrune +-- sparse-bitfield@3.0.3
+58 silly idealTree:prePrune +-- sshpk@1.16.1
+58 silly idealTree:prePrune +-- statuses@1.4.0
+58 silly idealTree:prePrune +-- stealthy-require@1.1.1
+58 silly idealTree:prePrune +-- streamsearch@0.1.2
+58 silly idealTree:prePrune +-- string_decoder@1.1.1
+58 silly idealTree:prePrune +-- string-width@1.0.2
+58 silly idealTree:prePrune +-- strip-ansi@3.0.1
+58 silly idealTree:prePrune +-- tar@6.1.11
+58 silly idealTree:prePrune +-- tough-cookie@2.5.0
+58 silly idealTree:prePrune +-- tr46@2.1.0
+58 silly idealTree:prePrune +-- tunnel-agent@0.6.0
+58 silly idealTree:prePrune +-- tweetnacl@0.14.5
+58 silly idealTree:prePrune +-- type-is@1.6.18
+58 silly idealTree:prePrune +-- uglify-js@3.14.1
+58 silly idealTree:prePrune +-- uid-safe@2.1.5
+58 silly idealTree:prePrune +-- unpipe@1.0.0
+58 silly idealTree:prePrune +-- upload@1.1.1
+58 silly idealTree:prePrune +-- uri-js@4.4.1
+58 silly idealTree:prePrune +-- util-deprecate@1.0.2
+58 silly idealTree:prePrune +-- utils-merge@1.0.1
+58 silly idealTree:prePrune +-- uuid@3.4.0
+58 silly idealTree:prePrune +-- vary@1.1.2
+58 silly idealTree:prePrune +-- verror@1.10.0
+58 silly idealTree:prePrune | `-- core-util-is@1.0.2
+58 silly idealTree:prePrune +-- walk@2.3.14
+58 silly idealTree:prePrune +-- webidl-conversions@6.1.0
+58 silly idealTree:prePrune +-- whatwg-url@9.1.0
+58 silly idealTree:prePrune +-- wide-align@1.1.3
+58 silly idealTree:prePrune +-- wordwrap@1.0.0
+58 silly idealTree:prePrune +-- wrappy@1.0.2
+58 silly idealTree:prePrune `-- yallist@4.0.0
+59 silly loadIdealTree Finishing
+60 silly currentTree shpping-cart-project@0.0.0
+60 silly currentTree +-- @mapbox/node-pre-gyp@1.0.5
+60 silly currentTree +-- @types/node@16.10.1
+60 silly currentTree +-- @types/webidl-conversions@6.1.1
+60 silly currentTree +-- @types/whatwg-url@8.2.1
+60 silly currentTree +-- abbrev@1.1.1
+60 silly currentTree +-- accepts@1.3.7
+60 silly currentTree +-- agent-base@6.0.2
+60 silly currentTree | +-- debug@4.3.2
+60 silly currentTree | `-- ms@2.1.2
+60 silly currentTree +-- ajv@6.12.6
+60 silly currentTree +-- ansi-regex@2.1.1
+60 silly currentTree +-- aproba@1.2.0
+60 silly currentTree +-- are-we-there-yet@1.1.7
+60 silly currentTree +-- array-flatten@1.1.1
+60 silly currentTree +-- asap@2.0.6
+60 silly currentTree +-- asn1@0.2.4
+60 silly currentTree +-- assert-plus@1.0.0
+60 silly currentTree +-- asynckit@0.4.0
+60 silly currentTree +-- aws-sign2@0.7.0
+60 silly currentTree +-- aws4@1.11.0
+60 silly currentTree +-- balanced-match@1.0.2
+60 silly currentTree +-- base64-js@1.5.1
+60 silly currentTree +-- basic-auth@2.0.1
+60 silly currentTree +-- bcrypt-pbkdf@1.0.2
+60 silly currentTree +-- bluebird@3.7.2
+60 silly currentTree +-- body-parser@1.18.3
+60 silly currentTree +-- brace-expansion@1.1.11
+60 silly currentTree +-- bson@4.5.2
+60 silly currentTree +-- buffer@5.7.1
+60 silly currentTree +-- busboy@0.3.1
+60 silly currentTree +-- bytes@3.0.0
+60 silly currentTree +-- caseless@0.12.0
+60 silly currentTree +-- chownr@2.0.0
+60 silly currentTree +-- code-point-at@1.1.0
+60 silly currentTree +-- combined-stream@1.0.8
+60 silly currentTree +-- concat-map@0.0.1
+60 silly currentTree +-- console-control-strings@1.1.0
+60 silly currentTree +-- content-disposition@0.5.2
+60 silly currentTree +-- content-type@1.0.4
+60 silly currentTree +-- cookie-parser@1.4.5
+60 silly currentTree +-- cookie-signature@1.0.6
+60 silly currentTree +-- cookie@0.4.0
+60 silly currentTree +-- core-util-is@1.0.3
+60 silly currentTree +-- crypto@1.0.1
+60 silly currentTree +-- dashdash@1.14.1
+60 silly currentTree +-- debug@2.6.9
+60 silly currentTree +-- delayed-stream@1.0.0
+60 silly currentTree +-- delegates@1.0.0
+60 silly currentTree +-- denque@2.0.1
+60 silly currentTree +-- depd@1.1.2
+60 silly currentTree +-- destroy@1.0.4
+60 silly currentTree +-- detect-libc@1.0.3
+60 silly currentTree +-- dicer@0.3.0
+60 silly currentTree +-- ecc-jsbn@0.1.2
+60 silly currentTree +-- ee-first@1.1.1
+60 silly currentTree +-- encodeurl@1.0.2
+60 silly currentTree +-- escape-html@1.0.3
+60 silly currentTree +-- etag@1.8.1
+60 silly currentTree +-- express-fileupload@1.2.1
+60 silly currentTree +-- express-handlebars@5.3.3
+60 silly currentTree +-- express-session@1.17.2
+60 silly currentTree | +-- cookie@0.4.1
+60 silly currentTree | +-- depd@2.0.0
+60 silly currentTree | `-- safe-buffer@5.2.1
+60 silly currentTree +-- express@4.16.4
+60 silly currentTree | `-- cookie@0.3.1
+60 silly currentTree +-- extend@3.0.2
+60 silly currentTree +-- extsprintf@1.3.0
+60 silly currentTree +-- fast-deep-equal@3.1.3
+60 silly currentTree +-- fast-json-stable-stringify@2.1.0
+60 silly currentTree +-- file@0.2.2
+60 silly currentTree +-- finalhandler@1.1.1
+60 silly currentTree +-- foreachasync@3.0.0
+60 silly currentTree +-- forever-agent@0.6.1
+60 silly currentTree +-- form-data@3.0.1
+60 silly currentTree +-- forwarded@0.2.0
+60 silly currentTree +-- fresh@0.5.2
+60 silly currentTree +-- fs-minipass@2.1.0
+60 silly currentTree +-- fs.realpath@1.0.0
+60 silly currentTree +-- gauge@2.7.4
+60 silly currentTree +-- getpass@0.1.7
+60 silly currentTree +-- glob@7.1.7
+60 silly currentTree +-- graceful-fs@4.2.8
+60 silly currentTree +-- handlebars@4.7.7
+60 silly currentTree +-- har-schema@2.0.0
+60 silly currentTree +-- har-validator@5.1.5
+60 silly currentTree +-- has-unicode@2.0.1
+60 silly currentTree +-- hbs@4.1.2
+60 silly currentTree +-- http-errors@1.6.3
+60 silly currentTree +-- http-signature@1.2.0
+60 silly currentTree +-- https-proxy-agent@5.0.0
+60 silly currentTree | +-- debug@4.3.2
+60 silly currentTree | `-- ms@2.1.2
+60 silly currentTree +-- iconv-lite@0.4.23
+60 silly currentTree +-- ieee754@1.2.1
+60 silly currentTree +-- inflight@1.0.6
+60 silly currentTree +-- inherits@2.0.3
+60 silly currentTree +-- ipaddr.js@1.9.1
+60 silly currentTree +-- is-fullwidth-code-point@1.0.0
+60 silly currentTree +-- is-typedarray@1.0.0
+60 silly currentTree +-- isarray@1.0.0
+60 silly currentTree +-- isstream@0.1.2
+60 silly currentTree +-- jsbn@0.1.1
+60 silly currentTree +-- json-schema-traverse@0.4.1
+60 silly currentTree +-- json-schema@0.2.3
+60 silly currentTree +-- json-stringify-safe@5.0.1
+60 silly currentTree +-- jsprim@1.4.1
+60 silly currentTree +-- lodash@4.17.21
+60 silly currentTree +-- lru-cache@6.0.0
+60 silly currentTree +-- make-dir@3.1.0
+60 silly currentTree | `-- semver@6.3.0
+60 silly currentTree +-- media-typer@0.3.0
+60 silly currentTree +-- memory-pager@1.5.0
+60 silly currentTree +-- merge-descriptors@1.0.1
+60 silly currentTree +-- methods@1.1.2
+60 silly currentTree +-- mime-db@1.49.0
+60 silly currentTree +-- mime-types@2.1.32
+60 silly currentTree +-- mime@1.4.1
+60 silly currentTree +-- minimatch@3.0.4
+60 silly currentTree +-- minimist@1.2.5
+60 silly currentTree +-- minipass@3.1.3
+60 silly currentTree +-- minizlib@2.1.2
+60 silly currentTree +-- mkdirp@1.0.4
+60 silly currentTree +-- mongod@2.0.0
+60 silly currentTree +-- mongodb-connection-string-url@2.1.0
+60 silly currentTree +-- mongodb@4.1.2
+60 silly currentTree +-- morgan@1.9.1
+60 silly currentTree +-- ms@2.0.0
+60 silly currentTree +-- negotiator@0.6.2
+60 silly currentTree +-- neo-async@2.6.2
+60 silly currentTree +-- node-addon-api@3.2.1
+60 silly currentTree +-- node-fetch@2.6.2
+60 silly currentTree +-- nopt@5.0.0
+60 silly currentTree +-- npmlog@4.1.2
+60 silly currentTree +-- number-is-nan@1.0.1
+60 silly currentTree +-- oauth-sign@0.9.0
+60 silly currentTree +-- object-assign@4.1.1
+60 silly currentTree +-- on-finished@2.3.0
+60 silly currentTree +-- on-headers@1.0.2
+60 silly currentTree +-- once@1.4.0
+60 silly currentTree +-- parseurl@1.3.3
+60 silly currentTree +-- path-is-absolute@1.0.1
+60 silly currentTree +-- path-to-regexp@0.1.7
+60 silly currentTree +-- performance-now@2.1.0
+60 silly currentTree +-- process-nextick-args@2.0.1
+60 silly currentTree +-- promise-queue@2.2.5
+60 silly currentTree +-- promise@8.1.0
+60 silly currentTree +-- proxy-addr@2.0.7
+60 silly currentTree +-- psl@1.8.0
+60 silly currentTree +-- punycode@2.1.1
+60 silly currentTree +-- qs@6.5.2
+60 silly currentTree +-- random-bytes@1.0.0
+60 silly currentTree +-- range-parser@1.2.1
+60 silly currentTree +-- raw-body@2.3.3
+60 silly currentTree +-- razorpay@2.0.7
+60 silly currentTree +-- readable-stream@2.3.7
+60 silly currentTree +-- request-promise-core@1.1.4
+60 silly currentTree +-- request-promise@4.2.6
+60 silly currentTree +-- request@2.88.2
+60 silly currentTree | `-- form-data@2.3.3
+60 silly currentTree +-- rimraf@3.0.2
+60 silly currentTree +-- safe-buffer@5.1.2
+60 silly currentTree +-- safer-buffer@2.1.2
+60 silly currentTree +-- saslprep@1.0.3
+60 silly currentTree +-- semver@7.3.5
+60 silly currentTree +-- send@0.16.2
+60 silly currentTree +-- serve-static@1.13.2
+60 silly currentTree +-- set-blocking@2.0.0
+60 silly currentTree +-- setprototypeof@1.1.0
+60 silly currentTree +-- signal-exit@3.0.3
+60 silly currentTree +-- source-map@0.6.1
+60 silly currentTree +-- sparse-bitfield@3.0.3
+60 silly currentTree +-- sshpk@1.16.1
+60 silly currentTree +-- statuses@1.4.0
+60 silly currentTree +-- stealthy-require@1.1.1
+60 silly currentTree +-- streamsearch@0.1.2
+60 silly currentTree +-- string_decoder@1.1.1
+60 silly currentTree +-- string-width@1.0.2
+60 silly currentTree +-- strip-ansi@3.0.1
+60 silly currentTree +-- tar@6.1.11
+60 silly currentTree +-- tough-cookie@2.5.0
+60 silly currentTree +-- tr46@2.1.0
+60 silly currentTree +-- tunnel-agent@0.6.0
+60 silly currentTree +-- tweetnacl@0.14.5
+60 silly currentTree +-- type-is@1.6.18
+60 silly currentTree +-- uglify-js@3.14.1
+60 silly currentTree +-- uid-safe@2.1.5
+60 silly currentTree +-- unpipe@1.0.0
+60 silly currentTree +-- upload@1.1.1
+60 silly currentTree +-- uri-js@4.4.1
+60 silly currentTree +-- util-deprecate@1.0.2
+60 silly currentTree +-- utils-merge@1.0.1
+60 silly currentTree +-- uuid@3.4.0
+60 silly currentTree +-- vary@1.1.2
+60 silly currentTree +-- verror@1.10.0
+60 silly currentTree | `-- core-util-is@1.0.2
+60 silly currentTree +-- walk@2.3.14
+60 silly currentTree +-- webidl-conversions@6.1.0
+60 silly currentTree +-- whatwg-url@9.1.0
+60 silly currentTree +-- wide-align@1.1.3
+60 silly currentTree +-- wordwrap@1.0.0
+60 silly currentTree +-- wrappy@1.0.2
+60 silly currentTree `-- yallist@4.0.0
+61 silly idealTree shpping-cart-project@0.0.0
+61 silly idealTree +-- @mapbox/node-pre-gyp@1.0.5
+61 silly idealTree +-- @types/node@16.10.1
+61 silly idealTree +-- @types/webidl-conversions@6.1.1
+61 silly idealTree +-- @types/whatwg-url@8.2.1
+61 silly idealTree +-- abbrev@1.1.1
+61 silly idealTree +-- accepts@1.3.7
+61 silly idealTree +-- agent-base@6.0.2
+61 silly idealTree | +-- debug@4.3.2
+61 silly idealTree | `-- ms@2.1.2
+61 silly idealTree +-- ajv@6.12.6
+61 silly idealTree +-- ansi-regex@2.1.1
+61 silly idealTree +-- aproba@1.2.0
+61 silly idealTree +-- are-we-there-yet@1.1.7
+61 silly idealTree +-- array-flatten@1.1.1
+61 silly idealTree +-- asap@2.0.6
+61 silly idealTree +-- asn1@0.2.4
+61 silly idealTree +-- assert-plus@1.0.0
+61 silly idealTree +-- asynckit@0.4.0
+61 silly idealTree +-- aws-sign2@0.7.0
+61 silly idealTree +-- aws4@1.11.0
+61 silly idealTree +-- balanced-match@1.0.2
+61 silly idealTree +-- base64-js@1.5.1
+61 silly idealTree +-- basic-auth@2.0.1
+61 silly idealTree +-- bcrypt-pbkdf@1.0.2
+61 silly idealTree +-- bcrypt@5.0.1
+61 silly idealTree +-- bluebird@3.7.2
+61 silly idealTree +-- body-parser@1.18.3
+61 silly idealTree +-- brace-expansion@1.1.11
+61 silly idealTree +-- bson@4.5.2
+61 silly idealTree +-- buffer@5.7.1
+61 silly idealTree +-- busboy@0.3.1
+61 silly idealTree +-- bytes@3.0.0
+61 silly idealTree +-- caseless@0.12.0
+61 silly idealTree +-- chownr@2.0.0
+61 silly idealTree +-- code-point-at@1.1.0
+61 silly idealTree +-- combined-stream@1.0.8
+61 silly idealTree +-- concat-map@0.0.1
+61 silly idealTree +-- console-control-strings@1.1.0
+61 silly idealTree +-- content-disposition@0.5.2
+61 silly idealTree +-- content-type@1.0.4
+61 silly idealTree +-- cookie-parser@1.4.5
+61 silly idealTree +-- cookie-signature@1.0.6
+61 silly idealTree +-- cookie@0.4.0
+61 silly idealTree +-- core-util-is@1.0.3
+61 silly idealTree +-- crypto@1.0.1
+61 silly idealTree +-- dashdash@1.14.1
+61 silly idealTree +-- debug@2.6.9
+61 silly idealTree +-- delayed-stream@1.0.0
+61 silly idealTree +-- delegates@1.0.0
+61 silly idealTree +-- denque@2.0.1
+61 silly idealTree +-- depd@1.1.2
+61 silly idealTree +-- destroy@1.0.4
+61 silly idealTree +-- detect-libc@1.0.3
+61 silly idealTree +-- dicer@0.3.0
+61 silly idealTree +-- ecc-jsbn@0.1.2
+61 silly idealTree +-- ee-first@1.1.1
+61 silly idealTree +-- encodeurl@1.0.2
+61 silly idealTree +-- escape-html@1.0.3
+61 silly idealTree +-- etag@1.8.1
+61 silly idealTree +-- express-fileupload@1.2.1
+61 silly idealTree +-- express-handlebars@5.3.3
+61 silly idealTree +-- express-session@1.17.2
+61 silly idealTree | +-- cookie@0.4.1
+61 silly idealTree | +-- depd@2.0.0
+61 silly idealTree | `-- safe-buffer@5.2.1
+61 silly idealTree +-- express@4.16.4
+61 silly idealTree | `-- cookie@0.3.1
+61 silly idealTree +-- extend@3.0.2
+61 silly idealTree +-- extsprintf@1.3.0
+61 silly idealTree +-- fast-deep-equal@3.1.3
+61 silly idealTree +-- fast-json-stable-stringify@2.1.0
+61 silly idealTree +-- file@0.2.2
+61 silly idealTree +-- finalhandler@1.1.1
+61 silly idealTree +-- foreachasync@3.0.0
+61 silly idealTree +-- forever-agent@0.6.1
+61 silly idealTree +-- form-data@3.0.1
+61 silly idealTree +-- forwarded@0.2.0
+61 silly idealTree +-- fresh@0.5.2
+61 silly idealTree +-- fs-minipass@2.1.0
+61 silly idealTree +-- fs.realpath@1.0.0
+61 silly idealTree +-- gauge@2.7.4
+61 silly idealTree +-- getpass@0.1.7
+61 silly idealTree +-- glob@7.1.7
+61 silly idealTree +-- graceful-fs@4.2.8
+61 silly idealTree +-- handlebars@4.7.7
+61 silly idealTree +-- har-schema@2.0.0
+61 silly idealTree +-- har-validator@5.1.5
+61 silly idealTree +-- has-unicode@2.0.1
+61 silly idealTree +-- hbs@4.1.2
+61 silly idealTree +-- http-errors@1.6.3
+61 silly idealTree +-- http-signature@1.2.0
+61 silly idealTree +-- https-proxy-agent@5.0.0
+61 silly idealTree | +-- debug@4.3.2
+61 silly idealTree | `-- ms@2.1.2
+61 silly idealTree +-- iconv-lite@0.4.23
+61 silly idealTree +-- ieee754@1.2.1
+61 silly idealTree +-- inflight@1.0.6
+61 silly idealTree +-- inherits@2.0.3
+61 silly idealTree +-- ipaddr.js@1.9.1
+61 silly idealTree +-- is-fullwidth-code-point@1.0.0
+61 silly idealTree +-- is-typedarray@1.0.0
+61 silly idealTree +-- isarray@1.0.0
+61 silly idealTree +-- isstream@0.1.2
+61 silly idealTree +-- jsbn@0.1.1
+61 silly idealTree +-- json-schema-traverse@0.4.1
+61 silly idealTree +-- json-schema@0.2.3
+61 silly idealTree +-- json-stringify-safe@5.0.1
+61 silly idealTree +-- jsprim@1.4.1
+61 silly idealTree +-- lodash@4.17.21
+61 silly idealTree +-- lru-cache@6.0.0
+61 silly idealTree +-- make-dir@3.1.0
+61 silly idealTree | `-- semver@6.3.0
+61 silly idealTree +-- media-typer@0.3.0
+61 silly idealTree +-- memory-pager@1.5.0
+61 silly idealTree +-- merge-descriptors@1.0.1
+61 silly idealTree +-- methods@1.1.2
+61 silly idealTree +-- mime-db@1.49.0
+61 silly idealTree +-- mime-types@2.1.32
+61 silly idealTree +-- mime@1.4.1
+61 silly idealTree +-- minimatch@3.0.4
+61 silly idealTree +-- minimist@1.2.5
+61 silly idealTree +-- minipass@3.1.3
+61 silly idealTree +-- minizlib@2.1.2
+61 silly idealTree +-- mkdirp@1.0.4
+61 silly idealTree +-- mongod@2.0.0
+61 silly idealTree +-- mongodb-connection-string-url@2.1.0
+61 silly idealTree +-- mongodb@4.1.2
+61 silly idealTree +-- morgan@1.9.1
+61 silly idealTree +-- ms@2.0.0
+61 silly idealTree +-- negotiator@0.6.2
+61 silly idealTree +-- neo-async@2.6.2
+61 silly idealTree +-- node-addon-api@3.2.1
+61 silly idealTree +-- node-fetch@2.6.2
+61 silly idealTree +-- nopt@5.0.0
+61 silly idealTree +-- npmlog@4.1.2
+61 silly idealTree +-- number-is-nan@1.0.1
+61 silly idealTree +-- oauth-sign@0.9.0
+61 silly idealTree +-- object-assign@4.1.1
+61 silly idealTree +-- on-finished@2.3.0
+61 silly idealTree +-- on-headers@1.0.2
+61 silly idealTree +-- once@1.4.0
+61 silly idealTree +-- parseurl@1.3.3
+61 silly idealTree +-- path-is-absolute@1.0.1
+61 silly idealTree +-- path-to-regexp@0.1.7
+61 silly idealTree +-- performance-now@2.1.0
+61 silly idealTree +-- process-nextick-args@2.0.1
+61 silly idealTree +-- promise-queue@2.2.5
+61 silly idealTree +-- promise@8.1.0
+61 silly idealTree +-- proxy-addr@2.0.7
+61 silly idealTree +-- psl@1.8.0
+61 silly idealTree +-- punycode@2.1.1
+61 silly idealTree +-- qs@6.5.2
+61 silly idealTree +-- random-bytes@1.0.0
+61 silly idealTree +-- range-parser@1.2.1
+61 silly idealTree +-- raw-body@2.3.3
+61 silly idealTree +-- razorpay@2.0.7
+61 silly idealTree +-- readable-stream@2.3.7
+61 silly idealTree +-- request-promise-core@1.1.4
+61 silly idealTree +-- request-promise@4.2.6
+61 silly idealTree +-- request@2.88.2
+61 silly idealTree | `-- form-data@2.3.3
+61 silly idealTree +-- rimraf@3.0.2
+61 silly idealTree +-- safe-buffer@5.1.2
+61 silly idealTree +-- safer-buffer@2.1.2
+61 silly idealTree +-- saslprep@1.0.3
+61 silly idealTree +-- semver@7.3.5
+61 silly idealTree +-- send@0.16.2
+61 silly idealTree +-- serve-static@1.13.2
+61 silly idealTree +-- set-blocking@2.0.0
+61 silly idealTree +-- setprototypeof@1.1.0
+61 silly idealTree +-- signal-exit@3.0.3
+61 silly idealTree +-- source-map@0.6.1
+61 silly idealTree +-- sparse-bitfield@3.0.3
+61 silly idealTree +-- sshpk@1.16.1
+61 silly idealTree +-- statuses@1.4.0
+61 silly idealTree +-- stealthy-require@1.1.1
+61 silly idealTree +-- streamsearch@0.1.2
+61 silly idealTree +-- string_decoder@1.1.1
+61 silly idealTree +-- string-width@1.0.2
+61 silly idealTree +-- strip-ansi@3.0.1
+61 silly idealTree +-- tar@6.1.11
+61 silly idealTree +-- tough-cookie@2.5.0
+61 silly idealTree +-- tr46@2.1.0
+61 silly idealTree +-- tunnel-agent@0.6.0
+61 silly idealTree +-- tweetnacl@0.14.5
+61 silly idealTree +-- type-is@1.6.18
+61 silly idealTree +-- uglify-js@3.14.1
+61 silly idealTree +-- uid-safe@2.1.5
+61 silly idealTree +-- unpipe@1.0.0
+61 silly idealTree +-- upload@1.1.1
+61 silly idealTree +-- uri-js@4.4.1
+61 silly idealTree +-- util-deprecate@1.0.2
+61 silly idealTree +-- utils-merge@1.0.1
+61 silly idealTree +-- uuid@3.4.0
+61 silly idealTree +-- vary@1.1.2
+61 silly idealTree +-- verror@1.10.0
+61 silly idealTree | `-- core-util-is@1.0.2
+61 silly idealTree +-- walk@2.3.14
+61 silly idealTree +-- webidl-conversions@6.1.0
+61 silly idealTree +-- whatwg-url@9.1.0
+61 silly idealTree +-- wide-align@1.1.3
+61 silly idealTree +-- wordwrap@1.0.0
+61 silly idealTree +-- wrappy@1.0.2
+61 silly idealTree `-- yallist@4.0.0
+62 silly generateActionsToTake Starting
+63 silly install generateActionsToTake
+64 silly generateActionsToTake Finishing
+65 silly diffTrees action count 10
+66 silly diffTrees add bcrypt@5.0.1
+67 silly diffTrees update crypto@1.0.1
+68 silly diffTrees update express-fileupload@1.2.1
+69 silly diffTrees update express-handlebars@5.3.3
+70 silly diffTrees update express-session@1.17.2
+71 silly diffTrees update file@0.2.2
+72 silly diffTrees update hbs@4.1.2
+73 silly diffTrees update mongod@2.0.0
+74 silly diffTrees update razorpay@2.0.7
+75 silly diffTrees update upload@1.1.1
+76 silly decomposeActions action count 80
+77 silly decomposeActions fetch bcrypt@5.0.1
+78 silly decomposeActions extract bcrypt@5.0.1
+79 silly decomposeActions test bcrypt@5.0.1
+80 silly decomposeActions preinstall bcrypt@5.0.1
+81 silly decomposeActions build bcrypt@5.0.1
+82 silly decomposeActions install bcrypt@5.0.1
+83 silly decomposeActions postinstall bcrypt@5.0.1
+84 silly decomposeActions finalize bcrypt@5.0.1
+85 silly decomposeActions fetch crypto@1.0.1
+86 silly decomposeActions extract crypto@1.0.1
+87 silly decomposeActions test crypto@1.0.1
+88 silly decomposeActions preinstall crypto@1.0.1
+89 silly decomposeActions build crypto@1.0.1
+90 silly decomposeActions install crypto@1.0.1
+91 silly decomposeActions postinstall crypto@1.0.1
+92 silly decomposeActions finalize crypto@1.0.1
+93 silly decomposeActions fetch express-fileupload@1.2.1
+94 silly decomposeActions extract express-fileupload@1.2.1
+95 silly decomposeActions test express-fileupload@1.2.1
+96 silly decomposeActions preinstall express-fileupload@1.2.1
+97 silly decomposeActions build express-fileupload@1.2.1
+98 silly decomposeActions install express-fileupload@1.2.1
+99 silly decomposeActions postinstall express-fileupload@1.2.1
+100 silly decomposeActions finalize express-fileupload@1.2.1
+101 silly decomposeActions fetch express-handlebars@5.3.3
+102 silly decomposeActions extract express-handlebars@5.3.3
+103 silly decomposeActions test express-handlebars@5.3.3
+104 silly decomposeActions preinstall express-handlebars@5.3.3
+105 silly decomposeActions build express-handlebars@5.3.3
+106 silly decomposeActions install express-handlebars@5.3.3
+107 silly decomposeActions postinstall express-handlebars@5.3.3
+108 silly decomposeActions finalize express-handlebars@5.3.3
+109 silly decomposeActions fetch express-session@1.17.2
+110 silly decomposeActions extract express-session@1.17.2
+111 silly decomposeActions test express-session@1.17.2
+112 silly decomposeActions preinstall express-session@1.17.2
+113 silly decomposeActions build express-session@1.17.2
+114 silly decomposeActions install express-session@1.17.2
+115 silly decomposeActions postinstall express-session@1.17.2
+116 silly decomposeActions finalize express-session@1.17.2
+117 silly decomposeActions fetch file@0.2.2
+118 silly decomposeActions extract file@0.2.2
+119 silly decomposeActions test file@0.2.2
+120 silly decomposeActions preinstall file@0.2.2
+121 silly decomposeActions build file@0.2.2
+122 silly decomposeActions install file@0.2.2
+123 silly decomposeActions postinstall file@0.2.2
+124 silly decomposeActions finalize file@0.2.2
+125 silly decomposeActions fetch hbs@4.1.2
+126 silly decomposeActions extract hbs@4.1.2
+127 silly decomposeActions test hbs@4.1.2
+128 silly decomposeActions preinstall hbs@4.1.2
+129 silly decomposeActions build hbs@4.1.2
+130 silly decomposeActions install hbs@4.1.2
+131 silly decomposeActions postinstall hbs@4.1.2
+132 silly decomposeActions finalize hbs@4.1.2
+133 silly decomposeActions fetch mongod@2.0.0
+134 silly decomposeActions extract mongod@2.0.0
+135 silly decomposeActions test mongod@2.0.0
+136 silly decomposeActions preinstall mongod@2.0.0
+137 silly decomposeActions build mongod@2.0.0
+138 silly decomposeActions install mongod@2.0.0
+139 silly decomposeActions postinstall mongod@2.0.0
+140 silly decomposeActions finalize mongod@2.0.0
+141 silly decomposeActions fetch razorpay@2.0.7
+142 silly decomposeActions extract razorpay@2.0.7
+143 silly decomposeActions test razorpay@2.0.7
+144 silly decomposeActions preinstall razorpay@2.0.7
+145 silly decomposeActions build razorpay@2.0.7
+146 silly decomposeActions install razorpay@2.0.7
+147 silly decomposeActions postinstall razorpay@2.0.7
+148 silly decomposeActions finalize razorpay@2.0.7
+149 silly decomposeActions fetch upload@1.1.1
+150 silly decomposeActions extract upload@1.1.1
+151 silly decomposeActions test upload@1.1.1
+152 silly decomposeActions preinstall upload@1.1.1
+153 silly decomposeActions build upload@1.1.1
+154 silly decomposeActions install upload@1.1.1
+155 silly decomposeActions postinstall upload@1.1.1
+156 silly decomposeActions finalize upload@1.1.1
+157 silly executeActions Starting
+158 silly install executeActions
+159 silly doSerial global-install 0
+160 silly doParallel fetch 10
+161 verbose lock using /home/vaishakh/.npm/_locks/staging-7567333549438a03.lock for /home/vaishakh/Desktop/Vaishakh/programming/web development/Shopping Cart Project/node_modules/.staging
+162 silly doParallel extract 10
+163 silly extract bcrypt@5.0.1
+164 silly extract crypto@1.0.1
+165 silly extract express-fileupload@1.2.1
+166 silly extract express-handlebars@5.3.3
+167 silly extract express-session@1.17.2
+168 silly extract file@0.2.2
+169 silly extract hbs@4.1.2
+170 silly extract mongod@2.0.0
+171 silly extract razorpay@2.0.7
+172 silly extract upload@1.1.1
+173 silly addNamed crypto@1.0.1
+174 verbose addNamed "1.0.1" is a plain semver version for crypto
+175 silly mapToRegistry name crypto
+176 silly mapToRegistry using default registry
+177 silly mapToRegistry registry https://registry.npmjs.org/
+178 silly mapToRegistry uri https://registry.npmjs.org/crypto
+179 verbose addNameVersion registry:https://registry.npmjs.org/crypto not in flight; fetching
+180 silly addNamed express-fileupload@1.2.1
+181 verbose addNamed "1.2.1" is a plain semver version for express-fileupload
+182 silly mapToRegistry name express-fileupload
+183 silly mapToRegistry using default registry
+184 silly mapToRegistry registry https://registry.npmjs.org/
+185 silly mapToRegistry uri https://registry.npmjs.org/express-fileupload
+186 verbose addNameVersion registry:https://registry.npmjs.org/express-fileupload not in flight; fetching
+187 silly addNamed file@0.2.2
+188 verbose addNamed "0.2.2" is a plain semver version for file
+189 silly mapToRegistry name file
+190 silly mapToRegistry using default registry
+191 silly mapToRegistry registry https://registry.npmjs.org/
+192 silly mapToRegistry uri https://registry.npmjs.org/file
+193 verbose addNameVersion registry:https://registry.npmjs.org/file not in flight; fetching
+194 silly addNamed express-session@1.17.2
+195 verbose addNamed "1.17.2" is a plain semver version for express-session
+196 silly mapToRegistry name express-session
+197 silly mapToRegistry using default registry
+198 silly mapToRegistry registry https://registry.npmjs.org/
+199 silly mapToRegistry uri https://registry.npmjs.org/express-session
+200 verbose addNameVersion registry:https://registry.npmjs.org/express-session not in flight; fetching
+201 silly addNamed express-handlebars@5.3.3
+202 verbose addNamed "5.3.3" is a plain semver version for express-handlebars
+203 silly mapToRegistry name express-handlebars
+204 silly mapToRegistry using default registry
+205 silly mapToRegistry registry https://registry.npmjs.org/
+206 silly mapToRegistry uri https://registry.npmjs.org/express-handlebars
+207 verbose addNameVersion registry:https://registry.npmjs.org/express-handlebars not in flight; fetching
+208 silly addNamed hbs@4.1.2
+209 verbose addNamed "4.1.2" is a plain semver version for hbs
+210 silly mapToRegistry name hbs
+211 silly mapToRegistry using default registry
+212 silly mapToRegistry registry https://registry.npmjs.org/
+213 silly mapToRegistry uri https://registry.npmjs.org/hbs
+214 verbose addNameVersion registry:https://registry.npmjs.org/hbs not in flight; fetching
+215 silly addNamed razorpay@2.0.7
+216 verbose addNamed "2.0.7" is a plain semver version for razorpay
+217 silly mapToRegistry name razorpay
+218 silly mapToRegistry using default registry
+219 silly mapToRegistry registry https://registry.npmjs.org/
+220 silly mapToRegistry uri https://registry.npmjs.org/razorpay
+221 verbose addNameVersion registry:https://registry.npmjs.org/razorpay not in flight; fetching
+222 silly addNamed upload@1.1.1
+223 verbose addNamed "1.1.1" is a plain semver version for upload
+224 silly mapToRegistry name upload
+225 silly mapToRegistry using default registry
+226 silly mapToRegistry registry https://registry.npmjs.org/
+227 silly mapToRegistry uri https://registry.npmjs.org/upload
+228 verbose addNameVersion registry:https://registry.npmjs.org/upload not in flight; fetching
+229 verbose unbuild node_modules/.staging/bcrypt-605c1bd4
+230 verbose unbuild node_modules/.staging/mongod-6484b641
+231 silly gentlyRm /home/vaishakh/Desktop/Vaishakh/programming/web development/Shopping Cart Project/node_modules/.staging/bcrypt-605c1bd4 is being purged from base /home/vaishakh/Desktop/Vaishakh/programming/web development/Shopping Cart Project
+232 verbose gentlyRm don't care about contents; nuking /home/vaishakh/Desktop/Vaishakh/programming/web development/Shopping Cart Project/node_modules/.staging/bcrypt-605c1bd4
+233 verbose request uri https://registry.npmjs.org/crypto
+234 verbose request no auth needed
+235 info attempt registry request try #1 at 6:44:08 AM
+236 verbose etag W/"de0ddc44a076d02c8db4f5c8a29745f5"
+237 verbose lastModified Sat, 22 May 2021 04:31:55 GMT
+238 http request GET https://registry.npmjs.org/crypto
+239 verbose request uri https://registry.npmjs.org/file
+240 verbose request no auth needed
+241 info attempt registry request try #1 at 6:44:08 AM
+242 verbose etag W/"c4f2fc3439691ab3cd0f9ac7a00f3609"
+243 verbose lastModified Sun, 27 May 2018 00:39:19 GMT
+244 http request GET https://registry.npmjs.org/file
+245 verbose request uri https://registry.npmjs.org/express-fileupload
+246 verbose request no auth needed
+247 info attempt registry request try #1 at 6:44:09 AM
+248 verbose etag W/"42875a7451e80453a80156e9ced39a11"
+249 verbose lastModified Tue, 04 May 2021 21:16:52 GMT
+250 http request GET https://registry.npmjs.org/express-fileupload
+251 verbose request uri https://registry.npmjs.org/hbs
+252 verbose request no auth needed
+253 info attempt registry request try #1 at 6:44:09 AM
+254 verbose etag W/"afa04dc21e7a9556e9687cb8861c3376"
+255 verbose lastModified Thu, 15 Apr 2021 18:39:27 GMT
+256 http request GET https://registry.npmjs.org/hbs
+257 verbose request uri https://registry.npmjs.org/express-handlebars
+258 verbose request no auth needed
+259 info attempt registry request try #1 at 6:44:09 AM
+260 verbose etag W/"a02495272346b0a479a10fc2f4bd5576"
+261 verbose lastModified Thu, 23 Sep 2021 00:21:24 GMT
+262 http request GET https://registry.npmjs.org/express-handlebars
+263 verbose request uri https://registry.npmjs.org/express-session
+264 verbose request no auth needed
+265 info attempt registry request try #1 at 6:44:09 AM
+266 verbose etag W/"535ed16bb61294f8e16ddab6c561ea80"
+267 verbose lastModified Wed, 19 May 2021 17:35:10 GMT
+268 http request GET https://registry.npmjs.org/express-session
+269 silly gentlyRm /home/vaishakh/Desktop/Vaishakh/programming/web development/Shopping Cart Project/node_modules/.staging/mongod-6484b641 is being purged from base /home/vaishakh/Desktop/Vaishakh/programming/web development/Shopping Cart Project
+270 verbose gentlyRm don't care about contents; nuking /home/vaishakh/Desktop/Vaishakh/programming/web development/Shopping Cart Project/node_modules/.staging/mongod-6484b641
+271 verbose request uri https://registry.npmjs.org/razorpay
+272 verbose request no auth needed
+273 info attempt registry request try #1 at 6:44:09 AM
+274 verbose etag W/"b4e2f9fae4ef4473005a1dbc92744ed4"
+275 verbose lastModified Wed, 22 Sep 2021 08:40:38 GMT
+276 http request GET https://registry.npmjs.org/razorpay
+277 verbose tar unpack /home/vaishakh/.npm/bcrypt/5.0.1/package.tgz
+278 verbose tar unpacking to /home/vaishakh/Desktop/Vaishakh/programming/web development/Shopping Cart Project/node_modules/.staging/bcrypt-605c1bd4
+279 silly gentlyRm /home/vaishakh/Desktop/Vaishakh/programming/web development/Shopping Cart Project/node_modules/.staging/bcrypt-605c1bd4 is being purged
+280 verbose gentlyRm don't care about contents; nuking /home/vaishakh/Desktop/Vaishakh/programming/web development/Shopping Cart Project/node_modules/.staging/bcrypt-605c1bd4
+281 verbose request uri https://registry.npmjs.org/upload
+282 verbose request no auth needed
+283 info attempt registry request try #1 at 6:44:09 AM
+284 verbose etag W/"e889c0bf8a83e8dc9795a2a0d5b95125"
+285 verbose lastModified Sun, 30 Aug 2020 17:43:11 GMT
+286 http request GET https://registry.npmjs.org/upload
+287 verbose tar unpack /home/vaishakh/.npm/mongod/2.0.0/package.tgz
+288 verbose tar unpacking to /home/vaishakh/Desktop/Vaishakh/programming/web development/Shopping Cart Project/node_modules/.staging/mongod-6484b641
+289 silly gentlyRm /home/vaishakh/Desktop/Vaishakh/programming/web development/Shopping Cart Project/node_modules/.staging/mongod-6484b641 is being purged
+290 verbose gentlyRm don't care about contents; nuking /home/vaishakh/Desktop/Vaishakh/programming/web development/Shopping Cart Project/node_modules/.staging/mongod-6484b641
+291 silly gunzTarPerm modes [ '775', '664' ]
+292 silly gunzTarPerm modes [ '775', '664' ]
+293 silly gunzTarPerm extractEntry .editorconfig
+294 silly gunzTarPerm modified mode [ '.editorconfig', 420, 436 ]
+295 silly gunzTarPerm extractEntry package.json
+296 silly gunzTarPerm modified mode [ 'package.json', 420, 436 ]
+297 silly gunzTarPerm extractEntry LICENSE
+298 silly gunzTarPerm modified mode [ 'LICENSE', 420, 436 ]
+299 silly gunzTarPerm extractEntry Makefile
+300 silly gunzTarPerm modified mode [ 'Makefile', 420, 436 ]
+301 silly gunzTarPerm extractEntry .npmignore
+302 silly gunzTarPerm modified mode [ '.npmignore', 420, 436 ]
+303 silly gunzTarPerm extractEntry README.md
+304 silly gunzTarPerm modified mode [ 'README.md', 420, 436 ]
+305 silly gunzTarPerm extractEntry src/bcrypt_node.cc
+306 silly gunzTarPerm modified mode [ 'src/bcrypt_node.cc', 420, 436 ]
+307 silly gunzTarPerm extractEntry src/bcrypt.cc
+308 silly gunzTarPerm modified mode [ 'src/bcrypt.cc', 420, 436 ]
+309 silly gunzTarPerm extractEntry Mongod.js
+310 silly gunzTarPerm modified mode [ 'Mongod.js', 420, 436 ]
+311 silly gunzTarPerm extractEntry .travis.yml
+312 silly gunzTarPerm modified mode [ '.travis.yml', 420, 436 ]
+313 silly gunzTarPerm extractEntry .coveralls.yml
+314 silly gunzTarPerm modified mode [ '.coveralls.yml', 420, 436 ]
+315 silly gunzTarPerm extractEntry LICENSE.md
+316 silly gunzTarPerm modified mode [ 'LICENSE.md', 420, 436 ]
+317 silly gunzTarPerm extractEntry .eslintrc.yml
+318 silly gunzTarPerm modified mode [ '.eslintrc.yml', 420, 436 ]
+319 silly gunzTarPerm extractEntry CHANGELOG.md
+320 silly gunzTarPerm modified mode [ 'CHANGELOG.md', 420, 436 ]
+321 silly gunzTarPerm extractEntry src/blowfish.cc
+322 silly gunzTarPerm modified mode [ 'src/blowfish.cc', 420, 436 ]
+323 silly gunzTarPerm extractEntry binding.gyp
+324 silly gunzTarPerm modified mode [ 'binding.gyp', 420, 436 ]
+325 silly gunzTarPerm extractEntry src/node_blf.h
+326 silly gunzTarPerm modified mode [ 'src/node_blf.h', 420, 436 ]
+327 silly gunzTarPerm extractEntry examples/async_compare.js
+328 silly gunzTarPerm modified mode [ 'examples/async_compare.js', 420, 436 ]
+329 silly gunzTarPerm extractEntry test/async.js
+330 silly gunzTarPerm modified mode [ 'test/async.js', 420, 436 ]
+331 silly gunzTarPerm extractEntry bcrypt.js
+332 silly gunzTarPerm modified mode [ 'bcrypt.js', 420, 436 ]
+333 silly gunzTarPerm extractEntry examples/forever_gen_salt.js
+334 silly gunzTarPerm modified mode [ 'examples/forever_gen_salt.js', 420, 436 ]
+335 silly gunzTarPerm extractEntry test/implementation.js
+336 silly gunzTarPerm modified mode [ 'test/implementation.js', 420, 436 ]
+337 silly gunzTarPerm extractEntry test/promise.js
+338 silly gunzTarPerm modified mode [ 'test/promise.js', 420, 436 ]
+339 silly gunzTarPerm extractEntry promises.js
+340 silly gunzTarPerm modified mode [ 'promises.js', 420, 436 ]
+341 silly gunzTarPerm extractEntry test/repetitions.js
+342 silly gunzTarPerm modified mode [ 'test/repetitions.js', 420, 436 ]
+343 silly gunzTarPerm extractEntry test/sync.js
+344 silly gunzTarPerm modified mode [ 'test/sync.js', 420, 436 ]
+345 silly gunzTarPerm extractEntry package.json
+346 silly gunzTarPerm modified mode [ 'package.json', 420, 436 ]
+347 silly gunzTarPerm extractEntry CHANGELOG.md
+348 silly gunzTarPerm modified mode [ 'CHANGELOG.md', 420, 436 ]
+349 silly gunzTarPerm extractEntry ISSUE_TEMPLATE.md
+350 silly gunzTarPerm modified mode [ 'ISSUE_TEMPLATE.md', 420, 436 ]
+351 silly gunzTarPerm extractEntry README.md
+352 silly gunzTarPerm modified mode [ 'README.md', 420, 436 ]
+353 silly gunzTarPerm extractEntry SECURITY.md
+354 silly gunzTarPerm modified mode [ 'SECURITY.md', 420, 436 ]
+355 silly gentlyRm /home/vaishakh/Desktop/Vaishakh/programming/web development/Shopping Cart Project/node_modules/.staging/mongod-6484b641/node_modules is being purged
+356 verbose gentlyRm don't care about contents; nuking /home/vaishakh/Desktop/Vaishakh/programming/web development/Shopping Cart Project/node_modules/.staging/mongod-6484b641/node_modules
+357 silly gunzTarPerm extractEntry test_alpine.sh
+358 silly gunzTarPerm modified mode [ 'test_alpine.sh', 493, 509 ]
+359 silly gunzTarPerm extractEntry .travis.yml
+360 silly gunzTarPerm modified mode [ '.travis.yml', 420, 436 ]
+361 silly gunzTarPerm extractEntry appveyor.yml
+362 silly gunzTarPerm modified mode [ 'appveyor.yml', 420, 436 ]
+363 silly gentlyRm /home/vaishakh/Desktop/Vaishakh/programming/web development/Shopping Cart Project/node_modules/.staging/bcrypt-605c1bd4/node_modules is being purged
+364 verbose gentlyRm don't care about contents; nuking /home/vaishakh/Desktop/Vaishakh/programming/web development/Shopping Cart Project/node_modules/.staging/bcrypt-605c1bd4/node_modules
+365 http 304 https://registry.npmjs.org/crypto
+366 verbose headers { date: 'Sun, 26 Sep 2021 01:14:10 GMT',
+366 verbose headers   connection: 'keep-alive',
+366 verbose headers   'cf-ray': '6948a23f6c6dde7e-BLR',
+366 verbose headers   'cache-control': 'public, max-age=300',
+366 verbose headers   etag: '"de0ddc44a076d02c8db4f5c8a29745f5"',
+366 verbose headers   'last-modified': 'Sat, 22 May 2021 04:31:55 GMT',
+366 verbose headers   vary: 'Accept-Encoding',
+366 verbose headers   'cf-cache-status': 'HIT',
+366 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+366 verbose headers   server: 'cloudflare' }
+367 silly get cb [ 304,
+367 silly get   { date: 'Sun, 26 Sep 2021 01:14:10 GMT',
+367 silly get     connection: 'keep-alive',
+367 silly get     'cf-ray': '6948a23f6c6dde7e-BLR',
+367 silly get     'cache-control': 'public, max-age=300',
+367 silly get     etag: '"de0ddc44a076d02c8db4f5c8a29745f5"',
+367 silly get     'last-modified': 'Sat, 22 May 2021 04:31:55 GMT',
+367 silly get     vary: 'Accept-Encoding',
+367 silly get     'cf-cache-status': 'HIT',
+367 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+367 silly get     server: 'cloudflare' } ]
+368 verbose etag https://registry.npmjs.org/crypto from cache
+369 verbose get saving crypto to /home/vaishakh/.npm/registry.npmjs.org/crypto/.cache.json
+370 warn deprecated crypto@1.0.1: This package is no longer supported. It's now a built-in Node module. If you've depended on crypto, you should switch to the one that's built-in.
+371 silly mapToRegistry name crypto
+372 silly mapToRegistry using default registry
+373 silly mapToRegistry registry https://registry.npmjs.org/
+374 silly mapToRegistry uri https://registry.npmjs.org/crypto
+375 verbose addRemoteTarball https://registry.npmjs.org/crypto/-/crypto-1.0.1.tgz not in flight; adding
+376 verbose addRemoteTarball [ 'https://registry.npmjs.org/crypto/-/crypto-1.0.1.tgz',
+376 verbose addRemoteTarball   '2af1b7cad8175d24c8a1b0778255794a21803037' ]
+377 info retry fetch attempt 1 at 6:44:10 AM
+378 info attempt registry request try #1 at 6:44:10 AM
+379 http fetch GET https://registry.npmjs.org/crypto/-/crypto-1.0.1.tgz
+380 http fetch 200 https://registry.npmjs.org/crypto/-/crypto-1.0.1.tgz
+381 http 304 https://registry.npmjs.org/file
+382 verbose headers { date: 'Sun, 26 Sep 2021 01:14:10 GMT',
+382 verbose headers   connection: 'keep-alive',
+382 verbose headers   'cf-ray': '6948a2407cecde7e-BLR',
+382 verbose headers   'cache-control': 'public, max-age=300',
+382 verbose headers   etag: '"c4f2fc3439691ab3cd0f9ac7a00f3609"',
+382 verbose headers   'last-modified': 'Sun, 27 May 2018 00:39:19 GMT',
+382 verbose headers   vary: 'Accept-Encoding',
+382 verbose headers   'cf-cache-status': 'HIT',
+382 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+382 verbose headers   server: 'cloudflare' }
+383 silly get cb [ 304,
+383 silly get   { date: 'Sun, 26 Sep 2021 01:14:10 GMT',
+383 silly get     connection: 'keep-alive',
+383 silly get     'cf-ray': '6948a2407cecde7e-BLR',
+383 silly get     'cache-control': 'public, max-age=300',
+383 silly get     etag: '"c4f2fc3439691ab3cd0f9ac7a00f3609"',
+383 silly get     'last-modified': 'Sun, 27 May 2018 00:39:19 GMT',
+383 silly get     vary: 'Accept-Encoding',
+383 silly get     'cf-cache-status': 'HIT',
+383 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+383 silly get     server: 'cloudflare' } ]
+384 verbose etag https://registry.npmjs.org/file from cache
+385 verbose get saving file to /home/vaishakh/.npm/registry.npmjs.org/file/.cache.json
+386 silly fetchAndShaCheck shasum 2af1b7cad8175d24c8a1b0778255794a21803037
+387 verbose addTmpTarball /tmp/npm-29259-2f5ceb30/registry.npmjs.org/crypto/-/crypto-1.0.1.tgz not in flight; adding
+388 verbose addTmpTarball already have metadata; skipping unpack for crypto@1.0.1
+389 silly mapToRegistry name file
+390 silly mapToRegistry using default registry
+391 silly mapToRegistry registry https://registry.npmjs.org/
+392 silly mapToRegistry uri https://registry.npmjs.org/file
+393 verbose addRemoteTarball https://registry.npmjs.org/file/-/file-0.2.2.tgz not in flight; adding
+394 verbose addRemoteTarball [ 'https://registry.npmjs.org/file/-/file-0.2.2.tgz',
+394 verbose addRemoteTarball   'c3dfd8f8cf3535ae455c2b423c2e52635d76b4d3' ]
+395 info retry fetch attempt 1 at 6:44:10 AM
+396 info attempt registry request try #1 at 6:44:10 AM
+397 http fetch GET https://registry.npmjs.org/file/-/file-0.2.2.tgz
+398 http 304 https://registry.npmjs.org/express-fileupload
+399 verbose headers { date: 'Sun, 26 Sep 2021 01:14:10 GMT',
+399 verbose headers   connection: 'keep-alive',
+399 verbose headers   'cf-ray': '6948a2409d07de8e-BLR',
+399 verbose headers   'cache-control': 'public, max-age=300',
+399 verbose headers   etag: '"42875a7451e80453a80156e9ced39a11"',
+399 verbose headers   'last-modified': 'Tue, 04 May 2021 21:16:52 GMT',
+399 verbose headers   vary: 'Accept-Encoding',
+399 verbose headers   'cf-cache-status': 'HIT',
+399 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+399 verbose headers   server: 'cloudflare' }
+400 silly get cb [ 304,
+400 silly get   { date: 'Sun, 26 Sep 2021 01:14:10 GMT',
+400 silly get     connection: 'keep-alive',
+400 silly get     'cf-ray': '6948a2409d07de8e-BLR',
+400 silly get     'cache-control': 'public, max-age=300',
+400 silly get     etag: '"42875a7451e80453a80156e9ced39a11"',
+400 silly get     'last-modified': 'Tue, 04 May 2021 21:16:52 GMT',
+400 silly get     vary: 'Accept-Encoding',
+400 silly get     'cf-cache-status': 'HIT',
+400 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+400 silly get     server: 'cloudflare' } ]
+401 verbose etag https://registry.npmjs.org/express-fileupload from cache
+402 verbose get saving express-fileupload to /home/vaishakh/.npm/registry.npmjs.org/express-fileupload/.cache.json
+403 http 304 https://registry.npmjs.org/hbs
+404 verbose headers { date: 'Sun, 26 Sep 2021 01:14:10 GMT',
+404 verbose headers   connection: 'keep-alive',
+404 verbose headers   'cf-ray': '6948a240ae4bdea6-BLR',
+404 verbose headers   'cache-control': 'public, max-age=300',
+404 verbose headers   etag: '"afa04dc21e7a9556e9687cb8861c3376"',
+404 verbose headers   'last-modified': 'Thu, 15 Apr 2021 18:39:27 GMT',
+404 verbose headers   vary: 'Accept-Encoding',
+404 verbose headers   'cf-cache-status': 'REVALIDATED',
+404 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+404 verbose headers   server: 'cloudflare' }
+405 silly get cb [ 304,
+405 silly get   { date: 'Sun, 26 Sep 2021 01:14:10 GMT',
+405 silly get     connection: 'keep-alive',
+405 silly get     'cf-ray': '6948a240ae4bdea6-BLR',
+405 silly get     'cache-control': 'public, max-age=300',
+405 silly get     etag: '"afa04dc21e7a9556e9687cb8861c3376"',
+405 silly get     'last-modified': 'Thu, 15 Apr 2021 18:39:27 GMT',
+405 silly get     vary: 'Accept-Encoding',
+405 silly get     'cf-cache-status': 'REVALIDATED',
+405 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+405 silly get     server: 'cloudflare' } ]
+406 verbose etag https://registry.npmjs.org/hbs from cache
+407 verbose get saving hbs to /home/vaishakh/.npm/registry.npmjs.org/hbs/.cache.json
+408 verbose unbuild node_modules/.staging/crypto-41ae68ab
+409 silly gentlyRm /home/vaishakh/Desktop/Vaishakh/programming/web development/Shopping Cart Project/node_modules/.staging/crypto-41ae68ab is being purged from base /home/vaishakh/Desktop/Vaishakh/programming/web development/Shopping Cart Project
+410 verbose gentlyRm don't care about contents; nuking /home/vaishakh/Desktop/Vaishakh/programming/web development/Shopping Cart Project/node_modules/.staging/crypto-41ae68ab
+411 verbose tar unpack /home/vaishakh/.npm/crypto/1.0.1/package.tgz
+412 verbose tar unpacking to /home/vaishakh/Desktop/Vaishakh/programming/web development/Shopping Cart Project/node_modules/.staging/crypto-41ae68ab
+413 silly gentlyRm /home/vaishakh/Desktop/Vaishakh/programming/web development/Shopping Cart Project/node_modules/.staging/crypto-41ae68ab is being purged
+414 verbose gentlyRm don't care about contents; nuking /home/vaishakh/Desktop/Vaishakh/programming/web development/Shopping Cart Project/node_modules/.staging/crypto-41ae68ab
+415 silly gunzTarPerm modes [ '775', '664' ]
+416 silly mapToRegistry name express-fileupload
+417 silly mapToRegistry using default registry
+418 silly mapToRegistry registry https://registry.npmjs.org/
+419 silly mapToRegistry uri https://registry.npmjs.org/express-fileupload
+420 verbose addRemoteTarball https://registry.npmjs.org/express-fileupload/-/express-fileupload-1.2.1.tgz not in flight; adding
+421 verbose addRemoteTarball [ 'https://registry.npmjs.org/express-fileupload/-/express-fileupload-1.2.1.tgz',
+421 verbose addRemoteTarball   '73ac798bd14247d510adb1e439af2420c8367ded' ]
+422 silly mapToRegistry name hbs
+423 silly mapToRegistry using default registry
+424 silly mapToRegistry registry https://registry.npmjs.org/
+425 silly mapToRegistry uri https://registry.npmjs.org/hbs
+426 verbose addRemoteTarball https://registry.npmjs.org/hbs/-/hbs-4.1.2.tgz not in flight; adding
+427 verbose addRemoteTarball [ 'https://registry.npmjs.org/hbs/-/hbs-4.1.2.tgz',
+427 verbose addRemoteTarball   '8d8c07b50d985b580a3d6eae9bf52393a47b9aaf' ]
+428 silly gunzTarPerm extractEntry package.json
+429 silly gunzTarPerm modified mode [ 'package.json', 420, 436 ]
+430 info retry fetch attempt 1 at 6:44:10 AM
+431 info attempt registry request try #1 at 6:44:10 AM
+432 http fetch GET https://registry.npmjs.org/express-fileupload/-/express-fileupload-1.2.1.tgz
+433 info retry fetch attempt 1 at 6:44:10 AM
+434 info attempt registry request try #1 at 6:44:10 AM
+435 http fetch GET https://registry.npmjs.org/hbs/-/hbs-4.1.2.tgz
+436 silly gunzTarPerm extractEntry README.md
+437 silly gunzTarPerm modified mode [ 'README.md', 420, 436 ]
+438 silly gentlyRm /home/vaishakh/Desktop/Vaishakh/programming/web development/Shopping Cart Project/node_modules/.staging/crypto-41ae68ab/node_modules is being purged
+439 verbose gentlyRm don't care about contents; nuking /home/vaishakh/Desktop/Vaishakh/programming/web development/Shopping Cart Project/node_modules/.staging/crypto-41ae68ab/node_modules
+440 http 304 https://registry.npmjs.org/express-session
+441 verbose headers { date: 'Sun, 26 Sep 2021 01:14:10 GMT',
+441 verbose headers   connection: 'keep-alive',
+441 verbose headers   'cf-ray': '6948a240e9e7de86-BLR',
+441 verbose headers   'cache-control': 'public, max-age=300',
+441 verbose headers   etag: '"535ed16bb61294f8e16ddab6c561ea80"',
+441 verbose headers   'last-modified': 'Wed, 19 May 2021 17:35:10 GMT',
+441 verbose headers   vary: 'Accept-Encoding',
+441 verbose headers   'cf-cache-status': 'HIT',
+441 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+441 verbose headers   server: 'cloudflare' }
+442 silly get cb [ 304,
+442 silly get   { date: 'Sun, 26 Sep 2021 01:14:10 GMT',
+442 silly get     connection: 'keep-alive',
+442 silly get     'cf-ray': '6948a240e9e7de86-BLR',
+442 silly get     'cache-control': 'public, max-age=300',
+442 silly get     etag: '"535ed16bb61294f8e16ddab6c561ea80"',
+442 silly get     'last-modified': 'Wed, 19 May 2021 17:35:10 GMT',
+442 silly get     vary: 'Accept-Encoding',
+442 silly get     'cf-cache-status': 'HIT',
+442 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+442 silly get     server: 'cloudflare' } ]
+443 verbose etag https://registry.npmjs.org/express-session from cache
+444 verbose get saving express-session to /home/vaishakh/.npm/registry.npmjs.org/express-session/.cache.json
+445 silly mapToRegistry name express-session
+446 silly mapToRegistry using default registry
+447 silly mapToRegistry registry https://registry.npmjs.org/
+448 silly mapToRegistry uri https://registry.npmjs.org/express-session
+449 verbose addRemoteTarball https://registry.npmjs.org/express-session/-/express-session-1.17.2.tgz not in flight; adding
+450 verbose addRemoteTarball [ 'https://registry.npmjs.org/express-session/-/express-session-1.17.2.tgz',
+450 verbose addRemoteTarball   '397020374f9bf7997f891b85ea338767b30d0efd' ]
+451 info retry fetch attempt 1 at 6:44:10 AM
+452 info attempt registry request try #1 at 6:44:10 AM
+453 http fetch GET https://registry.npmjs.org/express-session/-/express-session-1.17.2.tgz
+454 http 304 https://registry.npmjs.org/upload
+455 verbose headers { date: 'Sun, 26 Sep 2021 01:14:10 GMT',
+455 verbose headers   connection: 'keep-alive',
+455 verbose headers   'cf-ray': '6948a240fe94dea6-BLR',
+455 verbose headers   'cache-control': 'public, max-age=300',
+455 verbose headers   etag: '"e889c0bf8a83e8dc9795a2a0d5b95125"',
+455 verbose headers   'last-modified': 'Sun, 30 Aug 2020 17:43:11 GMT',
+455 verbose headers   vary: 'Accept-Encoding',
+455 verbose headers   'cf-cache-status': 'REVALIDATED',
+455 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+455 verbose headers   server: 'cloudflare' }
+456 silly get cb [ 304,
+456 silly get   { date: 'Sun, 26 Sep 2021 01:14:10 GMT',
+456 silly get     connection: 'keep-alive',
+456 silly get     'cf-ray': '6948a240fe94dea6-BLR',
+456 silly get     'cache-control': 'public, max-age=300',
+456 silly get     etag: '"e889c0bf8a83e8dc9795a2a0d5b95125"',
+456 silly get     'last-modified': 'Sun, 30 Aug 2020 17:43:11 GMT',
+456 silly get     vary: 'Accept-Encoding',
+456 silly get     'cf-cache-status': 'REVALIDATED',
+456 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+456 silly get     server: 'cloudflare' } ]
+457 verbose etag https://registry.npmjs.org/upload from cache
+458 verbose get saving upload to /home/vaishakh/.npm/registry.npmjs.org/upload/.cache.json
+459 http 304 https://registry.npmjs.org/razorpay
+460 verbose headers { date: 'Sun, 26 Sep 2021 01:14:10 GMT',
+460 verbose headers   connection: 'keep-alive',
+460 verbose headers   'cf-ray': '6948a240bd17de8e-BLR',
+460 verbose headers   'cache-control': 'public, max-age=300',
+460 verbose headers   etag: '"b4e2f9fae4ef4473005a1dbc92744ed4"',
+460 verbose headers   'last-modified': 'Wed, 22 Sep 2021 08:40:38 GMT',
+460 verbose headers   vary: 'Accept-Encoding',
+460 verbose headers   'cf-cache-status': 'REVALIDATED',
+460 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+460 verbose headers   'x-amz-replication-status': 'COMPLETED',
+460 verbose headers   server: 'cloudflare' }
+461 silly get cb [ 304,
+461 silly get   { date: 'Sun, 26 Sep 2021 01:14:10 GMT',
+461 silly get     connection: 'keep-alive',
+461 silly get     'cf-ray': '6948a240bd17de8e-BLR',
+461 silly get     'cache-control': 'public, max-age=300',
+461 silly get     etag: '"b4e2f9fae4ef4473005a1dbc92744ed4"',
+461 silly get     'last-modified': 'Wed, 22 Sep 2021 08:40:38 GMT',
+461 silly get     vary: 'Accept-Encoding',
+461 silly get     'cf-cache-status': 'REVALIDATED',
+461 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+461 silly get     'x-amz-replication-status': 'COMPLETED',
+461 silly get     server: 'cloudflare' } ]
+462 verbose etag https://registry.npmjs.org/razorpay from cache
+463 verbose get saving razorpay to /home/vaishakh/.npm/registry.npmjs.org/razorpay/.cache.json
+464 silly mapToRegistry name upload
+465 silly mapToRegistry using default registry
+466 silly mapToRegistry registry https://registry.npmjs.org/
+467 silly mapToRegistry uri https://registry.npmjs.org/upload
+468 verbose addRemoteTarball https://registry.npmjs.org/upload/-/upload-1.1.1.tgz not in flight; adding
+469 verbose addRemoteTarball [ 'https://registry.npmjs.org/upload/-/upload-1.1.1.tgz',
+469 verbose addRemoteTarball   '3f7f08e2d31f66e22e1ad311c6856ce9cacd5771' ]
+470 silly mapToRegistry name razorpay
+471 silly mapToRegistry using default registry
+472 silly mapToRegistry registry https://registry.npmjs.org/
+473 silly mapToRegistry uri https://registry.npmjs.org/razorpay
+474 verbose addRemoteTarball https://registry.npmjs.org/razorpay/-/razorpay-2.0.7.tgz not in flight; adding
+475 verbose addRemoteTarball [ 'https://registry.npmjs.org/razorpay/-/razorpay-2.0.7.tgz',
+475 verbose addRemoteTarball   '09ef04227d9533f7445d059a83b5d766f2f8288f' ]
+476 info retry fetch attempt 1 at 6:44:10 AM
+477 info attempt registry request try #1 at 6:44:10 AM
+478 http fetch GET https://registry.npmjs.org/upload/-/upload-1.1.1.tgz
+479 info retry fetch attempt 1 at 6:44:10 AM
+480 info attempt registry request try #1 at 6:44:10 AM
+481 http fetch GET https://registry.npmjs.org/razorpay/-/razorpay-2.0.7.tgz
+482 http 304 https://registry.npmjs.org/express-handlebars
+483 verbose headers { date: 'Sun, 26 Sep 2021 01:14:10 GMT',
+483 verbose headers   connection: 'keep-alive',
+483 verbose headers   'cf-ray': '6948a2412d3ede7e-BLR',
+483 verbose headers   'cache-control': 'public, max-age=300',
+483 verbose headers   etag: '"a02495272346b0a479a10fc2f4bd5576"',
+483 verbose headers   'last-modified': 'Thu, 23 Sep 2021 00:21:24 GMT',
+483 verbose headers   vary: 'Accept-Encoding',
+483 verbose headers   'cf-cache-status': 'REVALIDATED',
+483 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+483 verbose headers   'x-amz-replication-status': 'COMPLETED',
+483 verbose headers   server: 'cloudflare' }
+484 silly get cb [ 304,
+484 silly get   { date: 'Sun, 26 Sep 2021 01:14:10 GMT',
+484 silly get     connection: 'keep-alive',
+484 silly get     'cf-ray': '6948a2412d3ede7e-BLR',
+484 silly get     'cache-control': 'public, max-age=300',
+484 silly get     etag: '"a02495272346b0a479a10fc2f4bd5576"',
+484 silly get     'last-modified': 'Thu, 23 Sep 2021 00:21:24 GMT',
+484 silly get     vary: 'Accept-Encoding',
+484 silly get     'cf-cache-status': 'REVALIDATED',
+484 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+484 silly get     'x-amz-replication-status': 'COMPLETED',
+484 silly get     server: 'cloudflare' } ]
+485 verbose etag https://registry.npmjs.org/express-handlebars from cache
+486 verbose get saving express-handlebars to /home/vaishakh/.npm/registry.npmjs.org/express-handlebars/.cache.json
+487 silly mapToRegistry name express-handlebars
+488 silly mapToRegistry using default registry
+489 silly mapToRegistry registry https://registry.npmjs.org/
+490 silly mapToRegistry uri https://registry.npmjs.org/express-handlebars
+491 verbose addRemoteTarball https://registry.npmjs.org/express-handlebars/-/express-handlebars-5.3.3.tgz not in flight; adding
+492 verbose addRemoteTarball [ 'https://registry.npmjs.org/express-handlebars/-/express-handlebars-5.3.3.tgz',
+492 verbose addRemoteTarball   'd0a7fb2e7987b0ec0a8689f68f87c4c15979d77a' ]
+493 info retry fetch attempt 1 at 6:44:10 AM
+494 info attempt registry request try #1 at 6:44:10 AM
+495 http fetch GET https://registry.npmjs.org/express-handlebars/-/express-handlebars-5.3.3.tgz
+496 http fetch 200 https://registry.npmjs.org/file/-/file-0.2.2.tgz
+497 silly fetchAndShaCheck shasum c3dfd8f8cf3535ae455c2b423c2e52635d76b4d3
+498 verbose addTmpTarball /tmp/npm-29259-2f5ceb30/registry.npmjs.org/file/-/file-0.2.2.tgz not in flight; adding
+499 verbose addTmpTarball already have metadata; skipping unpack for file@0.2.2
+500 verbose unbuild node_modules/.staging/file-e512d24b
+501 silly gentlyRm /home/vaishakh/Desktop/Vaishakh/programming/web development/Shopping Cart Project/node_modules/.staging/file-e512d24b is being purged from base /home/vaishakh/Desktop/Vaishakh/programming/web development/Shopping Cart Project
+502 verbose gentlyRm don't care about contents; nuking /home/vaishakh/Desktop/Vaishakh/programming/web development/Shopping Cart Project/node_modules/.staging/file-e512d24b
+503 verbose tar unpack /home/vaishakh/.npm/file/0.2.2/package.tgz
+504 verbose tar unpacking to /home/vaishakh/Desktop/Vaishakh/programming/web development/Shopping Cart Project/node_modules/.staging/file-e512d24b
+505 silly gentlyRm /home/vaishakh/Desktop/Vaishakh/programming/web development/Shopping Cart Project/node_modules/.staging/file-e512d24b is being purged
+506 verbose gentlyRm don't care about contents; nuking /home/vaishakh/Desktop/Vaishakh/programming/web development/Shopping Cart Project/node_modules/.staging/file-e512d24b
+507 silly gunzTarPerm modes [ '775', '664' ]
+508 silly gunzTarPerm extractEntry package.json
+509 silly gunzTarPerm modified mode [ 'package.json', 420, 436 ]
+510 silly gunzTarPerm extractEntry .npmignore
+511 silly gunzTarPerm modified mode [ '.npmignore', 420, 436 ]
+512 silly gunzTarPerm extractEntry README.md
+513 silly gunzTarPerm modified mode [ 'README.md', 420, 436 ]
+514 silly gunzTarPerm extractEntry LICENSE
+515 silly gunzTarPerm modified mode [ 'LICENSE', 420, 436 ]
+516 silly gunzTarPerm extractEntry lib/file.js
+517 silly gunzTarPerm modified mode [ 'lib/file.js', 420, 436 ]
+518 silly gunzTarPerm extractEntry tests/file_spec.js
+519 silly gunzTarPerm modified mode [ 'tests/file_spec.js', 420, 436 ]
+520 http fetch 200 https://registry.npmjs.org/express-fileupload/-/express-fileupload-1.2.1.tgz
+521 silly gentlyRm /home/vaishakh/Desktop/Vaishakh/programming/web development/Shopping Cart Project/node_modules/.staging/file-e512d24b/node_modules is being purged
+522 verbose gentlyRm don't care about contents; nuking /home/vaishakh/Desktop/Vaishakh/programming/web development/Shopping Cart Project/node_modules/.staging/file-e512d24b/node_modules
+523 http fetch 200 https://registry.npmjs.org/hbs/-/hbs-4.1.2.tgz
+524 http fetch 200 https://registry.npmjs.org/upload/-/upload-1.1.1.tgz
+525 silly fetchAndShaCheck shasum 8d8c07b50d985b580a3d6eae9bf52393a47b9aaf
+526 verbose addTmpTarball /tmp/npm-29259-2f5ceb30/registry.npmjs.org/hbs/-/hbs-4.1.2.tgz not in flight; adding
+527 verbose addTmpTarball already have metadata; skipping unpack for hbs@4.1.2
+528 http fetch 200 https://registry.npmjs.org/express-session/-/express-session-1.17.2.tgz
+529 silly fetchAndShaCheck shasum 3f7f08e2d31f66e22e1ad311c6856ce9cacd5771
+530 verbose addTmpTarball /tmp/npm-29259-2f5ceb30/registry.npmjs.org/upload/-/upload-1.1.1.tgz not in flight; adding
+531 verbose addTmpTarball already have metadata; skipping unpack for upload@1.1.1
+532 verbose unbuild node_modules/.staging/hbs-134b85bf
+533 silly gentlyRm /home/vaishakh/Desktop/Vaishakh/programming/web development/Shopping Cart Project/node_modules/.staging/hbs-134b85bf is being purged from base /home/vaishakh/Desktop/Vaishakh/programming/web development/Shopping Cart Project
+534 verbose gentlyRm don't care about contents; nuking /home/vaishakh/Desktop/Vaishakh/programming/web development/Shopping Cart Project/node_modules/.staging/hbs-134b85bf
+535 verbose tar unpack /home/vaishakh/.npm/hbs/4.1.2/package.tgz
+536 verbose tar unpacking to /home/vaishakh/Desktop/Vaishakh/programming/web development/Shopping Cart Project/node_modules/.staging/hbs-134b85bf
+537 silly gentlyRm /home/vaishakh/Desktop/Vaishakh/programming/web development/Shopping Cart Project/node_modules/.staging/hbs-134b85bf is being purged
+538 verbose gentlyRm don't care about contents; nuking /home/vaishakh/Desktop/Vaishakh/programming/web development/Shopping Cart Project/node_modules/.staging/hbs-134b85bf
+539 silly gunzTarPerm modes [ '775', '664' ]
+540 silly gunzTarPerm extractEntry LICENSE
+541 silly gunzTarPerm modified mode [ 'LICENSE', 438, 436 ]
+542 verbose unbuild node_modules/.staging/upload-34cbb744
+543 silly gentlyRm /home/vaishakh/Desktop/Vaishakh/programming/web development/Shopping Cart Project/node_modules/.staging/upload-34cbb744 is being purged from base /home/vaishakh/Desktop/Vaishakh/programming/web development/Shopping Cart Project
+544 verbose gentlyRm don't care about contents; nuking /home/vaishakh/Desktop/Vaishakh/programming/web development/Shopping Cart Project/node_modules/.staging/upload-34cbb744
+545 silly gunzTarPerm extractEntry lib/async.js
+546 silly gunzTarPerm modified mode [ 'lib/async.js', 438, 436 ]
+547 silly gunzTarPerm extractEntry lib/hbs.js
+548 silly gunzTarPerm modified mode [ 'lib/hbs.js', 438, 436 ]
+549 verbose tar unpack /home/vaishakh/.npm/upload/1.1.1/package.tgz
+550 verbose tar unpacking to /home/vaishakh/Desktop/Vaishakh/programming/web development/Shopping Cart Project/node_modules/.staging/upload-34cbb744
+551 silly gentlyRm /home/vaishakh/Desktop/Vaishakh/programming/web development/Shopping Cart Project/node_modules/.staging/upload-34cbb744 is being purged
+552 verbose gentlyRm don't care about contents; nuking /home/vaishakh/Desktop/Vaishakh/programming/web development/Shopping Cart Project/node_modules/.staging/upload-34cbb744
+553 silly gunzTarPerm modes [ '775', '664' ]
+554 silly gunzTarPerm extractEntry LICENSE
+555 silly gunzTarPerm modified mode [ 'LICENSE', 420, 436 ]
+556 silly gunzTarPerm extractEntry package.json
+557 silly gunzTarPerm modified mode [ 'package.json', 438, 436 ]
+558 silly gunzTarPerm extractEntry HISTORY.md
+559 silly gunzTarPerm modified mode [ 'HISTORY.md', 438, 436 ]
+560 silly gunzTarPerm extractEntry lib/index.js
+561 silly gunzTarPerm modified mode [ 'lib/index.js', 420, 436 ]
+562 silly gunzTarPerm extractEntry lib/Upload.js
+563 silly gunzTarPerm modified mode [ 'lib/Upload.js', 420, 436 ]
+564 silly gunzTarPerm extractEntry lib/UploadFunction.js
+565 silly gunzTarPerm modified mode [ 'lib/UploadFunction.js', 420, 436 ]
+566 silly gunzTarPerm extractEntry README.md
+567 silly gunzTarPerm modified mode [ 'README.md', 438, 436 ]
+568 http fetch 200 https://registry.npmjs.org/razorpay/-/razorpay-2.0.7.tgz
+569 http fetch 200 https://registry.npmjs.org/express-handlebars/-/express-handlebars-5.3.3.tgz
+570 silly fetchAndShaCheck shasum 397020374f9bf7997f891b85ea338767b30d0efd
+571 silly fetchAndShaCheck shasum 09ef04227d9533f7445d059a83b5d766f2f8288f
+572 verbose addTmpTarball /tmp/npm-29259-2f5ceb30/registry.npmjs.org/express-session/-/express-session-1.17.2.tgz not in flight; adding
+573 verbose addTmpTarball already have metadata; skipping unpack for express-session@1.17.2
+574 verbose addTmpTarball /tmp/npm-29259-2f5ceb30/registry.npmjs.org/razorpay/-/razorpay-2.0.7.tgz not in flight; adding
+575 verbose addTmpTarball already have metadata; skipping unpack for razorpay@2.0.7
+576 silly gunzTarPerm extractEntry package.json
+577 silly gunzTarPerm modified mode [ 'package.json', 420, 436 ]
+578 silly gunzTarPerm extractEntry README.md
+579 silly gunzTarPerm modified mode [ 'README.md', 420, 436 ]
+580 silly gunzTarPerm extractEntry lib/index.d.ts
+581 silly gunzTarPerm modified mode [ 'lib/index.d.ts', 420, 436 ]
+582 silly gunzTarPerm extractEntry lib/Upload.d.ts
+583 silly gunzTarPerm modified mode [ 'lib/Upload.d.ts', 420, 436 ]
+584 verbose unbuild node_modules/.staging/express-session-6c569a81
+585 verbose unbuild node_modules/.staging/razorpay-77f9cbbd
+586 silly gentlyRm /home/vaishakh/Desktop/Vaishakh/programming/web development/Shopping Cart Project/node_modules/.staging/express-session-6c569a81 is being purged from base /home/vaishakh/Desktop/Vaishakh/programming/web development/Shopping Cart Project
+587 verbose gentlyRm don't care about contents; nuking /home/vaishakh/Desktop/Vaishakh/programming/web development/Shopping Cart Project/node_modules/.staging/express-session-6c569a81
+588 verbose tar unpack /home/vaishakh/.npm/express-session/1.17.2/package.tgz
+589 verbose tar unpacking to /home/vaishakh/Desktop/Vaishakh/programming/web development/Shopping Cart Project/node_modules/.staging/express-session-6c569a81
+590 silly gentlyRm /home/vaishakh/Desktop/Vaishakh/programming/web development/Shopping Cart Project/node_modules/.staging/express-session-6c569a81 is being purged
+591 verbose gentlyRm don't care about contents; nuking /home/vaishakh/Desktop/Vaishakh/programming/web development/Shopping Cart Project/node_modules/.staging/express-session-6c569a81
+592 silly gentlyRm /home/vaishakh/Desktop/Vaishakh/programming/web development/Shopping Cart Project/node_modules/.staging/razorpay-77f9cbbd is being purged from base /home/vaishakh/Desktop/Vaishakh/programming/web development/Shopping Cart Project
+593 verbose gentlyRm don't care about contents; nuking /home/vaishakh/Desktop/Vaishakh/programming/web development/Shopping Cart Project/node_modules/.staging/razorpay-77f9cbbd
+594 silly gunzTarPerm modes [ '775', '664' ]
+595 verbose tar unpack /home/vaishakh/.npm/razorpay/2.0.7/package.tgz
+596 verbose tar unpacking to /home/vaishakh/Desktop/Vaishakh/programming/web development/Shopping Cart Project/node_modules/.staging/razorpay-77f9cbbd
+597 silly gentlyRm /home/vaishakh/Desktop/Vaishakh/programming/web development/Shopping Cart Project/node_modules/.staging/razorpay-77f9cbbd is being purged
+598 verbose gentlyRm don't care about contents; nuking /home/vaishakh/Desktop/Vaishakh/programming/web development/Shopping Cart Project/node_modules/.staging/razorpay-77f9cbbd
+599 silly gunzTarPerm modes [ '775', '664' ]
+600 silly gunzTarPerm extractEntry lib/UploadFunction.d.ts
+601 silly gunzTarPerm modified mode [ 'lib/UploadFunction.d.ts', 420, 436 ]
+602 silly gunzTarPerm extractEntry LICENSE
+603 silly gunzTarPerm modified mode [ 'LICENSE', 420, 436 ]
+604 silly gunzTarPerm extractEntry dist/resources/addons.js
+605 silly gunzTarPerm modified mode [ 'dist/resources/addons.js', 420, 436 ]
+606 silly gunzTarPerm extractEntry session/cookie.js
+607 silly gunzTarPerm modified mode [ 'session/cookie.js', 420, 436 ]
+608 silly gunzTarPerm extractEntry index.js
+609 silly gunzTarPerm modified mode [ 'index.js', 420, 436 ]
+610 silly gunzTarPerm extractEntry dist/api.js
+611 silly gunzTarPerm modified mode [ 'dist/api.js', 420, 436 ]
+612 silly gunzTarPerm extractEntry dist/resources/customers.js
+613 silly gunzTarPerm modified mode [ 'dist/resources/customers.js', 420, 436 ]
+614 silly fetchAndShaCheck shasum d0a7fb2e7987b0ec0a8689f68f87c4c15979d77a
+615 verbose addTmpTarball /tmp/npm-29259-2f5ceb30/registry.npmjs.org/express-handlebars/-/express-handlebars-5.3.3.tgz not in flight; adding
+616 verbose addTmpTarball already have metadata; skipping unpack for express-handlebars@5.3.3
+617 silly gunzTarPerm extractEntry session/memory.js
+618 silly gunzTarPerm modified mode [ 'session/memory.js', 420, 436 ]
+619 silly gentlyRm /home/vaishakh/Desktop/Vaishakh/programming/web development/Shopping Cart Project/node_modules/.staging/hbs-134b85bf/node_modules is being purged
+620 verbose gentlyRm don't care about contents; nuking /home/vaishakh/Desktop/Vaishakh/programming/web development/Shopping Cart Project/node_modules/.staging/hbs-134b85bf/node_modules
+621 silly gunzTarPerm extractEntry dist/resources/invoices.js
+622 silly gunzTarPerm modified mode [ 'dist/resources/invoices.js', 420, 436 ]
+623 silly gunzTarPerm extractEntry dist/utils/nodeify.js
+624 silly gunzTarPerm modified mode [ 'dist/utils/nodeify.js', 420, 436 ]
+625 verbose unbuild node_modules/.staging/express-handlebars-21af7026
+626 silly gunzTarPerm extractEntry session/session.js
+627 silly gunzTarPerm modified mode [ 'session/session.js', 420, 436 ]
+628 silly gunzTarPerm extractEntry session/store.js
+629 silly gunzTarPerm modified mode [ 'session/store.js', 420, 436 ]
+630 silly gentlyRm /home/vaishakh/Desktop/Vaishakh/programming/web development/Shopping Cart Project/node_modules/.staging/express-handlebars-21af7026 is being purged from base /home/vaishakh/Desktop/Vaishakh/programming/web development/Shopping Cart Project
+631 verbose gentlyRm don't care about contents; nuking /home/vaishakh/Desktop/Vaishakh/programming/web development/Shopping Cart Project/node_modules/.staging/express-handlebars-21af7026
+632 verbose tar unpack /home/vaishakh/.npm/express-handlebars/5.3.3/package.tgz
+633 verbose tar unpacking to /home/vaishakh/Desktop/Vaishakh/programming/web development/Shopping Cart Project/node_modules/.staging/express-handlebars-21af7026
+634 silly gentlyRm /home/vaishakh/Desktop/Vaishakh/programming/web development/Shopping Cart Project/node_modules/.staging/express-handlebars-21af7026 is being purged
+635 verbose gentlyRm don't care about contents; nuking /home/vaishakh/Desktop/Vaishakh/programming/web development/Shopping Cart Project/node_modules/.staging/express-handlebars-21af7026
+636 silly gunzTarPerm modes [ '775', '664' ]
+637 silly gunzTarPerm extractEntry dist/resources/orders.js
+638 silly gunzTarPerm modified mode [ 'dist/resources/orders.js', 420, 436 ]
+639 silly gunzTarPerm extractEntry dist/resources/paymentLink.js
+640 silly gunzTarPerm modified mode [ 'dist/resources/paymentLink.js', 420, 436 ]
+641 silly gunzTarPerm extractEntry dist/resources/payments.js
+642 silly gunzTarPerm modified mode [ 'dist/resources/payments.js', 420, 436 ]
+643 silly gunzTarPerm extractEntry dist/resources/plans.js
+644 silly gunzTarPerm modified mode [ 'dist/resources/plans.js', 420, 436 ]
+645 silly gunzTarPerm extractEntry dist/utils/predefined-tests.js
+646 silly gunzTarPerm modified mode [ 'dist/utils/predefined-tests.js', 420, 436 ]
+647 silly gunzTarPerm extractEntry dist/utils/razorpay-utils.js
+648 silly gunzTarPerm modified mode [ 'dist/utils/razorpay-utils.js', 420, 436 ]
+649 silly gunzTarPerm extractEntry dist/razorpay.js
+650 silly gunzTarPerm modified mode [ 'dist/razorpay.js', 420, 436 ]
+651 silly gunzTarPerm extractEntry dist/resources/refunds.js
+652 silly gunzTarPerm modified mode [ 'dist/resources/refunds.js', 420, 436 ]
+653 silly gunzTarPerm extractEntry dist/resources/subscriptions.js
+654 silly gunzTarPerm modified mode [ 'dist/resources/subscriptions.js', 420, 436 ]
+655 silly gunzTarPerm extractEntry dist/resources/transfers.js
+656 silly gunzTarPerm modified mode [ 'dist/resources/transfers.js', 420, 436 ]
+657 silly gunzTarPerm extractEntry dist/resources/virtualAccounts.js
+658 silly gunzTarPerm modified mode [ 'dist/resources/virtualAccounts.js', 420, 436 ]
+659 silly gunzTarPerm extractEntry package.json
+660 silly gunzTarPerm modified mode [ 'package.json', 420, 436 ]
+661 silly gunzTarPerm extractEntry README.md
+662 silly gunzTarPerm modified mode [ 'README.md', 420, 436 ]
+663 silly gunzTarPerm extractEntry dist/razorpay.d.ts
+664 silly gunzTarPerm modified mode [ 'dist/razorpay.d.ts', 420, 436 ]
+665 silly gunzTarPerm extractEntry LICENCE.txt
+666 silly gunzTarPerm modified mode [ 'LICENCE.txt', 420, 436 ]
+667 silly gunzTarPerm extractEntry package.json
+668 silly gunzTarPerm modified mode [ 'package.json', 420, 436 ]
+669 silly gunzTarPerm extractEntry HISTORY.md
+670 silly gunzTarPerm modified mode [ 'HISTORY.md', 420, 436 ]
+671 silly gunzTarPerm extractEntry .eslintignore
+672 silly gunzTarPerm modified mode [ '.eslintignore', 420, 436 ]
+673 silly gunzTarPerm extractEntry LICENSE
+674 silly gunzTarPerm modified mode [ 'LICENSE', 420, 436 ]
+675 silly gunzTarPerm extractEntry spec/fixtures/layouts/main-latin1.handlebars
+676 silly gunzTarPerm modified mode [ 'spec/fixtures/layouts/main-latin1.handlebars', 420, 436 ]
+677 silly gunzTarPerm extractEntry README.md
+678 silly gunzTarPerm modified mode [ 'README.md', 420, 436 ]
+679 silly gunzTarPerm extractEntry spec/fixtures/layouts/main.handlebars
+680 silly gunzTarPerm modified mode [ 'spec/fixtures/layouts/main.handlebars', 420, 436 ]
+681 silly gunzTarPerm extractEntry spec/fixtures/other-views/layouts/main.handlebars
+682 silly gunzTarPerm modified mode [ 'spec/fixtures/other-views/layouts/main.handlebars', 420, 436 ]
+683 silly gentlyRm /home/vaishakh/Desktop/Vaishakh/programming/web development/Shopping Cart Project/node_modules/.staging/upload-34cbb744/node_modules is being purged
+684 verbose gentlyRm don't care about contents; nuking /home/vaishakh/Desktop/Vaishakh/programming/web development/Shopping Cart Project/node_modules/.staging/upload-34cbb744/node_modules
+685 silly gunzTarPerm extractEntry spec/fixtures/partials/partial-latin1.handlebars
+686 silly gunzTarPerm modified mode [ 'spec/fixtures/partials/partial-latin1.handlebars', 420, 436 ]
+687 silly gunzTarPerm extractEntry spec/fixtures/other-views/partials/partial.handlebars
+688 silly gunzTarPerm modified mode [ 'spec/fixtures/other-views/partials/partial.handlebars',
+688 silly gunzTarPerm   420,
+688 silly gunzTarPerm   436 ]
+689 silly gunzTarPerm extractEntry spec/fixtures/partials/partial.handlebars
+690 silly gunzTarPerm modified mode [ 'spec/fixtures/partials/partial.handlebars', 420, 436 ]
+691 silly gunzTarPerm extractEntry spec/fixtures/render-cached.handlebars
+692 silly gunzTarPerm modified mode [ 'spec/fixtures/render-cached.handlebars', 420, 436 ]
+693 silly gunzTarPerm extractEntry spec/fixtures/render-helper.handlebars
+694 silly gunzTarPerm modified mode [ 'spec/fixtures/render-helper.handlebars', 420, 436 ]
+695 silly gunzTarPerm extractEntry spec/fixtures/render-latin1.handlebars
+696 silly gunzTarPerm modified mode [ 'spec/fixtures/render-latin1.handlebars', 420, 436 ]
+697 silly gunzTarPerm extractEntry spec/fixtures/render-partial.handlebars
+698 silly gunzTarPerm modified mode [ 'spec/fixtures/render-partial.handlebars', 420, 436 ]
+699 silly gunzTarPerm extractEntry spec/fixtures/render-text.handlebars
+700 silly gunzTarPerm modified mode [ 'spec/fixtures/render-text.handlebars', 420, 436 ]
+701 silly gunzTarPerm extractEntry spec/fixtures/templates/template-latin1.handlebars
+702 silly gunzTarPerm modified mode [ 'spec/fixtures/templates/template-latin1.handlebars',
+702 silly gunzTarPerm   420,
+702 silly gunzTarPerm   436 ]
+703 silly gunzTarPerm extractEntry spec/fixtures/templates/subdir/template.handlebars
+704 silly gunzTarPerm modified mode [ 'spec/fixtures/templates/subdir/template.handlebars',
+704 silly gunzTarPerm   420,
+704 silly gunzTarPerm   436 ]
+705 silly gentlyRm /home/vaishakh/Desktop/Vaishakh/programming/web development/Shopping Cart Project/node_modules/.staging/express-session-6c569a81/node_modules is being purged
+706 verbose gentlyRm don't care about contents; nuking /home/vaishakh/Desktop/Vaishakh/programming/web development/Shopping Cart Project/node_modules/.staging/express-session-6c569a81/node_modules
+707 silly gunzTarPerm extractEntry spec/fixtures/templates/template.handlebars
+708 silly gunzTarPerm modified mode [ 'spec/fixtures/templates/template.handlebars', 420, 436 ]
+709 silly gunzTarPerm extractEntry .eslintrc.js
+710 silly gunzTarPerm modified mode [ '.eslintrc.js', 420, 436 ]
+711 silly gunzTarPerm extractEntry lib/express-handlebars.js
+712 silly gunzTarPerm modified mode [ 'lib/express-handlebars.js', 420, 436 ]
+713 silly gunzTarPerm extractEntry spec/express-handlebars.test.js
+714 silly gunzTarPerm modified mode [ 'spec/express-handlebars.test.js', 420, 436 ]
+715 silly gunzTarPerm extractEntry index.js
+716 silly gunzTarPerm modified mode [ 'index.js', 420, 436 ]
+717 silly gunzTarPerm extractEntry jest.config.js
+718 silly gunzTarPerm modified mode [ 'jest.config.js', 420, 436 ]
+719 silly gunzTarPerm extractEntry package.json
+720 silly gunzTarPerm modified mode [ 'package.json', 420, 436 ]
+721 silly gunzTarPerm extractEntry renovate.json
+722 silly gunzTarPerm modified mode [ 'renovate.json', 420, 436 ]
+723 silly gunzTarPerm extractEntry CHANGELOG.md
+724 silly gunzTarPerm modified mode [ 'CHANGELOG.md', 420, 436 ]
+725 silly gunzTarPerm extractEntry HISTORY.md
+726 silly gunzTarPerm modified mode [ 'HISTORY.md', 420, 436 ]
+727 silly gunzTarPerm extractEntry README.md
+728 silly gunzTarPerm modified mode [ 'README.md', 420, 436 ]
+729 silly gunzTarPerm extractEntry .github/workflows/codeql-analysis.yml
+730 silly gunzTarPerm modified mode [ '.github/workflows/codeql-analysis.yml', 420, 436 ]
+731 silly gunzTarPerm extractEntry .github/workflows/main.yml
+732 silly gunzTarPerm modified mode [ '.github/workflows/main.yml', 420, 436 ]
+733 silly gentlyRm /home/vaishakh/Desktop/Vaishakh/programming/web development/Shopping Cart Project/node_modules/.staging/razorpay-77f9cbbd/node_modules is being purged
+734 verbose gentlyRm don't care about contents; nuking /home/vaishakh/Desktop/Vaishakh/programming/web development/Shopping Cart Project/node_modules/.staging/razorpay-77f9cbbd/node_modules
+735 silly gentlyRm /home/vaishakh/Desktop/Vaishakh/programming/web development/Shopping Cart Project/node_modules/.staging/express-handlebars-21af7026/node_modules is being purged
+736 verbose gentlyRm don't care about contents; nuking /home/vaishakh/Desktop/Vaishakh/programming/web development/Shopping Cart Project/node_modules/.staging/express-handlebars-21af7026/node_modules
+737 silly fetchAndShaCheck shasum 73ac798bd14247d510adb1e439af2420c8367ded
+738 verbose addTmpTarball /tmp/npm-29259-2f5ceb30/registry.npmjs.org/express-fileupload/-/express-fileupload-1.2.1.tgz not in flight; adding
+739 verbose addTmpTarball already have metadata; skipping unpack for express-fileupload@1.2.1
+740 verbose unbuild node_modules/.staging/express-fileupload-c6e0a21f
+741 silly gentlyRm /home/vaishakh/Desktop/Vaishakh/programming/web development/Shopping Cart Project/node_modules/.staging/express-fileupload-c6e0a21f is being purged from base /home/vaishakh/Desktop/Vaishakh/programming/web development/Shopping Cart Project
+742 verbose gentlyRm don't care about contents; nuking /home/vaishakh/Desktop/Vaishakh/programming/web development/Shopping Cart Project/node_modules/.staging/express-fileupload-c6e0a21f
+743 verbose tar unpack /home/vaishakh/.npm/express-fileupload/1.2.1/package.tgz
+744 verbose tar unpacking to /home/vaishakh/Desktop/Vaishakh/programming/web development/Shopping Cart Project/node_modules/.staging/express-fileupload-c6e0a21f
+745 silly gentlyRm /home/vaishakh/Desktop/Vaishakh/programming/web development/Shopping Cart Project/node_modules/.staging/express-fileupload-c6e0a21f is being purged
+746 verbose gentlyRm don't care about contents; nuking /home/vaishakh/Desktop/Vaishakh/programming/web development/Shopping Cart Project/node_modules/.staging/express-fileupload-c6e0a21f
+747 silly gunzTarPerm modes [ '775', '664' ]
+748 silly gunzTarPerm extractEntry .eslintignore
+749 silly gunzTarPerm modified mode [ '.eslintignore', 420, 436 ]
+750 silly gunzTarPerm extractEntry .eslintrc
+751 silly gunzTarPerm modified mode [ '.eslintrc', 420, 436 ]
+752 silly gunzTarPerm extractEntry .prettierrc
+753 silly gunzTarPerm modified mode [ '.prettierrc', 420, 436 ]
+754 silly gunzTarPerm extractEntry LICENSE
+755 silly gunzTarPerm modified mode [ 'LICENSE', 420, 436 ]
+756 silly gunzTarPerm extractEntry test/files/basket.ball.bp
+757 silly gunzTarPerm modified mode [ 'test/files/basket.ball.bp', 420, 436 ]
+758 silly gunzTarPerm extractEntry example/index.html
+759 silly gunzTarPerm modified mode [ 'example/index.html', 420, 436 ]
+760 silly gunzTarPerm extractEntry lib/fileFactory.js
+761 silly gunzTarPerm modified mode [ 'lib/fileFactory.js', 420, 436 ]
+762 silly gunzTarPerm extractEntry test/fileFactory.spec.js
+763 silly gunzTarPerm modified mode [ 'test/fileFactory.spec.js', 420, 436 ]
+764 silly gunzTarPerm extractEntry test/fileLimitUploads.spec.js
+765 silly gunzTarPerm modified mode [ 'test/fileLimitUploads.spec.js', 420, 436 ]
+766 silly gunzTarPerm extractEntry lib/index.js
+767 silly gunzTarPerm modified mode [ 'lib/index.js', 420, 436 ]
+768 silly gunzTarPerm extractEntry lib/isEligibleRequest.js
+769 silly gunzTarPerm modified mode [ 'lib/isEligibleRequest.js', 420, 436 ]
+770 silly gunzTarPerm extractEntry lib/memHandler.js
+771 silly gunzTarPerm modified mode [ 'lib/memHandler.js', 420, 436 ]
+772 silly gunzTarPerm extractEntry test/multipartFields.spec.js
+773 silly gunzTarPerm modified mode [ 'test/multipartFields.spec.js', 420, 436 ]
+774 silly gunzTarPerm extractEntry test/multipartUploads.spec.js
+775 silly gunzTarPerm modified mode [ 'test/multipartUploads.spec.js', 420, 436 ]
+776 silly gunzTarPerm extractEntry test/options.spec.js
+777 silly gunzTarPerm modified mode [ 'test/options.spec.js', 420, 436 ]
+778 silly gunzTarPerm extractEntry lib/processMultipart.js
+779 silly gunzTarPerm modified mode [ 'lib/processMultipart.js', 420, 436 ]
+780 silly gunzTarPerm extractEntry lib/processNested.js
+781 silly gunzTarPerm modified mode [ 'lib/processNested.js', 420, 436 ]
+782 silly gunzTarPerm extractEntry test/processNested.spec.js
+783 silly gunzTarPerm modified mode [ 'test/processNested.spec.js', 420, 436 ]
+784 silly gunzTarPerm extractEntry example/server.js
+785 silly gunzTarPerm modified mode [ 'example/server.js', 420, 436 ]
+786 silly gunzTarPerm extractEntry test/server.js
+787 silly gunzTarPerm modified mode [ 'test/server.js', 420, 436 ]
+788 silly gunzTarPerm extractEntry test/tempFile.spec.js
+789 silly gunzTarPerm modified mode [ 'test/tempFile.spec.js', 420, 436 ]
+790 silly gunzTarPerm extractEntry lib/tempFileHandler.js
+791 silly gunzTarPerm modified mode [ 'lib/tempFileHandler.js', 420, 436 ]
+792 silly gunzTarPerm extractEntry lib/uploadtimer.js
+793 silly gunzTarPerm modified mode [ 'lib/uploadtimer.js', 420, 436 ]
+794 silly gunzTarPerm extractEntry test/uploadtimer.spec.js
+795 silly gunzTarPerm modified mode [ 'test/uploadtimer.spec.js', 420, 436 ]
+796 silly gunzTarPerm extractEntry lib/utilities.js
+797 silly gunzTarPerm modified mode [ 'lib/utilities.js', 420, 436 ]
+798 silly gunzTarPerm extractEntry test/utilities.spec.js
+799 silly gunzTarPerm modified mode [ 'test/utilities.spec.js', 420, 436 ]
+800 silly gunzTarPerm extractEntry package.json
+801 silly gunzTarPerm modified mode [ 'package.json', 420, 436 ]
+802 silly gunzTarPerm extractEntry example/README.md
+803 silly gunzTarPerm modified mode [ 'example/README.md', 420, 436 ]
+804 silly gunzTarPerm extractEntry README.md
+805 silly gunzTarPerm modified mode [ 'README.md', 420, 436 ]
+806 silly gunzTarPerm extractEntry test/files/basketball.png
+807 silly gunzTarPerm modified mode [ 'test/files/basketball.png', 420, 436 ]
+808 silly gunzTarPerm extractEntry test/files/car.png
+809 silly gunzTarPerm modified mode [ 'test/files/car.png', 420, 436 ]
+810 silly gunzTarPerm extractEntry test/files/tree.png
+811 silly gunzTarPerm modified mode [ 'test/files/tree.png', 420, 436 ]
+812 silly gunzTarPerm extractEntry test/files/my$Invalid#fileName.png123
+813 silly gunzTarPerm modified mode [ 'test/files/my$Invalid#fileName.png123', 420, 436 ]
+814 silly gunzTarPerm extractEntry test/files/emptyfile.txt
+815 silly gunzTarPerm modified mode [ 'test/files/emptyfile.txt', 420, 436 ]
+816 silly gunzTarPerm extractEntry example/uploads/placeholder.txt
+817 silly gunzTarPerm modified mode [ 'example/uploads/placeholder.txt', 420, 436 ]
+818 silly gunzTarPerm extractEntry .travis.yml
+819 silly gunzTarPerm modified mode [ '.travis.yml', 420, 436 ]
+820 silly gentlyRm /home/vaishakh/Desktop/Vaishakh/programming/web development/Shopping Cart Project/node_modules/.staging/express-fileupload-c6e0a21f/node_modules is being purged
+821 verbose gentlyRm don't care about contents; nuking /home/vaishakh/Desktop/Vaishakh/programming/web development/Shopping Cart Project/node_modules/.staging/express-fileupload-c6e0a21f/node_modules
+822 silly doParallel preinstall 10
+823 silly preinstall bcrypt@5.0.1 /home/vaishakh/Desktop/Vaishakh/programming/web development/Shopping Cart Project/node_modules/.staging/bcrypt-605c1bd4
+824 info lifecycle bcrypt@5.0.1~preinstall: bcrypt@5.0.1
+825 silly preinstall crypto@1.0.1 /home/vaishakh/Desktop/Vaishakh/programming/web development/Shopping Cart Project/node_modules/.staging/crypto-41ae68ab
+826 info lifecycle crypto@1.0.1~preinstall: crypto@1.0.1
+827 silly preinstall express-fileupload@1.2.1 /home/vaishakh/Desktop/Vaishakh/programming/web development/Shopping Cart Project/node_modules/.staging/express-fileupload-c6e0a21f
+828 info lifecycle express-fileupload@1.2.1~preinstall: express-fileupload@1.2.1
+829 silly preinstall express-handlebars@5.3.3 /home/vaishakh/Desktop/Vaishakh/programming/web development/Shopping Cart Project/node_modules/.staging/express-handlebars-21af7026
+830 info lifecycle express-handlebars@5.3.3~preinstall: express-handlebars@5.3.3
+831 silly preinstall express-session@1.17.2 /home/vaishakh/Desktop/Vaishakh/programming/web development/Shopping Cart Project/node_modules/.staging/express-session-6c569a81
+832 info lifecycle express-session@1.17.2~preinstall: express-session@1.17.2
+833 silly preinstall file@0.2.2 /home/vaishakh/Desktop/Vaishakh/programming/web development/Shopping Cart Project/node_modules/.staging/file-e512d24b
+834 info lifecycle file@0.2.2~preinstall: file@0.2.2
+835 silly preinstall hbs@4.1.2 /home/vaishakh/Desktop/Vaishakh/programming/web development/Shopping Cart Project/node_modules/.staging/hbs-134b85bf
+836 info lifecycle hbs@4.1.2~preinstall: hbs@4.1.2
+837 silly preinstall mongod@2.0.0 /home/vaishakh/Desktop/Vaishakh/programming/web development/Shopping Cart Project/node_modules/.staging/mongod-6484b641
+838 info lifecycle mongod@2.0.0~preinstall: mongod@2.0.0
+839 silly preinstall razorpay@2.0.7 /home/vaishakh/Desktop/Vaishakh/programming/web development/Shopping Cart Project/node_modules/.staging/razorpay-77f9cbbd
+840 info lifecycle razorpay@2.0.7~preinstall: razorpay@2.0.7
+841 silly preinstall upload@1.1.1 /home/vaishakh/Desktop/Vaishakh/programming/web development/Shopping Cart Project/node_modules/.staging/upload-34cbb744
+842 info lifecycle upload@1.1.1~preinstall: upload@1.1.1
+843 silly lifecycle bcrypt@5.0.1~preinstall: no script for preinstall, continuing
+844 silly lifecycle crypto@1.0.1~preinstall: no script for preinstall, continuing
+845 silly lifecycle express-fileupload@1.2.1~preinstall: no script for preinstall, continuing
+846 silly lifecycle express-handlebars@5.3.3~preinstall: no script for preinstall, continuing
+847 silly lifecycle express-session@1.17.2~preinstall: no script for preinstall, continuing
+848 silly lifecycle file@0.2.2~preinstall: no script for preinstall, continuing
+849 silly lifecycle hbs@4.1.2~preinstall: no script for preinstall, continuing
+850 silly lifecycle mongod@2.0.0~preinstall: no script for preinstall, continuing
+851 silly lifecycle razorpay@2.0.7~preinstall: no script for preinstall, continuing
+852 silly lifecycle upload@1.1.1~preinstall: no script for preinstall, continuing
+853 silly doReverseSerial remove 0
+854 silly doSerial move 0
+855 silly doSerial finalize 10
+856 silly finalize /home/vaishakh/Desktop/Vaishakh/programming/web development/Shopping Cart Project/node_modules/bcrypt
+857 silly finalize /home/vaishakh/Desktop/Vaishakh/programming/web development/Shopping Cart Project/node_modules/crypto
+858 silly finalize /home/vaishakh/Desktop/Vaishakh/programming/web development/Shopping Cart Project/node_modules/express-fileupload
+859 silly finalize /home/vaishakh/Desktop/Vaishakh/programming/web development/Shopping Cart Project/node_modules/express-handlebars
+860 silly finalize /home/vaishakh/Desktop/Vaishakh/programming/web development/Shopping Cart Project/node_modules/express-session
+861 silly finalize /home/vaishakh/Desktop/Vaishakh/programming/web development/Shopping Cart Project/node_modules/file
+862 silly finalize /home/vaishakh/Desktop/Vaishakh/programming/web development/Shopping Cart Project/node_modules/hbs
+863 silly finalize /home/vaishakh/Desktop/Vaishakh/programming/web development/Shopping Cart Project/node_modules/mongod
+864 silly finalize /home/vaishakh/Desktop/Vaishakh/programming/web development/Shopping Cart Project/node_modules/razorpay
+865 silly finalize /home/vaishakh/Desktop/Vaishakh/programming/web development/Shopping Cart Project/node_modules/upload
+866 silly doSerial build 10
+867 silly build bcrypt@5.0.1
+868 info linkStuff bcrypt@5.0.1
+869 silly linkStuff bcrypt@5.0.1 has /home/vaishakh/Desktop/Vaishakh/programming/web development/Shopping Cart Project/node_modules as its parent node_modules
+870 verbose linkBins bcrypt@5.0.1
+871 verbose linkMans bcrypt@5.0.1
+872 silly build crypto@1.0.1
+873 info linkStuff crypto@1.0.1
+874 silly linkStuff crypto@1.0.1 has /home/vaishakh/Desktop/Vaishakh/programming/web development/Shopping Cart Project/node_modules as its parent node_modules
+875 verbose linkBins crypto@1.0.1
+876 verbose linkMans crypto@1.0.1
+877 silly build express-fileupload@1.2.1
+878 info linkStuff express-fileupload@1.2.1
+879 silly linkStuff express-fileupload@1.2.1 has /home/vaishakh/Desktop/Vaishakh/programming/web development/Shopping Cart Project/node_modules as its parent node_modules
+880 verbose linkBins express-fileupload@1.2.1
+881 verbose linkMans express-fileupload@1.2.1
+882 silly build express-handlebars@5.3.3
+883 info linkStuff express-handlebars@5.3.3
+884 silly linkStuff express-handlebars@5.3.3 has /home/vaishakh/Desktop/Vaishakh/programming/web development/Shopping Cart Project/node_modules as its parent node_modules
+885 verbose linkBins express-handlebars@5.3.3
+886 verbose linkMans express-handlebars@5.3.3
+887 silly build express-session@1.17.2
+888 info linkStuff express-session@1.17.2
+889 silly linkStuff express-session@1.17.2 has /home/vaishakh/Desktop/Vaishakh/programming/web development/Shopping Cart Project/node_modules as its parent node_modules
+890 verbose linkBins express-session@1.17.2
+891 verbose linkMans express-session@1.17.2
+892 silly build file@0.2.2
+893 info linkStuff file@0.2.2
+894 silly linkStuff file@0.2.2 has /home/vaishakh/Desktop/Vaishakh/programming/web development/Shopping Cart Project/node_modules as its parent node_modules
+895 verbose linkBins file@0.2.2
+896 verbose linkMans file@0.2.2
+897 silly build hbs@4.1.2
+898 info linkStuff hbs@4.1.2
+899 silly linkStuff hbs@4.1.2 has /home/vaishakh/Desktop/Vaishakh/programming/web development/Shopping Cart Project/node_modules as its parent node_modules
+900 verbose linkBins hbs@4.1.2
+901 verbose linkMans hbs@4.1.2
+902 silly build mongod@2.0.0
+903 info linkStuff mongod@2.0.0
+904 silly linkStuff mongod@2.0.0 has /home/vaishakh/Desktop/Vaishakh/programming/web development/Shopping Cart Project/node_modules as its parent node_modules
+905 verbose linkBins mongod@2.0.0
+906 verbose linkMans mongod@2.0.0
+907 silly build razorpay@2.0.7
+908 info linkStuff razorpay@2.0.7
+909 silly linkStuff razorpay@2.0.7 has /home/vaishakh/Desktop/Vaishakh/programming/web development/Shopping Cart Project/node_modules as its parent node_modules
+910 verbose linkBins razorpay@2.0.7
+911 verbose linkMans razorpay@2.0.7
+912 silly build upload@1.1.1
+913 info linkStuff upload@1.1.1
+914 silly linkStuff upload@1.1.1 has /home/vaishakh/Desktop/Vaishakh/programming/web development/Shopping Cart Project/node_modules as its parent node_modules
+915 verbose linkBins upload@1.1.1
+916 verbose linkMans upload@1.1.1
+917 silly doSerial global-link 0
+918 silly doParallel update-linked 0
+919 silly doSerial install 10
+920 silly install bcrypt@5.0.1 /home/vaishakh/Desktop/Vaishakh/programming/web development/Shopping Cart Project/node_modules/.staging/bcrypt-605c1bd4
+921 info lifecycle bcrypt@5.0.1~install: bcrypt@5.0.1
+922 verbose lifecycle bcrypt@5.0.1~install: unsafe-perm in lifecycle true
+923 verbose lifecycle bcrypt@5.0.1~install: PATH: /usr/share/npm/bin/node-gyp-bin:/home/vaishakh/Desktop/Vaishakh/programming/web development/Shopping Cart Project/node_modules/bcrypt/node_modules/.bin:/home/vaishakh/Desktop/Vaishakh/programming/web development/Shopping Cart Project/node_modules/.bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+924 verbose lifecycle bcrypt@5.0.1~install: CWD: /home/vaishakh/Desktop/Vaishakh/programming/web development/Shopping Cart Project/node_modules/bcrypt
+925 silly lifecycle bcrypt@5.0.1~install: Args: [ '-c', 'node-pre-gyp install --fallback-to-build' ]
+926 silly lifecycle bcrypt@5.0.1~install: Returned: code: 1  signal: null
+927 info lifecycle bcrypt@5.0.1~install: Failed to exec install script
+928 verbose unlock done using /home/vaishakh/.npm/_locks/staging-7567333549438a03.lock for /home/vaishakh/Desktop/Vaishakh/programming/web development/Shopping Cart Project/node_modules/.staging
+929 silly rollbackFailedOptional Starting
+930 silly rollbackFailedOptional Finishing
+931 silly runTopLevelLifecycles Starting
+932 silly runTopLevelLifecycles Finishing
+933 silly install printInstalled
+934 verbose stack Error: bcrypt@5.0.1 install: `node-pre-gyp install --fallback-to-build`
+934 verbose stack Exit status 1
+934 verbose stack     at EventEmitter.<anonymous> (/usr/share/npm/lib/utils/lifecycle.js:232:16)
+934 verbose stack     at emitTwo (events.js:126:13)
+934 verbose stack     at EventEmitter.emit (events.js:214:7)
+934 verbose stack     at ChildProcess.<anonymous> (/usr/share/npm/lib/utils/spawn.js:24:14)
+934 verbose stack     at emitTwo (events.js:126:13)
+934 verbose stack     at ChildProcess.emit (events.js:214:7)
+934 verbose stack     at maybeClose (internal/child_process.js:925:16)
+934 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:209:5)
+935 verbose pkgid bcrypt@5.0.1
+936 verbose cwd /home/vaishakh/Desktop/Vaishakh/programming/web development/Shopping Cart Project
+937 error Linux 5.4.0-86-generic
+938 error argv "/usr/bin/node" "/usr/bin/npm" "install" "bcrypt"
+939 error node v8.10.0
+940 error npm  v3.5.2
+941 error code ELIFECYCLE
+942 error bcrypt@5.0.1 install: `node-pre-gyp install --fallback-to-build`
+942 error Exit status 1
+943 error Failed at the bcrypt@5.0.1 install script 'node-pre-gyp install --fallback-to-build'.
+943 error Make sure you have the latest version of node.js and npm installed.
+943 error If you do, this is most likely a problem with the bcrypt package,
+943 error not with npm itself.
+943 error Tell the author that this fails on your system:
+943 error     node-pre-gyp install --fallback-to-build
+943 error You can get information on how to open an issue for this project with:
+943 error     npm bugs bcrypt
+943 error Or if that isn't available, you can get their info via:
+943 error     npm owner ls bcrypt
+943 error There is likely additional logging output above.
+944 verbose exit [ 1, true ]
